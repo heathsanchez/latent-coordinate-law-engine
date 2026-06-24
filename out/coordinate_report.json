@@ -1,0 +1,383 @@
+{
+  "candidate_features": [
+    "support_index",
+    "support_amplitude",
+    "a6",
+    "a18",
+    "abs_support_amplitude",
+    "a6_positive",
+    "a6_negative",
+    "a6_abs",
+    "a18_abs",
+    "active_support_slots",
+    "paired_resonance",
+    "reverse_resonance",
+    "support_face",
+    "support_bucket",
+    "threshold_zone"
+  ],
+  "identified_coordinates": {
+    "a18_predictive_value_for_r": {
+      "feature": "a18",
+      "mutual_info": 0.001849423017683094,
+      "tree_accuracy": 0.5888888888888889,
+      "tree_macro_f1": 0.24708624708624707,
+      "tree_rule": "|--- a18 <= 95.50\n|   |--- a18 <= 53.00\n|   |   |--- a18 <= 17.50\n|   |   |   |--- class: 2\n|   |   |--- a18 >  17.50\n|   |   |   |--- class: 2\n|   |--- a18 >  53.00\n|   |   |--- class: 2\n|--- a18 >  95.50\n|   |--- class: 2\n"
+    },
+    "r_coordinate": "threshold_zone",
+    "reverse_orientation": {
+      "feature": "reverse_resonance",
+      "mutual_info": 0.18649027628288903,
+      "tree_accuracy": 0.5888888888888889,
+      "tree_macro_f1": 0.24708624708624707,
+      "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 2\n|--- reverse_resonance >  0.50\n|   |--- class: 2\n"
+    },
+    "t_coordinate": "support_face"
+  },
+  "n_rows": 600,
+  "target_cols": [
+    "t",
+    "r"
+  ],
+  "targets": {
+    "combined": {
+      "baseline": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "rankings": [
+        {
+          "feature": "threshold_zone",
+          "mutual_info": 1.6322070488959441,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.4331012716977629,
+          "tree_rule": "|--- threshold_zone_low <= 0.50\n|   |--- threshold_zone_high <= 0.50\n|   |   |--- class: 25000|4\n|   |--- threshold_zone_high >  0.50\n|   |   |--- class: 25000|6\n|--- threshold_zone_low >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "support_face",
+          "mutual_info": 1.078552682994101,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24441629129129128,
+          "tree_rule": "|--- support_face_x12_base <= 0.50\n|   |--- class: 25000|2\n|--- support_face_x12_base >  0.50\n|   |--- class: 24979|2\n"
+        },
+        {
+          "feature": "support_bucket",
+          "mutual_info": 1.078552682994101,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24441629129129128,
+          "tree_rule": "|--- support_bucket_x12_base <= 0.50\n|   |--- class: 25000|2\n|--- support_bucket_x12_base >  0.50\n|   |--- class: 24979|2\n"
+        },
+        {
+          "feature": "a6",
+          "mutual_info": 0.906498048546325,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.4331012716977629,
+          "tree_rule": "|--- a6 <= 70.50\n|   |--- a6 <= -51.00\n|   |   |--- a6 <= -81.00\n|   |   |   |--- class: 25000|2\n|   |   |--- a6 >  -81.00\n|   |   |   |--- class: 25000|2\n|   |--- a6 >  -51.00\n|   |   |--- a6 <= 45.00\n|   |   |   |--- class: 25000|2\n|   |   |--- a6 >  45.00\n|   |   |   |--- class: 25000|2\n|--- a6 >  70.50\n|   |--- a6 <= 71.50\n|   |   |--- class: 25000|4\n|   |--- a6 >  71.50\n|   |   |--- a6 <= 97.50\n|   |   |   |--- class: 25000|6\n|   |   |--- a6 >  97.50\n|   |   |   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "active_support_slots",
+          "mutual_info": 0.7804382396402989,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24441629129129128,
+          "tree_rule": "|--- active_support_slots_12 <= 0.50\n|   |--- active_support_slots_17 <= 0.50\n|   |   |--- active_support_slots_13 <= 0.50\n|   |   |   |--- class: 25000|2\n|   |   |--- active_support_slots_13 >  0.50\n|   |   |   |--- class: 25000|2\n|   |--- active_support_slots_17 >  0.50\n|   |   |--- class: 25000|2\n|--- active_support_slots_12 >  0.50\n|   |--- class: 24979|2\n"
+        },
+        {
+          "feature": "a6_abs",
+          "mutual_info": 0.7796319441168242,
+          "tree_accuracy": 0.6055555555555555,
+          "tree_macro_f1": 0.33104823249750787,
+          "tree_rule": "|--- a6_abs <= 70.50\n|   |--- a6_abs <= 25.00\n|   |   |--- a6_abs <= 10.00\n|   |   |   |--- class: 25000|2\n|   |   |--- a6_abs >  10.00\n|   |   |   |--- class: 25000|2\n|   |--- a6_abs >  25.00\n|   |   |--- a6_abs <= 50.00\n|   |   |   |--- class: 25000|2\n|   |   |--- a6_abs >  50.00\n|   |   |   |--- class: 25000|2\n|--- a6_abs >  70.50\n|   |--- a6_abs <= 71.50\n|   |   |--- class: 25000|4\n|   |--- a6_abs >  71.50\n|   |   |--- a6_abs <= 100.00\n|   |   |   |--- class: 25000|2\n|   |   |--- a6_abs >  100.00\n|   |   |   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "support_index",
+          "mutual_info": 0.5453657042343869,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24441629129129128,
+          "tree_rule": "|--- support_index <= 12.50\n|   |--- class: 24979|2\n|--- support_index >  12.50\n|   |--- support_index <= 16.00\n|   |   |--- support_index <= 14.00\n|   |   |   |--- class: 25000|2\n|   |   |--- support_index >  14.00\n|   |   |   |--- class: 25000|2\n|   |--- support_index >  16.00\n|   |   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "a6_positive",
+          "mutual_info": 0.26939049020022776,
+          "tree_accuracy": 0.5333333333333333,
+          "tree_macro_f1": 0.21096681096681094,
+          "tree_rule": "|--- a6_positive <= 0.50\n|   |--- class: 25000|2\n|--- a6_positive >  0.50\n|   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "a6_negative",
+          "mutual_info": 0.18703586506042158,
+          "tree_accuracy": 0.46111111111111114,
+          "tree_macro_f1": 0.10519645120405575,
+          "tree_rule": "|--- a6_negative <= 0.50\n|   |--- class: 25000|2\n|--- a6_negative >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "reverse_resonance",
+          "mutual_info": 0.18703586506042158,
+          "tree_accuracy": 0.46111111111111114,
+          "tree_macro_f1": 0.10519645120405575,
+          "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 25000|2\n|--- reverse_resonance >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "paired_resonance",
+          "mutual_info": 0.13655451124576348,
+          "tree_accuracy": 0.5166666666666667,
+          "tree_macro_f1": 0.1989586550765565,
+          "tree_rule": "|--- paired_resonance <= 0.50\n|   |--- class: 25000|2\n|--- paired_resonance >  0.50\n|   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "a18_abs",
+          "mutual_info": 0.010043545402885101,
+          "tree_accuracy": 0.46111111111111114,
+          "tree_macro_f1": 0.10519645120405575,
+          "tree_rule": "|--- a18_abs <= 37.50\n|   |--- a18_abs <= 17.50\n|   |   |--- class: 25000|2\n|   |--- a18_abs >  17.50\n|   |   |--- class: 25000|2\n|--- a18_abs >  37.50\n|   |--- a18_abs <= 55.50\n|   |   |--- class: 25000|2\n|   |--- a18_abs >  55.50\n|   |   |--- a18_abs <= 130.00\n|   |   |   |--- class: 25000|2\n|   |   |--- a18_abs >  130.00\n|   |   |   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "a18",
+          "mutual_info": 0.00967460587327551,
+          "tree_accuracy": 0.46111111111111114,
+          "tree_macro_f1": 0.10519645120405575,
+          "tree_rule": "|--- a18 <= -20.00\n|   |--- a18 <= -90.00\n|   |   |--- class: 25000|2\n|   |--- a18 >  -90.00\n|   |   |--- class: 25000|2\n|--- a18 >  -20.00\n|   |--- a18 <= 53.00\n|   |   |--- a18 <= 17.50\n|   |   |   |--- class: 25000|2\n|   |   |--- a18 >  17.50\n|   |   |   |--- class: 25000|2\n|   |--- a18 >  53.00\n|   |   |--- a18 <= 95.50\n|   |   |   |--- class: 25000|2\n|   |   |--- a18 >  95.50\n|   |   |   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "support_amplitude",
+          "mutual_info": 0.004395636993550056,
+          "tree_accuracy": 0.45,
+          "tree_macro_f1": 0.11085354747909594,
+          "tree_rule": "|--- support_amplitude <= 123.50\n|   |--- support_amplitude <= -137.50\n|   |   |--- support_amplitude <= -139.50\n|   |   |   |--- class: 25000|2\n|   |   |--- support_amplitude >  -139.50\n|   |   |   |--- class: 25000|2\n|   |--- support_amplitude >  -137.50\n|   |   |--- support_amplitude <= -136.50\n|   |   |   |--- class: 25000|6\n|   |   |--- support_amplitude >  -136.50\n|   |   |   |--- class: 25000|2\n|--- support_amplitude >  123.50\n|   |--- support_amplitude <= 135.50\n|   |   |--- support_amplitude <= 130.50\n|   |   |   |--- class: 25000|2\n|   |   |--- support_amplitude >  130.50\n|   |   |   |--- class: 25000|2\n|   |--- support_amplitude >  135.50\n|   |   |--- support_amplitude <= 139.50\n|   |   |   |--- class: 25000|2\n|   |   |--- support_amplitude >  139.50\n|   |   |   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "abs_support_amplitude",
+          "mutual_info": 0.0,
+          "tree_accuracy": 0.4444444444444444,
+          "tree_macro_f1": 0.10256410256410257,
+          "tree_rule": "|--- abs_support_amplitude <= 130.50\n|   |--- abs_support_amplitude <= 101.50\n|   |   |--- abs_support_amplitude <= 100.50\n|   |   |   |--- class: 25000|2\n|   |   |--- abs_support_amplitude >  100.50\n|   |   |   |--- class: 25000|4\n|   |--- abs_support_amplitude >  101.50\n|   |   |--- abs_support_amplitude <= 102.50\n|   |   |   |--- class: 25000|2\n|   |   |--- abs_support_amplitude >  102.50\n|   |   |   |--- class: 25000|2\n|--- abs_support_amplitude >  130.50\n|   |--- abs_support_amplitude <= 131.50\n|   |   |--- class: 25000|2\n|   |--- abs_support_amplitude >  131.50\n|   |   |--- abs_support_amplitude <= 137.50\n|   |   |   |--- class: 25000|2\n|   |   |--- abs_support_amplitude >  137.50\n|   |   |   |--- class: 25000|2\n"
+        }
+      ]
+    },
+    "r": {
+      "baseline": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "rankings": [
+        {
+          "feature": "threshold_zone",
+          "mutual_info": 1.6322070488959457,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- threshold_zone_low <= 0.50\n|   |--- threshold_zone_high <= 0.50\n|   |   |--- class: 4\n|   |--- threshold_zone_high >  0.50\n|   |   |--- class: 6\n|--- threshold_zone_low >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "a6",
+          "mutual_info": 0.9158308827409973,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- a6 <= 70.50\n|   |--- class: 2\n|--- a6 >  70.50\n|   |--- a6 <= 71.50\n|   |   |--- class: 4\n|   |--- a6 >  71.50\n|   |   |--- class: 6\n"
+        },
+        {
+          "feature": "a6_abs",
+          "mutual_info": 0.7962083918060066,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.7420014551747194,
+          "tree_rule": "|--- a6_abs <= 70.50\n|   |--- class: 2\n|--- a6_abs >  70.50\n|   |--- a6_abs <= 71.50\n|   |   |--- class: 4\n|   |--- a6_abs >  71.50\n|   |   |--- a6_abs <= 100.00\n|   |   |   |--- class: 2\n|   |   |--- a6_abs >  100.00\n|   |   |   |--- class: 6\n"
+        },
+        {
+          "feature": "a6_positive",
+          "mutual_info": 0.26938232663235984,
+          "tree_accuracy": 0.7,
+          "tree_macro_f1": 0.49188514357053686,
+          "tree_rule": "|--- a6_positive <= 0.50\n|   |--- class: 2\n|--- a6_positive >  0.50\n|   |--- class: 6\n"
+        },
+        {
+          "feature": "a6_negative",
+          "mutual_info": 0.18649027628288903,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- a6_negative <= 0.50\n|   |--- class: 2\n|--- a6_negative >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "reverse_resonance",
+          "mutual_info": 0.18649027628288903,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 2\n|--- reverse_resonance >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "paired_resonance",
+          "mutual_info": 0.1352791205178781,
+          "tree_accuracy": 0.6722222222222223,
+          "tree_macro_f1": 0.4646162253347114,
+          "tree_rule": "|--- paired_resonance <= 0.50\n|   |--- class: 2\n|--- paired_resonance >  0.50\n|   |--- class: 6\n"
+        },
+        {
+          "feature": "support_index",
+          "mutual_info": 0.00380296032982419,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- support_index <= 16.00\n|   |--- support_index <= 12.50\n|   |   |--- class: 2\n|   |--- support_index >  12.50\n|   |   |--- support_index <= 14.00\n|   |   |   |--- class: 2\n|   |   |--- support_index >  14.00\n|   |   |   |--- class: 2\n|--- support_index >  16.00\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "active_support_slots",
+          "mutual_info": 0.0027805988406655185,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- active_support_slots_17 <= 0.50\n|   |--- active_support_slots_12 <= 0.50\n|   |   |--- active_support_slots_15 <= 0.50\n|   |   |   |--- class: 2\n|   |   |--- active_support_slots_15 >  0.50\n|   |   |   |--- class: 2\n|   |--- active_support_slots_12 >  0.50\n|   |   |--- class: 2\n|--- active_support_slots_17 >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "a18",
+          "mutual_info": 0.001849423017683094,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- a18 <= 95.50\n|   |--- a18 <= 53.00\n|   |   |--- a18 <= 17.50\n|   |   |   |--- class: 2\n|   |   |--- a18 >  17.50\n|   |   |   |--- class: 2\n|   |--- a18 >  53.00\n|   |   |--- class: 2\n|--- a18 >  95.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "a18_abs",
+          "mutual_info": 0.001849423017683094,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- a18_abs <= 55.50\n|   |--- a18_abs <= 17.50\n|   |   |--- class: 2\n|   |--- a18_abs >  17.50\n|   |   |--- a18_abs <= 37.50\n|   |   |   |--- class: 2\n|   |   |--- a18_abs >  37.50\n|   |   |   |--- class: 2\n|--- a18_abs >  55.50\n|   |--- a18_abs <= 95.50\n|   |   |--- class: 2\n|   |--- a18_abs >  95.50\n|   |   |--- a18_abs <= 130.00\n|   |   |   |--- class: 2\n|   |   |--- a18_abs >  130.00\n|   |   |   |--- class: 2\n"
+        },
+        {
+          "feature": "support_face",
+          "mutual_info": 0.00045658653405528105,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- support_face_x13_x15_x17 <= 0.50\n|   |--- class: 2\n|--- support_face_x13_x15_x17 >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "support_bucket",
+          "mutual_info": 0.00045658653405528105,
+          "tree_accuracy": 0.5888888888888889,
+          "tree_macro_f1": 0.24708624708624707,
+          "tree_rule": "|--- support_bucket_x13_x15_x17 <= 0.50\n|   |--- class: 2\n|--- support_bucket_x13_x15_x17 >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "abs_support_amplitude",
+          "mutual_info": 0.0,
+          "tree_accuracy": 0.5166666666666667,
+          "tree_macro_f1": 0.26697059346557384,
+          "tree_rule": "|--- abs_support_amplitude <= 104.50\n|   |--- abs_support_amplitude <= 100.50\n|   |   |--- abs_support_amplitude <= 98.50\n|   |   |   |--- class: 6\n|   |   |--- abs_support_amplitude >  98.50\n|   |   |   |--- class: 2\n|   |--- abs_support_amplitude >  100.50\n|   |   |--- abs_support_amplitude <= 102.50\n|   |   |   |--- class: 6\n|   |   |--- abs_support_amplitude >  102.50\n|   |   |   |--- class: 2\n|--- abs_support_amplitude >  104.50\n|   |--- abs_support_amplitude <= 120.50\n|   |   |--- abs_support_amplitude <= 114.50\n|   |   |   |--- class: 2\n|   |   |--- abs_support_amplitude >  114.50\n|   |   |   |--- class: 2\n|   |--- abs_support_amplitude >  120.50\n|   |   |--- abs_support_amplitude <= 128.50\n|   |   |   |--- class: 2\n|   |   |--- abs_support_amplitude >  128.50\n|   |   |   |--- class: 2\n"
+        },
+        {
+          "feature": "support_amplitude",
+          "mutual_info": 0.0,
+          "tree_accuracy": 0.5388888888888889,
+          "tree_macro_f1": 0.25245098039215685,
+          "tree_rule": "|--- support_amplitude <= 118.50\n|   |--- support_amplitude <= 114.50\n|   |   |--- support_amplitude <= 99.50\n|   |   |   |--- class: 2\n|   |   |--- support_amplitude >  99.50\n|   |   |   |--- class: 2\n|   |--- support_amplitude >  114.50\n|   |   |--- support_amplitude <= 115.50\n|   |   |   |--- class: 6\n|   |   |--- support_amplitude >  115.50\n|   |   |   |--- class: 6\n|--- support_amplitude >  118.50\n|   |--- support_amplitude <= 139.50\n|   |   |--- support_amplitude <= 138.50\n|   |   |   |--- class: 2\n|   |   |--- support_amplitude >  138.50\n|   |   |   |--- class: 6\n|   |--- support_amplitude >  139.50\n|   |   |--- class: 2\n"
+        }
+      ]
+    },
+    "t": {
+      "baseline": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "rankings": [
+        {
+          "feature": "support_face",
+          "mutual_info": 1.078552682994101,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- support_face_x13_x15_x17 <= 0.50\n|   |--- class: 24979\n|--- support_face_x13_x15_x17 >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "support_bucket",
+          "mutual_info": 1.078552682994101,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- support_bucket_x13_x15_x17 <= 0.50\n|   |--- class: 24979\n|--- support_bucket_x13_x15_x17 >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "active_support_slots",
+          "mutual_info": 0.7776575751424679,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- active_support_slots_12 <= 0.50\n|   |--- class: 25000\n|--- active_support_slots_12 >  0.50\n|   |--- class: 24979\n"
+        },
+        {
+          "feature": "support_index",
+          "mutual_info": 0.5401107504100642,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- support_index <= 12.50\n|   |--- class: 24979\n|--- support_index >  12.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "support_amplitude",
+          "mutual_info": 0.02477644654599853,
+          "tree_accuracy": 0.7555555555555555,
+          "tree_macro_f1": 0.4516754361672667,
+          "tree_rule": "|--- support_amplitude <= 124.50\n|   |--- support_amplitude <= -129.50\n|   |   |--- support_amplitude <= -132.50\n|   |   |   |--- class: 25000\n|   |   |--- support_amplitude >  -132.50\n|   |   |   |--- class: 25000\n|   |--- support_amplitude >  -129.50\n|   |   |--- support_amplitude <= -126.50\n|   |   |   |--- class: 24979\n|   |   |--- support_amplitude >  -126.50\n|   |   |   |--- class: 25000\n|--- support_amplitude >  124.50\n|   |--- support_amplitude <= 137.50\n|   |   |--- support_amplitude <= 136.50\n|   |   |   |--- class: 25000\n|   |   |--- support_amplitude >  136.50\n|   |   |   |--- class: 25000\n|   |--- support_amplitude >  137.50\n|   |   |--- support_amplitude <= 139.50\n|   |   |   |--- class: 25000\n|   |   |--- support_amplitude >  139.50\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "a18",
+          "mutual_info": 0.01433186111505469,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- a18 <= -20.00\n|   |--- a18 <= -90.00\n|   |   |--- class: 25000\n|   |--- a18 >  -90.00\n|   |   |--- class: 25000\n|--- a18 >  -20.00\n|   |--- a18 <= 17.50\n|   |   |--- class: 25000\n|   |--- a18 >  17.50\n|   |   |--- a18 <= 95.50\n|   |   |   |--- class: 25000\n|   |   |--- a18 >  95.50\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "a18_abs",
+          "mutual_info": 0.01433186111505469,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- a18_abs <= 17.50\n|   |--- class: 25000\n|--- a18_abs >  17.50\n|   |--- a18_abs <= 55.50\n|   |   |--- a18_abs <= 37.50\n|   |   |   |--- class: 25000\n|   |   |--- a18_abs >  37.50\n|   |   |   |--- class: 25000\n|   |--- a18_abs >  55.50\n|   |   |--- a18_abs <= 130.00\n|   |   |   |--- class: 25000\n|   |   |--- a18_abs >  130.00\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "abs_support_amplitude",
+          "mutual_info": 0.006470326594818054,
+          "tree_accuracy": 0.7444444444444445,
+          "tree_macro_f1": 0.4267515923566879,
+          "tree_rule": "|--- abs_support_amplitude <= 129.50\n|   |--- abs_support_amplitude <= 98.50\n|   |   |--- abs_support_amplitude <= 97.50\n|   |   |   |--- class: 25000\n|   |   |--- abs_support_amplitude >  97.50\n|   |   |   |--- class: 25000\n|   |--- abs_support_amplitude >  98.50\n|   |   |--- abs_support_amplitude <= 99.50\n|   |   |   |--- class: 24979\n|   |   |--- abs_support_amplitude >  99.50\n|   |   |   |--- class: 25000\n|--- abs_support_amplitude >  129.50\n|   |--- abs_support_amplitude <= 132.50\n|   |   |--- abs_support_amplitude <= 131.50\n|   |   |   |--- class: 25000\n|   |   |--- abs_support_amplitude >  131.50\n|   |   |   |--- class: 25000\n|   |--- abs_support_amplitude >  132.50\n|   |   |--- abs_support_amplitude <= 138.50\n|   |   |   |--- class: 25000\n|   |   |--- abs_support_amplitude >  138.50\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "threshold_zone",
+          "mutual_info": 0.0004052535105757704,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- threshold_zone_boundary <= 0.50\n|   |--- threshold_zone_low <= 0.50\n|   |   |--- class: 25000\n|   |--- threshold_zone_low >  0.50\n|   |   |--- class: 25000\n|--- threshold_zone_boundary >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "paired_resonance",
+          "mutual_info": 0.0002850709389678463,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- paired_resonance <= 0.50\n|   |--- class: 25000\n|--- paired_resonance >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "a6_negative",
+          "mutual_info": 0.0001384997331038973,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- a6_negative <= 0.50\n|   |--- class: 25000\n|--- a6_negative >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "reverse_resonance",
+          "mutual_info": 0.0001384997331038973,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 25000\n|--- reverse_resonance >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "a6_positive",
+          "mutual_info": 5.602142137006716e-05,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- a6_positive <= 0.50\n|   |--- class: 25000\n|--- a6_positive >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "a6",
+          "mutual_info": 0.0,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- a6 <= 70.50\n|   |--- a6 <= -51.00\n|   |   |--- a6 <= -81.00\n|   |   |   |--- class: 25000\n|   |   |--- a6 >  -81.00\n|   |   |   |--- class: 25000\n|   |--- a6 >  -51.00\n|   |   |--- a6 <= 10.00\n|   |   |   |--- class: 25000\n|   |   |--- a6 >  10.00\n|   |   |   |--- class: 25000\n|--- a6 >  70.50\n|   |--- a6 <= 97.50\n|   |   |--- a6 <= 71.50\n|   |   |   |--- class: 25000\n|   |   |--- a6 >  71.50\n|   |   |   |--- class: 25000\n|   |--- a6 >  97.50\n|   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "a6_abs",
+          "mutual_info": 0.0,
+          "tree_accuracy": 0.7722222222222223,
+          "tree_macro_f1": 0.43573667711598746,
+          "tree_rule": "|--- a6_abs <= 70.50\n|   |--- a6_abs <= 10.00\n|   |   |--- class: 25000\n|   |--- a6_abs >  10.00\n|   |   |--- a6_abs <= 25.00\n|   |   |   |--- class: 25000\n|   |   |--- a6_abs >  25.00\n|   |   |   |--- class: 25000\n|--- a6_abs >  70.50\n|   |--- a6_abs <= 87.50\n|   |   |--- a6_abs <= 71.50\n|   |   |   |--- class: 25000\n|   |   |--- a6_abs >  71.50\n|   |   |   |--- class: 25000\n|   |--- a6_abs >  87.50\n|   |   |--- a6_abs <= 100.00\n|   |   |   |--- class: 25000\n|   |   |--- a6_abs >  100.00\n|   |   |   |--- class: 25000\n"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "lawbook_version": "1.0",
+  "laws": [
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": ">=",
+        "value": 13
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_index_>=_13",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_index >= 13 then t = 25000",
+      "support": 462
+    },
+    {
+      "condition": {
+        "feature": "support_face",
+        "op": "==",
+        "value": "x13_x15_x17"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_face_==_x13_x15_x17",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_face == x13_x15_x17 then t = 25000",
+      "support": 462
+    },
+    {
+      "condition": {
+        "feature": "support_bucket",
+        "op": "==",
+        "value": "x13_x15_x17"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_bucket_==_x13_x15_x17",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_bucket == x13_x15_x17 then t = 25000",
+      "support": 462
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "<=",
+        "value": 12
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_index_<=_12",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_index <= 12 then t = 24979",
+      "support": 138
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "==",
+        "value": 12
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_index_==_12",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_index == 12 then t = 24979",
+      "support": 138
+    },
+    {
+      "condition": {
+        "feature": "active_support_slots",
+        "op": "==",
+        "value": "12"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_active_support_slots_==_12",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if active_support_slots == 12 then t = 24979",
+      "support": 138
+    },
+    {
+      "condition": {
+        "feature": "support_face",
+        "op": "==",
+        "value": "x12_base"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_face_==_x12_base",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_face == x12_base then t = 24979",
+      "support": 138
+    },
+    {
+      "condition": {
+        "feature": "support_bucket",
+        "op": "==",
+        "value": "x12_base"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_bucket_==_x12_base",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_bucket == x12_base then t = 24979",
+      "support": 138
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": ">=",
+        "value": 15
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_index_>=_15",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.6861471861471862,
+      "statement": "if support_index >= 15 then t = 25000",
+      "support": 317
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_70",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 1.0,
+      "statement": "if a6 <= 70 then r = 2",
+      "support": 355
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "==",
+        "value": "low"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_threshold_zone_==_low",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 1.0,
+      "statement": "if threshold_zone == low then r = 2",
+      "support": 355
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 72
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_>=_72",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 1.0,
+      "statement": "if a6 >= 72 then r = 6",
+      "support": 179
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "==",
+        "value": "high"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_threshold_zone_==_high",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 1.0,
+      "statement": "if threshold_zone == high then r = 6",
+      "support": 179
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "feature": "a6",
+            "op": ">=",
+            "value": 72
+          },
+          {
+            "feature": "a6_positive",
+            "op": "==",
+            "value": true
+          }
+        ]
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_>=_72_and_a6_positive_==_True",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 1.0,
+      "statement": "if a6 >= 72 and a6_positive == True then r = 6",
+      "support": 179
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "==",
+        "value": 71
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_==_71",
+      "precision": 1.0,
+      "predicted_value": 4,
+      "recall": 1.0,
+      "statement": "if a6 == 71 then r = 4",
+      "support": 66
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "==",
+        "value": 71
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_abs_==_71",
+      "precision": 1.0,
+      "predicted_value": 4,
+      "recall": 1.0,
+      "statement": "if a6_abs == 71 then r = 4",
+      "support": 66
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "==",
+        "value": "boundary"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_threshold_zone_==_boundary",
+      "precision": 1.0,
+      "predicted_value": 4,
+      "recall": 1.0,
+      "statement": "if threshold_zone == boundary then r = 4",
+      "support": 66
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 20
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_20",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.7943661971830986,
+      "statement": "if a6 <= 20 then r = 2",
+      "support": 282
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 85
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_85",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.7206703910614525,
+      "statement": "if a6 >= 85 then r = 6",
+      "support": 129
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_70",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6732394366197183,
+      "statement": "if a6_abs <= 70 then r = 2",
+      "support": 239
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 0
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_0",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6281690140845071,
+      "statement": "if a6 <= 0 then r = 2",
+      "support": 223
+    },
+    {
+      "condition": {
+        "feature": "a6_positive",
+        "op": "==",
+        "value": false
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_positive_==_False",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6281690140845071,
+      "statement": "if a6_positive == False then r = 2",
+      "support": 223
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": -30
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_-30",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4788732394366197,
+      "statement": "if a6 <= -30 then r = 2",
+      "support": 170
+    },
+    {
+      "condition": {
+        "feature": "a6_negative",
+        "op": "==",
+        "value": true
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_negative_==_True",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4788732394366197,
+      "statement": "if a6_negative == True then r = 2",
+      "support": 170
+    },
+    {
+      "condition": {
+        "feature": "reverse_resonance",
+        "op": "==",
+        "value": true
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_reverse_resonance_==_True",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4788732394366197,
+      "statement": "if reverse_resonance == True then r = 2",
+      "support": 170
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 30
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_30",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4676056338028169,
+      "statement": "if a6_abs <= 30 then r = 2",
+      "support": 166
+    }
+  ]
+}

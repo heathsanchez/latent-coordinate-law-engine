@@ -1,0 +1,26 @@
+[
+  {
+    "name":"srsd-benchmark",
+    "kind":"git",
+    "url":"https:\/\/github.com\/omron-sinicx\/srsd-benchmark",
+    "status":"cached",
+    "note":"Network is restricted in this environment unless explicitly approved.",
+    "path":"a_plus_plus_out_live\/cache\/srsd-benchmark"
+  },
+  {
+    "name":"pmlb",
+    "kind":"git",
+    "url":"https:\/\/github.com\/EpistasisLab\/pmlb",
+    "status":"cached",
+    "note":"Network is restricted in this environment unless explicitly approved.",
+    "path":"a_plus_plus_out_live\/cache\/pmlb"
+  },
+  {
+    "name":"uci_wine_quality",
+    "kind":"http",
+    "url":"https:\/\/archive.ics.uci.edu\/ml\/machine-learning-databases\/wine-quality\/winequality-red.csv",
+    "status":"cached",
+    "note":"Network is restricted in this environment unless explicitly approved.",
+    "path":"a_plus_plus_out_live\/cache\/winequality-red.csv"
+  }
+]

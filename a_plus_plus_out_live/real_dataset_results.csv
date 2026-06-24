@@ -1,0 +1,2 @@
+domain,status,rows,top_coordinates,random_forest_accuracy,random_forest_macro_f1,decision_tree_coordinates_accuracy,decision_tree_coordinates_macro_f1,nearest_neighbors_accuracy,nearest_neighbors_macro_f1
+UCI_WINE_QUALITY,evaluated,1599,"['coord_diff__total_sulfur_dioxide__minus__sulphates', 'coord_sum__total_sulfur_dioxide__plus__sulphates', 'coord_ratio__sulphates__over__density', 'coord_mul__density__times__sulphates', 'coord_sum__density__plus__sulphates']",0.7041666666666667,0.6578981603433517,0.5729166666666666,0.42995903310718125,0.5875,0.5305109496094976

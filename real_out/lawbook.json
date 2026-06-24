@@ -1,0 +1,8188 @@
+{
+  "lawbook_version": "1.0",
+  "laws": [
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": ">=",
+        "value": 13
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_index_>=_13",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_index >= 13 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_face",
+        "op": "==",
+        "value": "x13_x15_x17"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_face_==_x13_x15_x17",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_face == x13_x15_x17 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_bucket",
+        "op": "==",
+        "value": "x13_x15_x17"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_bucket_==_x13_x15_x17",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_bucket == x13_x15_x17 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "<=",
+        "value": 12
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_index_<=_12",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_index <= 12 then t = 24979",
+      "support": 7,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "==",
+        "value": 12
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_index_==_12",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_index == 12 then t = 24979",
+      "support": 7,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "active_support_slots",
+        "op": "==",
+        "value": "12"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_active_support_slots_==_12",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if active_support_slots == 12 then t = 24979",
+      "support": 7,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_face",
+        "op": "==",
+        "value": "x12_base"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_face_==_x12_base",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_face == x12_base then t = 24979",
+      "support": 7,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_bucket",
+        "op": "==",
+        "value": "x12_base"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "t_support_bucket_==_x12_base",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 1.0,
+      "statement": "if support_bucket == x12_base then t = 24979",
+      "support": 7,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": ">=",
+        "value": 15
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_index_>=_15",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.5176056338028169,
+      "statement": "if support_index >= 15 then t = 25000",
+      "support": 147,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": -1
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_amplitude_<=_-1",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.5035211267605634,
+      "statement": "if support_amplitude <= -1 then t = 25000",
+      "support": 143,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "==",
+        "value": 13
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_index_==_13",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.4823943661971831,
+      "statement": "if support_index == 13 then t = 25000",
+      "support": 137,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "active_support_slots",
+        "op": "==",
+        "value": "13"
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_active_support_slots_==_13",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.4823943661971831,
+      "statement": "if active_support_slots == 13 then t = 25000",
+      "support": 137,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "==",
+        "value": -1
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_amplitude_==_-1",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.4753521126760563,
+      "statement": "if support_amplitude == -1 then t = 25000",
+      "support": 135,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "==",
+        "value": 5730485
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_amplitude_==_5730485",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 0.42857142857142855,
+      "statement": "if support_amplitude == 5730485 then t = 24979",
+      "support": 3,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": 5730485
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_amplitude_>=_5730485",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 0.42857142857142855,
+      "statement": "if support_amplitude >= 5730485 then t = 24979",
+      "support": 3,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "==",
+        "value": 5730485
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_abs_support_amplitude_==_5730485",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 0.42857142857142855,
+      "statement": "if abs_support_amplitude == 5730485 then t = 24979",
+      "support": 3,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": ">=",
+        "value": 5730485
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_abs_support_amplitude_>=_5730485",
+      "precision": 1.0,
+      "predicted_value": 24979,
+      "recall": 0.42857142857142855,
+      "statement": "if abs_support_amplitude >= 5730485 then t = 24979",
+      "support": 3,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "==",
+        "value": 15
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_support_index_==_15",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.41901408450704225,
+      "statement": "if support_index == 15 then t = 25000",
+      "support": 119,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "active_support_slots",
+        "op": "==",
+        "value": "15"
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "t_active_support_slots_==_15",
+      "precision": 1.0,
+      "predicted_value": 25000,
+      "recall": 0.41901408450704225,
+      "statement": "if active_support_slots == 15 then t = 25000",
+      "support": 119,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": 2
+      },
+      "confidence": "high",
+      "exceptions": [
+        187
+      ],
+      "name": "t_support_amplitude_<=_2",
+      "precision": 0.99644128113879,
+      "predicted_value": 25000,
+      "recall": 0.9859154929577465,
+      "statement": "if support_amplitude <= 2 then t = 25000",
+      "support": 281,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": 1
+      },
+      "confidence": "high",
+      "exceptions": [
+        187
+      ],
+      "name": "t_support_amplitude_<=_1",
+      "precision": 0.9964028776978417,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if support_amplitude <= 1 then t = 25000",
+      "support": 278,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "<=",
+        "value": 2
+      },
+      "confidence": "high",
+      "exceptions": [
+        187
+      ],
+      "name": "t_abs_support_amplitude_<=_2",
+      "precision": 0.9963768115942029,
+      "predicted_value": 25000,
+      "recall": 0.9683098591549296,
+      "statement": "if abs_support_amplitude <= 2 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "<=",
+        "value": 1
+      },
+      "confidence": "high",
+      "exceptions": [
+        187
+      ],
+      "name": "t_abs_support_amplitude_<=_1",
+      "precision": 0.9962962962962963,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if abs_support_amplitude <= 1 then t = 25000",
+      "support": 270,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "==",
+        "value": 1
+      },
+      "confidence": "high",
+      "exceptions": [
+        187
+      ],
+      "name": "t_abs_support_amplitude_==_1",
+      "precision": 0.9962962962962963,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if abs_support_amplitude == 1 then t = 25000",
+      "support": 270,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": 5
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188
+      ],
+      "name": "t_support_amplitude_<=_5",
+      "precision": 0.9929577464788732,
+      "predicted_value": 25000,
+      "recall": 0.9929577464788732,
+      "statement": "if support_amplitude <= 5 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "<=",
+        "value": 5
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188
+      ],
+      "name": "t_abs_support_amplitude_<=_5",
+      "precision": 0.9929078014184397,
+      "predicted_value": 25000,
+      "recall": 0.9859154929577465,
+      "statement": "if abs_support_amplitude <= 5 then t = 25000",
+      "support": 282,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "==",
+        "value": 1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187
+      ],
+      "name": "t_support_amplitude_==_1",
+      "precision": 0.9925925925925926,
+      "predicted_value": 25000,
+      "recall": 0.47183098591549294,
+      "statement": "if support_amplitude == 1 then t = 25000",
+      "support": 135,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": 10
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189
+      ],
+      "name": "t_support_amplitude_<=_10",
+      "precision": 0.9895104895104895,
+      "predicted_value": 25000,
+      "recall": 0.9964788732394366,
+      "statement": "if support_amplitude <= 10 then t = 25000",
+      "support": 286,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "<=",
+        "value": 10
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189
+      ],
+      "name": "t_abs_support_amplitude_<=_10",
+      "precision": 0.9894736842105263,
+      "predicted_value": 25000,
+      "recall": 0.9929577464788732,
+      "statement": "if abs_support_amplitude <= 10 then t = 25000",
+      "support": 285,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": 20
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_support_amplitude_<=_20",
+      "precision": 0.9861111111111112,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_amplitude <= 20 then t = 25000",
+      "support": 288,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "<=",
+        "value": 20
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_abs_support_amplitude_<=_20",
+      "precision": 0.9861111111111112,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if abs_support_amplitude <= 20 then t = 25000",
+      "support": 288,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 22.3
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_22.3",
+      "precision": 0.9848484848484849,
+      "predicted_value": 25000,
+      "recall": 0.9154929577464789,
+      "statement": "if a6_abs >= 22.3 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 28
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_28",
+      "precision": 0.9848484848484849,
+      "predicted_value": 25000,
+      "recall": 0.9154929577464789,
+      "statement": "if a6_abs >= 28 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 30
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_30",
+      "precision": 0.9846153846153847,
+      "predicted_value": 25000,
+      "recall": 0.9014084507042254,
+      "statement": "if a6_abs >= 30 then t = 25000",
+      "support": 260,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 30.8
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_30.8",
+      "precision": 0.984375,
+      "predicted_value": 25000,
+      "recall": 0.8873239436619719,
+      "statement": "if a6_abs >= 30.8 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 32
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_32",
+      "precision": 0.984375,
+      "predicted_value": 25000,
+      "recall": 0.8873239436619719,
+      "statement": "if a6_abs >= 32 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 36
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_36",
+      "precision": 0.9841269841269841,
+      "predicted_value": 25000,
+      "recall": 0.8732394366197183,
+      "statement": "if a6_abs >= 36 then t = 25000",
+      "support": 252,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 22.3
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_22.3",
+      "precision": 0.984,
+      "predicted_value": 25000,
+      "recall": 0.8661971830985915,
+      "statement": "if a18_abs >= 22.3 then t = 25000",
+      "support": 250,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 28
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_28",
+      "precision": 0.984,
+      "predicted_value": 25000,
+      "recall": 0.8661971830985915,
+      "statement": "if a18_abs >= 28 then t = 25000",
+      "support": 250,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 36.4
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_36.4",
+      "precision": 0.9838709677419355,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a6_abs >= 36.4 then t = 25000",
+      "support": 248,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 40
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_40",
+      "precision": 0.9838709677419355,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a6_abs >= 40 then t = 25000",
+      "support": 248,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 30
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_30",
+      "precision": 0.983739837398374,
+      "predicted_value": 25000,
+      "recall": 0.852112676056338,
+      "statement": "if a18_abs >= 30 then t = 25000",
+      "support": 246,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 44
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_44",
+      "precision": 0.9836065573770492,
+      "predicted_value": 25000,
+      "recall": 0.8450704225352113,
+      "statement": "if a6_abs >= 44 then t = 25000",
+      "support": 244,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 45
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_45",
+      "precision": 0.9836065573770492,
+      "predicted_value": 25000,
+      "recall": 0.8450704225352113,
+      "statement": "if a6_abs >= 45 then t = 25000",
+      "support": 244,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-71",
+      "precision": 0.9836065573770492,
+      "predicted_value": 25000,
+      "recall": 0.6338028169014085,
+      "statement": "if a18 >= -71 then t = 25000",
+      "support": 183,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 30.8
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_30.8",
+      "precision": 0.9834710743801653,
+      "predicted_value": 25000,
+      "recall": 0.8380281690140845,
+      "statement": "if a18_abs >= 30.8 then t = 25000",
+      "support": 242,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 32
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_32",
+      "precision": 0.9834710743801653,
+      "predicted_value": 25000,
+      "recall": 0.8380281690140845,
+      "statement": "if a18_abs >= 32 then t = 25000",
+      "support": 242,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 48
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_48",
+      "precision": 0.9833333333333333,
+      "predicted_value": 25000,
+      "recall": 0.8309859154929577,
+      "statement": "if a6_abs >= 48 then t = 25000",
+      "support": 240,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_71",
+      "precision": 0.9832402234636871,
+      "predicted_value": 25000,
+      "recall": 0.6197183098591549,
+      "statement": "if a6 <= 71 then t = 25000",
+      "support": 179,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 36
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_36",
+      "precision": 0.9831932773109243,
+      "predicted_value": 25000,
+      "recall": 0.823943661971831,
+      "statement": "if a18_abs >= 36 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 51
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_51",
+      "precision": 0.9830508474576272,
+      "predicted_value": 25000,
+      "recall": 0.8169014084507042,
+      "statement": "if a6_abs >= 51 then t = 25000",
+      "support": 236,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 54
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_54",
+      "precision": 0.9830508474576272,
+      "predicted_value": 25000,
+      "recall": 0.8169014084507042,
+      "statement": "if a6_abs >= 54 then t = 25000",
+      "support": 236,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 36.4
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_36.4",
+      "precision": 0.9829059829059829,
+      "predicted_value": 25000,
+      "recall": 0.8098591549295775,
+      "statement": "if a18_abs >= 36.4 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 40
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_40",
+      "precision": 0.9829059829059829,
+      "predicted_value": 25000,
+      "recall": 0.8098591549295775,
+      "statement": "if a18_abs >= 40 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "r",
+        "op": "<=",
+        "value": 4
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_r_<=_4",
+      "precision": 0.9828571428571429,
+      "predicted_value": 25000,
+      "recall": 0.6056338028169014,
+      "statement": "if r <= 4 then t = 25000",
+      "support": 175,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 60
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_60",
+      "precision": 0.9827586206896551,
+      "predicted_value": 25000,
+      "recall": 0.8028169014084507,
+      "statement": "if a6_abs >= 60 then t = 25000",
+      "support": 232,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 44
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_44",
+      "precision": 0.9826086956521739,
+      "predicted_value": 25000,
+      "recall": 0.795774647887324,
+      "statement": "if a18_abs >= 44 then t = 25000",
+      "support": 230,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 45
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_45",
+      "precision": 0.9826086956521739,
+      "predicted_value": 25000,
+      "recall": 0.795774647887324,
+      "statement": "if a18_abs >= 45 then t = 25000",
+      "support": 230,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 60.8
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_60.8",
+      "precision": 0.9824561403508771,
+      "predicted_value": 25000,
+      "recall": 0.7887323943661971,
+      "statement": "if a6_abs >= 60.8 then t = 25000",
+      "support": 228,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 64
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_64",
+      "precision": 0.9824561403508771,
+      "predicted_value": 25000,
+      "recall": 0.7887323943661971,
+      "statement": "if a6_abs >= 64 then t = 25000",
+      "support": 228,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 48
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_48",
+      "precision": 0.9823008849557522,
+      "predicted_value": 25000,
+      "recall": 0.7816901408450704,
+      "statement": "if a18_abs >= 48 then t = 25000",
+      "support": 226,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 12.8
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_12.8",
+      "precision": 0.9821428571428571,
+      "predicted_value": 25000,
+      "recall": 0.7746478873239436,
+      "statement": "if a6 >= 12.8 then t = 25000",
+      "support": 224,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 28
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_28",
+      "precision": 0.9821428571428571,
+      "predicted_value": 25000,
+      "recall": 0.7746478873239436,
+      "statement": "if a6 >= 28 then t = 25000",
+      "support": 224,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_abs_<=_71",
+      "precision": 0.9820359281437125,
+      "predicted_value": 25000,
+      "recall": 0.5774647887323944,
+      "statement": "if a18_abs <= 71 then t = 25000",
+      "support": 167,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 71.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_abs_<=_71.7",
+      "precision": 0.9820359281437125,
+      "predicted_value": 25000,
+      "recall": 0.5774647887323944,
+      "statement": "if a18_abs <= 71.7 then t = 25000",
+      "support": 167,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 64.9
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_64.9",
+      "precision": 0.9819819819819819,
+      "predicted_value": 25000,
+      "recall": 0.7676056338028169,
+      "statement": "if a6_abs >= 64.9 then t = 25000",
+      "support": 222,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 65
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_65",
+      "precision": 0.9819819819819819,
+      "predicted_value": 25000,
+      "recall": 0.7676056338028169,
+      "statement": "if a6_abs >= 65 then t = 25000",
+      "support": 222,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 51
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_51",
+      "precision": 0.9819819819819819,
+      "predicted_value": 25000,
+      "recall": 0.7676056338028169,
+      "statement": "if a18_abs >= 51 then t = 25000",
+      "support": 222,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 54
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_54",
+      "precision": 0.9819819819819819,
+      "predicted_value": 25000,
+      "recall": 0.7676056338028169,
+      "statement": "if a18_abs >= 54 then t = 25000",
+      "support": 222,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 30
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_30",
+      "precision": 0.9818181818181818,
+      "predicted_value": 25000,
+      "recall": 0.7605633802816901,
+      "statement": "if a6 >= 30 then t = 25000",
+      "support": 220,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "r",
+        "op": "<=",
+        "value": 2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_r_<=_2",
+      "precision": 0.9818181818181818,
+      "predicted_value": 25000,
+      "recall": 0.5704225352112676,
+      "statement": "if r <= 2 then t = 25000",
+      "support": 165,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "r",
+        "op": "==",
+        "value": 2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_r_==_2",
+      "precision": 0.9818181818181818,
+      "predicted_value": 25000,
+      "recall": 0.5704225352112676,
+      "statement": "if r == 2 then t = 25000",
+      "support": 165,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -70.6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-70.6",
+      "precision": 0.9818181818181818,
+      "predicted_value": 25000,
+      "recall": 0.5704225352112676,
+      "statement": "if a18 >= -70.6 then t = 25000",
+      "support": 165,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-70",
+      "precision": 0.9818181818181818,
+      "predicted_value": 25000,
+      "recall": 0.5704225352112676,
+      "statement": "if a18 >= -70 then t = 25000",
+      "support": 165,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 66
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_66",
+      "precision": 0.981651376146789,
+      "predicted_value": 25000,
+      "recall": 0.7535211267605634,
+      "statement": "if a6_abs >= 66 then t = 25000",
+      "support": 218,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 60
+      },
+      "confidence": "high",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_60",
+      "precision": 0.981651376146789,
+      "predicted_value": 25000,
+      "recall": 0.7535211267605634,
+      "statement": "if a18_abs >= 60 then t = 25000",
+      "support": 218,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_abs_<=_71",
+      "precision": 0.9815950920245399,
+      "predicted_value": 25000,
+      "recall": 0.5633802816901409,
+      "statement": "if a6_abs <= 71 then t = 25000",
+      "support": 163,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 71.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_abs_<=_71.7",
+      "precision": 0.9815950920245399,
+      "predicted_value": 25000,
+      "recall": 0.5633802816901409,
+      "statement": "if a6_abs <= 71.7 then t = 25000",
+      "support": 163,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 30.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_30.5",
+      "precision": 0.9814814814814815,
+      "predicted_value": 25000,
+      "recall": 0.7464788732394366,
+      "statement": "if a6 >= 30.5 then t = 25000",
+      "support": 216,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 32
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_32",
+      "precision": 0.9814814814814815,
+      "predicted_value": 25000,
+      "recall": 0.7464788732394366,
+      "statement": "if a6 >= 32 then t = 25000",
+      "support": 216,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 66.6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_66.6",
+      "precision": 0.9813084112149533,
+      "predicted_value": 25000,
+      "recall": 0.7394366197183099,
+      "statement": "if a6_abs >= 66.6 then t = 25000",
+      "support": 214,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 67
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_67",
+      "precision": 0.9813084112149533,
+      "predicted_value": 25000,
+      "recall": 0.7394366197183099,
+      "statement": "if a6_abs >= 67 then t = 25000",
+      "support": 214,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 60.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_60.8",
+      "precision": 0.9813084112149533,
+      "predicted_value": 25000,
+      "recall": 0.7394366197183099,
+      "statement": "if a18_abs >= 60.8 then t = 25000",
+      "support": 214,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 64
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_64",
+      "precision": 0.9813084112149533,
+      "predicted_value": 25000,
+      "recall": 0.7394366197183099,
+      "statement": "if a18_abs >= 64 then t = 25000",
+      "support": 214,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 36
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_36",
+      "precision": 0.9811320754716981,
+      "predicted_value": 25000,
+      "recall": 0.7323943661971831,
+      "statement": "if a6 >= 36 then t = 25000",
+      "support": 212,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_70",
+      "precision": 0.9811320754716981,
+      "predicted_value": 25000,
+      "recall": 0.5492957746478874,
+      "statement": "if a6 <= 70 then t = 25000",
+      "support": 159,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 70.6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_70.6",
+      "precision": 0.9811320754716981,
+      "predicted_value": 25000,
+      "recall": 0.5492957746478874,
+      "statement": "if a6 <= 70.6 then t = 25000",
+      "support": 159,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "==",
+        "value": "low"
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_threshold_zone_==_low",
+      "precision": 0.9811320754716981,
+      "predicted_value": 25000,
+      "recall": 0.5492957746478874,
+      "statement": "if threshold_zone == low then t = 25000",
+      "support": 159,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -28
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-28",
+      "precision": 0.9809523809523809,
+      "predicted_value": 25000,
+      "recall": 0.7253521126760564,
+      "statement": "if a18 <= -28 then t = 25000",
+      "support": 210,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -12.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-12.8",
+      "precision": 0.9809523809523809,
+      "predicted_value": 25000,
+      "recall": 0.7253521126760564,
+      "statement": "if a18 <= -12.8 then t = 25000",
+      "support": 210,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_68",
+      "precision": 0.9809523809523809,
+      "predicted_value": 25000,
+      "recall": 0.7253521126760564,
+      "statement": "if a6_abs >= 68 then t = 25000",
+      "support": 210,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 37.2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_37.2",
+      "precision": 0.9807692307692307,
+      "predicted_value": 25000,
+      "recall": 0.7183098591549296,
+      "statement": "if a6 >= 37.2 then t = 25000",
+      "support": 208,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 40
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_40",
+      "precision": 0.9807692307692307,
+      "predicted_value": 25000,
+      "recall": 0.7183098591549296,
+      "statement": "if a6 >= 40 then t = 25000",
+      "support": 208,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 64.9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_64.9",
+      "precision": 0.9807692307692307,
+      "predicted_value": 25000,
+      "recall": 0.7183098591549296,
+      "statement": "if a18_abs >= 64.9 then t = 25000",
+      "support": 208,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 65
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_65",
+      "precision": 0.9807692307692307,
+      "predicted_value": 25000,
+      "recall": 0.7183098591549296,
+      "statement": "if a18_abs >= 65 then t = 25000",
+      "support": 208,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -30
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-30",
+      "precision": 0.9805825242718447,
+      "predicted_value": 25000,
+      "recall": 0.7112676056338029,
+      "statement": "if a18 <= -30 then t = 25000",
+      "support": 206,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 45
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_45",
+      "precision": 0.9803921568627451,
+      "predicted_value": 25000,
+      "recall": 0.704225352112676,
+      "statement": "if a6 >= 45 then t = 25000",
+      "support": 204,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 66
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_66",
+      "precision": 0.9803921568627451,
+      "predicted_value": 25000,
+      "recall": 0.704225352112676,
+      "statement": "if a18_abs >= 66 then t = 25000",
+      "support": 204,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -32
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-32",
+      "precision": 0.9801980198019802,
+      "predicted_value": 25000,
+      "recall": 0.6971830985915493,
+      "statement": "if a18 <= -32 then t = 25000",
+      "support": 202,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -30.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-30.5",
+      "precision": 0.9801980198019802,
+      "predicted_value": 25000,
+      "recall": 0.6971830985915493,
+      "statement": "if a18 <= -30.5 then t = 25000",
+      "support": 202,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 68.3
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_68.3",
+      "precision": 0.9801980198019802,
+      "predicted_value": 25000,
+      "recall": 0.6971830985915493,
+      "statement": "if a6_abs >= 68.3 then t = 25000",
+      "support": 202,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_69",
+      "precision": 0.9801980198019802,
+      "predicted_value": 25000,
+      "recall": 0.6971830985915493,
+      "statement": "if a6_abs >= 69 then t = 25000",
+      "support": 202,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 46.05
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_46.05",
+      "precision": 0.98,
+      "predicted_value": 25000,
+      "recall": 0.6901408450704225,
+      "statement": "if a6 >= 46.05 then t = 25000",
+      "support": 200,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 48
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_48",
+      "precision": 0.98,
+      "predicted_value": 25000,
+      "recall": 0.6901408450704225,
+      "statement": "if a6 >= 48 then t = 25000",
+      "support": 200,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 66.6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_66.6",
+      "precision": 0.98,
+      "predicted_value": 25000,
+      "recall": 0.6901408450704225,
+      "statement": "if a18_abs >= 66.6 then t = 25000",
+      "support": 200,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 67
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_67",
+      "precision": 0.98,
+      "predicted_value": 25000,
+      "recall": 0.6901408450704225,
+      "statement": "if a18_abs >= 67 then t = 25000",
+      "support": 200,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-69",
+      "precision": 0.9798657718120806,
+      "predicted_value": 25000,
+      "recall": 0.5140845070422535,
+      "statement": "if a18 >= -69 then t = 25000",
+      "support": 149,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -36
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-36",
+      "precision": 0.9797979797979798,
+      "predicted_value": 25000,
+      "recall": 0.6830985915492958,
+      "statement": "if a18 <= -36 then t = 25000",
+      "support": 198,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 54
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_54",
+      "precision": 0.9795918367346939,
+      "predicted_value": 25000,
+      "recall": 0.676056338028169,
+      "statement": "if a6 >= 54 then t = 25000",
+      "support": 196,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_68",
+      "precision": 0.9795918367346939,
+      "predicted_value": 25000,
+      "recall": 0.676056338028169,
+      "statement": "if a18_abs >= 68 then t = 25000",
+      "support": 196,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -40
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-40",
+      "precision": 0.979381443298969,
+      "predicted_value": 25000,
+      "recall": 0.6690140845070423,
+      "statement": "if a18 <= -40 then t = 25000",
+      "support": 194,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -37.2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-37.2",
+      "precision": 0.979381443298969,
+      "predicted_value": 25000,
+      "recall": 0.6690140845070423,
+      "statement": "if a18 <= -37.2 then t = 25000",
+      "support": 194,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 56.4
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_56.4",
+      "precision": 0.9791666666666666,
+      "predicted_value": 25000,
+      "recall": 0.6619718309859155,
+      "statement": "if a6 >= 56.4 then t = 25000",
+      "support": 192,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 60
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_60",
+      "precision": 0.9791666666666666,
+      "predicted_value": 25000,
+      "recall": 0.6619718309859155,
+      "statement": "if a6 >= 60 then t = 25000",
+      "support": 192,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -45
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-45",
+      "precision": 0.9789473684210527,
+      "predicted_value": 25000,
+      "recall": 0.6549295774647887,
+      "statement": "if a18 <= -45 then t = 25000",
+      "support": 190,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 64
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_64",
+      "precision": 0.9787234042553191,
+      "predicted_value": 25000,
+      "recall": 0.647887323943662,
+      "statement": "if a6 >= 64 then t = 25000",
+      "support": 188,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 68.3
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_68.3",
+      "precision": 0.9787234042553191,
+      "predicted_value": 25000,
+      "recall": 0.647887323943662,
+      "statement": "if a18_abs >= 68.3 then t = 25000",
+      "support": 188,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_69",
+      "precision": 0.9787234042553191,
+      "predicted_value": 25000,
+      "recall": 0.647887323943662,
+      "statement": "if a18_abs >= 69 then t = 25000",
+      "support": 188,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_69",
+      "precision": 0.9787234042553191,
+      "predicted_value": 25000,
+      "recall": 0.4859154929577465,
+      "statement": "if a6 <= 69 then t = 25000",
+      "support": 141,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_abs_<=_70",
+      "precision": 0.9787234042553191,
+      "predicted_value": 25000,
+      "recall": 0.4859154929577465,
+      "statement": "if a18_abs <= 70 then t = 25000",
+      "support": 141,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -48
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-48",
+      "precision": 0.978494623655914,
+      "predicted_value": 25000,
+      "recall": 0.6408450704225352,
+      "statement": "if a18 <= -48 then t = 25000",
+      "support": 186,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -46.05
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-46.05",
+      "precision": 0.978494623655914,
+      "predicted_value": 25000,
+      "recall": 0.6408450704225352,
+      "statement": "if a18 <= -46.05 then t = 25000",
+      "support": 186,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -68.55
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-68.55",
+      "precision": 0.9784172661870504,
+      "predicted_value": 25000,
+      "recall": 0.4788732394366197,
+      "statement": "if a18 >= -68.55 then t = 25000",
+      "support": 139,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-68",
+      "precision": 0.9784172661870504,
+      "predicted_value": 25000,
+      "recall": 0.4788732394366197,
+      "statement": "if a18 >= -68 then t = 25000",
+      "support": 139,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 64.45
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_64.45",
+      "precision": 0.978021978021978,
+      "predicted_value": 25000,
+      "recall": 0.6267605633802817,
+      "statement": "if a6 >= 64.45 then t = 25000",
+      "support": 182,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 65
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_65",
+      "precision": 0.978021978021978,
+      "predicted_value": 25000,
+      "recall": 0.6267605633802817,
+      "statement": "if a6 >= 65 then t = 25000",
+      "support": 182,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -54
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-54",
+      "precision": 0.978021978021978,
+      "predicted_value": 25000,
+      "recall": 0.6267605633802817,
+      "statement": "if a18 <= -54 then t = 25000",
+      "support": 182,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_70",
+      "precision": 0.978021978021978,
+      "predicted_value": 25000,
+      "recall": 0.6267605633802817,
+      "statement": "if a6_abs >= 70 then t = 25000",
+      "support": 182,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -67
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-67",
+      "precision": 0.9777777777777777,
+      "predicted_value": 25000,
+      "recall": 0.4647887323943662,
+      "statement": "if a18 >= -67 then t = 25000",
+      "support": 135,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_abs_<=_70",
+      "precision": 0.9777777777777777,
+      "predicted_value": 25000,
+      "recall": 0.4647887323943662,
+      "statement": "if a6_abs <= 70 then t = 25000",
+      "support": 135,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 66
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_66",
+      "precision": 0.9775280898876404,
+      "predicted_value": 25000,
+      "recall": 0.6126760563380281,
+      "statement": "if a6 >= 66 then t = 25000",
+      "support": 178,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -60
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-60",
+      "precision": 0.9775280898876404,
+      "predicted_value": 25000,
+      "recall": 0.6126760563380281,
+      "statement": "if a18 <= -60 then t = 25000",
+      "support": 178,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -56.4
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-56.4",
+      "precision": 0.9775280898876404,
+      "predicted_value": 25000,
+      "recall": 0.6126760563380281,
+      "statement": "if a18 <= -56.4 then t = 25000",
+      "support": 178,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -66.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-66.5",
+      "precision": 0.9770992366412213,
+      "predicted_value": 25000,
+      "recall": 0.4507042253521127,
+      "statement": "if a18 >= -66.5 then t = 25000",
+      "support": 131,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -66
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-66",
+      "precision": 0.9770992366412213,
+      "predicted_value": 25000,
+      "recall": 0.4507042253521127,
+      "statement": "if a18 >= -66 then t = 25000",
+      "support": 131,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 66.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_66.5",
+      "precision": 0.9770114942528736,
+      "predicted_value": 25000,
+      "recall": 0.5985915492957746,
+      "statement": "if a6 >= 66.5 then t = 25000",
+      "support": 174,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 67
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_67",
+      "precision": 0.9770114942528736,
+      "predicted_value": 25000,
+      "recall": 0.5985915492957746,
+      "statement": "if a6 >= 67 then t = 25000",
+      "support": 174,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -64
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-64",
+      "precision": 0.9770114942528736,
+      "predicted_value": 25000,
+      "recall": 0.5985915492957746,
+      "statement": "if a18 <= -64 then t = 25000",
+      "support": 174,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_70",
+      "precision": 0.9770114942528736,
+      "predicted_value": 25000,
+      "recall": 0.5985915492957746,
+      "statement": "if a18_abs >= 70 then t = 25000",
+      "support": 174,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_68",
+      "precision": 0.9764705882352941,
+      "predicted_value": 25000,
+      "recall": 0.5845070422535211,
+      "statement": "if a6 >= 68 then t = 25000",
+      "support": 170,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -65
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-65",
+      "precision": 0.9763779527559056,
+      "predicted_value": 25000,
+      "recall": 0.43661971830985913,
+      "statement": "if a18 >= -65 then t = 25000",
+      "support": 127,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -65
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-65",
+      "precision": 0.9761904761904762,
+      "predicted_value": 25000,
+      "recall": 0.5774647887323944,
+      "statement": "if a18 <= -65 then t = 25000",
+      "support": 168,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -64.45
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-64.45",
+      "precision": 0.9761904761904762,
+      "predicted_value": 25000,
+      "recall": 0.5774647887323944,
+      "statement": "if a18 <= -64.45 then t = 25000",
+      "support": 168,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_68",
+      "precision": 0.976,
+      "predicted_value": 25000,
+      "recall": 0.4295774647887324,
+      "statement": "if a6 <= 68 then t = 25000",
+      "support": 125,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 68.55
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_68.55",
+      "precision": 0.976,
+      "predicted_value": 25000,
+      "recall": 0.4295774647887324,
+      "statement": "if a6 <= 68.55 then t = 25000",
+      "support": 125,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "r",
+        "op": ">=",
+        "value": 2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_r_>=_2",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if r >= 2 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "r",
+        "op": "<=",
+        "value": 6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_r_<=_6",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if r <= 6 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": ">=",
+        "value": 12
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_index_>=_12",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_index >= 12 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "<=",
+        "value": 17
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_index_<=_17",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_index <= 17 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": -20
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_>=_-20",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_amplitude >= -20 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": "<=",
+        "value": 5730485
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_<=_5730485",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_amplitude <= 5730485 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-81",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a6 >= -81 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 243
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_243",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a6 <= 243 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -243
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-243",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a18 >= -243 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_81",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a18 <= 81 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": ">=",
+        "value": 1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_abs_support_amplitude_>=_1",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if abs_support_amplitude >= 1 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "abs_support_amplitude",
+        "op": "<=",
+        "value": 5730485
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_abs_support_amplitude_<=_5730485",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if abs_support_amplitude <= 5730485 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 0
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_>=_0",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a6_abs >= 0 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 243
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_243",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a6_abs <= 243 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 0
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_>=_0",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a18_abs >= 0 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 243
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_243",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if a18_abs <= 243 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_nonzero_count",
+        "op": "<=",
+        "value": 1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_nonzero_count_<=_1",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_nonzero_count <= 1 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_nonzero_count",
+        "op": "==",
+        "value": 1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_nonzero_count_==_1",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_nonzero_count == 1 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_nonzero_count",
+        "op": ">=",
+        "value": 1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_nonzero_count_>=_1",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_nonzero_count >= 1 then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "active_support_slots",
+        "op": "in",
+        "value": [
+          "12",
+          "13",
+          "15",
+          "17"
+        ]
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_active_support_slots_in_12,_13,_15,_17",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if active_support_slots in {12, 13, 15, 17} then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_face",
+        "op": "in",
+        "value": [
+          "x12_base",
+          "x13_x15_x17"
+        ]
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_face_in_x12_base,_x13_x15_x17",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_face in {x12_base, x13_x15_x17} then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_bucket",
+        "op": "in",
+        "value": [
+          "x12_base",
+          "x13_x15_x17"
+        ]
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_bucket_in_x12_base,_x13_x15_x17",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if support_bucket in {x12_base, x13_x15_x17} then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "in",
+        "value": [
+          "boundary",
+          "high",
+          "low"
+        ]
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_threshold_zone_in_boundary,_high,_low",
+      "precision": 0.9759450171821306,
+      "predicted_value": 25000,
+      "recall": 1.0,
+      "statement": "if threshold_zone in {boundary, high, low} then t = 25000",
+      "support": 291,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 68.55
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_68.55",
+      "precision": 0.9759036144578314,
+      "predicted_value": 25000,
+      "recall": 0.5704225352112676,
+      "statement": "if a6 >= 68.55 then t = 25000",
+      "support": 166,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_69",
+      "precision": 0.9759036144578314,
+      "predicted_value": 25000,
+      "recall": 0.5704225352112676,
+      "statement": "if a6 >= 69 then t = 25000",
+      "support": 166,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": -10
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_>=_-10",
+      "precision": 0.9758620689655172,
+      "predicted_value": 25000,
+      "recall": 0.9964788732394366,
+      "statement": "if support_amplitude >= -10 then t = 25000",
+      "support": 290,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": -5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_>=_-5",
+      "precision": 0.9757785467128027,
+      "predicted_value": 25000,
+      "recall": 0.9929577464788732,
+      "statement": "if support_amplitude >= -5 then t = 25000",
+      "support": 289,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 162
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_162",
+      "precision": 0.9756944444444444,
+      "predicted_value": 25000,
+      "recall": 0.9894366197183099,
+      "statement": "if a6 <= 162 then t = 25000",
+      "support": 288,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -162
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-162",
+      "precision": 0.9756944444444444,
+      "predicted_value": 25000,
+      "recall": 0.9894366197183099,
+      "statement": "if a18 >= -162 then t = 25000",
+      "support": 288,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 162
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_162",
+      "precision": 0.9756944444444444,
+      "predicted_value": 25000,
+      "recall": 0.9894366197183099,
+      "statement": "if a6_abs <= 162 then t = 25000",
+      "support": 288,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 162
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_162",
+      "precision": 0.9756944444444444,
+      "predicted_value": 25000,
+      "recall": 0.9894366197183099,
+      "statement": "if a18_abs <= 162 then t = 25000",
+      "support": 288,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-73",
+      "precision": 0.975609756097561,
+      "predicted_value": 25000,
+      "recall": 0.9859154929577465,
+      "statement": "if a6 >= -73 then t = 25000",
+      "support": 287,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_73",
+      "precision": 0.975609756097561,
+      "predicted_value": 25000,
+      "recall": 0.9859154929577465,
+      "statement": "if a18 <= 73 then t = 25000",
+      "support": 287,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -66
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-66",
+      "precision": 0.975609756097561,
+      "predicted_value": 25000,
+      "recall": 0.5633802816901409,
+      "statement": "if a18 <= -66 then t = 25000",
+      "support": 164,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -64.45
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-64.45",
+      "precision": 0.975609756097561,
+      "predicted_value": 25000,
+      "recall": 0.4225352112676056,
+      "statement": "if a18 >= -64.45 then t = 25000",
+      "support": 123,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -64
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-64",
+      "precision": 0.975609756097561,
+      "predicted_value": 25000,
+      "recall": 0.4225352112676056,
+      "statement": "if a18 >= -64 then t = 25000",
+      "support": 123,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": -2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_>=_-2",
+      "precision": 0.9755244755244755,
+      "predicted_value": 25000,
+      "recall": 0.9823943661971831,
+      "statement": "if support_amplitude >= -2 then t = 25000",
+      "support": 286,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 135
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_135",
+      "precision": 0.9753521126760564,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if a6 <= 135 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -135
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-135",
+      "precision": 0.9753521126760564,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if a18 >= -135 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 135
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_135",
+      "precision": 0.9753521126760564,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if a6_abs <= 135 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 143.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_143.1",
+      "precision": 0.9753521126760564,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if a6_abs <= 143.1 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 135
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_135",
+      "precision": 0.9753521126760564,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if a18_abs <= 135 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 143.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_143.1",
+      "precision": 0.9753521126760564,
+      "predicted_value": 25000,
+      "recall": 0.9753521126760564,
+      "statement": "if a18_abs <= 143.1 then t = 25000",
+      "support": 284,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": -1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_>=_-1",
+      "precision": 0.9752650176678446,
+      "predicted_value": 25000,
+      "recall": 0.971830985915493,
+      "statement": "if support_amplitude >= -1 then t = 25000",
+      "support": 283,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-72",
+      "precision": 0.9752650176678446,
+      "predicted_value": 25000,
+      "recall": 0.971830985915493,
+      "statement": "if a6 >= -72 then t = 25000",
+      "support": 283,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_72",
+      "precision": 0.9752650176678446,
+      "predicted_value": 25000,
+      "recall": 0.971830985915493,
+      "statement": "if a18 <= 72 then t = 25000",
+      "support": 283,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_>=_9",
+      "precision": 0.9752650176678446,
+      "predicted_value": 25000,
+      "recall": 0.971830985915493,
+      "statement": "if a6_abs >= 9 then t = 25000",
+      "support": 283,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_>=_9",
+      "precision": 0.9752650176678446,
+      "predicted_value": 25000,
+      "recall": 0.971830985915493,
+      "statement": "if a18_abs >= 9 then t = 25000",
+      "support": 283,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 67
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_67",
+      "precision": 0.9752066115702479,
+      "predicted_value": 25000,
+      "recall": 0.4154929577464789,
+      "statement": "if a6 <= 67 then t = 25000",
+      "support": 121,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 121
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_121",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.9612676056338029,
+      "statement": "if a6 <= 121 then t = 25000",
+      "support": 280,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 134.3
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_134.3",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.9612676056338029,
+      "statement": "if a6 <= 134.3 then t = 25000",
+      "support": 280,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -134.3
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-134.3",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.9612676056338029,
+      "statement": "if a18 >= -134.3 then t = 25000",
+      "support": 280,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -121
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-121",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.9612676056338029,
+      "statement": "if a18 >= -121 then t = 25000",
+      "support": 280,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 121
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_121",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.9612676056338029,
+      "statement": "if a6_abs <= 121 then t = 25000",
+      "support": 280,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 121
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_121",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.9612676056338029,
+      "statement": "if a18_abs <= 121 then t = 25000",
+      "support": 280,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -67
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-67",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.5492957746478874,
+      "statement": "if a18 <= -67 then t = 25000",
+      "support": 160,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -66.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-66.5",
+      "precision": 0.975,
+      "predicted_value": 25000,
+      "recall": 0.5492957746478874,
+      "statement": "if a18 <= -66.5 then t = 25000",
+      "support": 160,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 108
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_108",
+      "precision": 0.9746376811594203,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if a6 <= 108 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -108
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-108",
+      "precision": 0.9746376811594203,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if a18 >= -108 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 108
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_108",
+      "precision": 0.9746376811594203,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if a6_abs <= 108 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 115.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_115.8",
+      "precision": 0.9746376811594203,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if a6_abs <= 115.8 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 108
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_108",
+      "precision": 0.9746376811594203,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if a18_abs <= 108 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 115.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_115.8",
+      "precision": 0.9746376811594203,
+      "predicted_value": 25000,
+      "recall": 0.9471830985915493,
+      "statement": "if a18_abs <= 115.8 then t = 25000",
+      "support": 276,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -71.95
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-71.95",
+      "precision": 0.9745454545454545,
+      "predicted_value": 25000,
+      "recall": 0.9436619718309859,
+      "statement": "if a6 >= -71.95 then t = 25000",
+      "support": 275,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-71",
+      "precision": 0.9745454545454545,
+      "predicted_value": 25000,
+      "recall": 0.9436619718309859,
+      "statement": "if a6 >= -71 then t = 25000",
+      "support": 275,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_71",
+      "precision": 0.9745454545454545,
+      "predicted_value": 25000,
+      "recall": 0.9436619718309859,
+      "statement": "if a18 <= 71 then t = 25000",
+      "support": 275,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 71.95
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_71.95",
+      "precision": 0.9745454545454545,
+      "predicted_value": 25000,
+      "recall": 0.9436619718309859,
+      "statement": "if a18 <= 71.95 then t = 25000",
+      "support": 275,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-68",
+      "precision": 0.9743589743589743,
+      "predicted_value": 25000,
+      "recall": 0.5352112676056338,
+      "statement": "if a18 <= -68 then t = 25000",
+      "support": 156,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_71",
+      "precision": 0.9743589743589743,
+      "predicted_value": 25000,
+      "recall": 0.5352112676056338,
+      "statement": "if a6_abs >= 71 then t = 25000",
+      "support": 156,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 66
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_66",
+      "precision": 0.9743589743589743,
+      "predicted_value": 25000,
+      "recall": 0.4014084507042254,
+      "statement": "if a6 <= 66 then t = 25000",
+      "support": 117,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 66.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a6_<=_66.5",
+      "precision": 0.9743589743589743,
+      "predicted_value": 25000,
+      "recall": 0.4014084507042254,
+      "statement": "if a6 <= 66.5 then t = 25000",
+      "support": 117,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -60
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_>=_-60",
+      "precision": 0.9743589743589743,
+      "predicted_value": 25000,
+      "recall": 0.4014084507042254,
+      "statement": "if a18 >= -60 then t = 25000",
+      "support": 117,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        191
+      ],
+      "name": "t_a18_abs_<=_69",
+      "precision": 0.9743589743589743,
+      "predicted_value": 25000,
+      "recall": 0.4014084507042254,
+      "statement": "if a18_abs <= 69 then t = 25000",
+      "support": 117,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 96
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_96",
+      "precision": 0.9742647058823529,
+      "predicted_value": 25000,
+      "recall": 0.9330985915492958,
+      "statement": "if a6 <= 96 then t = 25000",
+      "support": 272,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 106.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_106.8",
+      "precision": 0.9742647058823529,
+      "predicted_value": 25000,
+      "recall": 0.9330985915492958,
+      "statement": "if a6 <= 106.8 then t = 25000",
+      "support": 272,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -106.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-106.8",
+      "precision": 0.9742647058823529,
+      "predicted_value": 25000,
+      "recall": 0.9330985915492958,
+      "statement": "if a18 >= -106.8 then t = 25000",
+      "support": 272,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -96
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-96",
+      "precision": 0.9742647058823529,
+      "predicted_value": 25000,
+      "recall": 0.9330985915492958,
+      "statement": "if a18 >= -96 then t = 25000",
+      "support": 272,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 96
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_96",
+      "precision": 0.9742647058823529,
+      "predicted_value": 25000,
+      "recall": 0.9330985915492958,
+      "statement": "if a6_abs <= 96 then t = 25000",
+      "support": 272,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 96
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_96",
+      "precision": 0.9742647058823529,
+      "predicted_value": 25000,
+      "recall": 0.9330985915492958,
+      "statement": "if a18_abs <= 96 then t = 25000",
+      "support": 272,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 90
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_90",
+      "precision": 0.9738805970149254,
+      "predicted_value": 25000,
+      "recall": 0.9190140845070423,
+      "statement": "if a6 <= 90 then t = 25000",
+      "support": 268,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -90
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-90",
+      "precision": 0.9738805970149254,
+      "predicted_value": 25000,
+      "recall": 0.9190140845070423,
+      "statement": "if a18 >= -90 then t = 25000",
+      "support": 268,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 90
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_90",
+      "precision": 0.9738805970149254,
+      "predicted_value": 25000,
+      "recall": 0.9190140845070423,
+      "statement": "if a6_abs <= 90 then t = 25000",
+      "support": 268,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 95.4
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_95.4",
+      "precision": 0.9738805970149254,
+      "predicted_value": 25000,
+      "recall": 0.9190140845070423,
+      "statement": "if a6_abs <= 95.4 then t = 25000",
+      "support": 268,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 90
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_90",
+      "precision": 0.9738805970149254,
+      "predicted_value": 25000,
+      "recall": 0.9190140845070423,
+      "statement": "if a18_abs <= 90 then t = 25000",
+      "support": 268,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 95.4
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_95.4",
+      "precision": 0.9738805970149254,
+      "predicted_value": 25000,
+      "recall": 0.9190140845070423,
+      "statement": "if a18_abs <= 95.4 then t = 25000",
+      "support": 268,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-70",
+      "precision": 0.9737827715355806,
+      "predicted_value": 25000,
+      "recall": 0.9154929577464789,
+      "statement": "if a6 >= -70 then t = 25000",
+      "support": 267,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_70",
+      "precision": 0.9737827715355806,
+      "predicted_value": 25000,
+      "recall": 0.9154929577464789,
+      "statement": "if a18 <= 70 then t = 25000",
+      "support": 267,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-69",
+      "precision": 0.9736842105263158,
+      "predicted_value": 25000,
+      "recall": 0.5211267605633803,
+      "statement": "if a18 <= -69 then t = 25000",
+      "support": 152,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -68.55
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-68.55",
+      "precision": 0.9736842105263158,
+      "predicted_value": 25000,
+      "recall": 0.5211267605633803,
+      "statement": "if a18 <= -68.55 then t = 25000",
+      "support": 152,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 84
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_84",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a6 <= 84 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 89.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_89.1",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a6 <= 89.1 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -89.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-89.1",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a18 >= -89.1 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -84
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-84",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a18 >= -84 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 84
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_84",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a6_abs <= 84 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 85.2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_85.2",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a6_abs <= 85.2 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 84
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_84",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a18_abs <= 84 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 85.2
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_85.2",
+      "precision": 0.9734848484848485,
+      "predicted_value": 25000,
+      "recall": 0.9049295774647887,
+      "statement": "if a18_abs <= 85.2 then t = 25000",
+      "support": 264,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "<=",
+        "value": 15
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_index_<=_15",
+      "precision": 0.973384030418251,
+      "predicted_value": 25000,
+      "recall": 0.9014084507042254,
+      "statement": "if support_index <= 15 then t = 25000",
+      "support": 263,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_70",
+      "precision": 0.9733333333333334,
+      "predicted_value": 25000,
+      "recall": 0.5140845070422535,
+      "statement": "if a6 >= 70 then t = 25000",
+      "support": 150,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_71",
+      "precision": 0.9733333333333334,
+      "predicted_value": 25000,
+      "recall": 0.5140845070422535,
+      "statement": "if a18_abs >= 71 then t = 25000",
+      "support": 150,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 83
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_83",
+      "precision": 0.9730769230769231,
+      "predicted_value": 25000,
+      "recall": 0.8908450704225352,
+      "statement": "if a6 <= 83 then t = 25000",
+      "support": 260,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -83
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-83",
+      "precision": 0.9730769230769231,
+      "predicted_value": 25000,
+      "recall": 0.8908450704225352,
+      "statement": "if a18 >= -83 then t = 25000",
+      "support": 260,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 83
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_83",
+      "precision": 0.9730769230769231,
+      "predicted_value": 25000,
+      "recall": 0.8908450704225352,
+      "statement": "if a6_abs <= 83 then t = 25000",
+      "support": 260,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 83
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_83",
+      "precision": 0.9730769230769231,
+      "predicted_value": 25000,
+      "recall": 0.8908450704225352,
+      "statement": "if a18_abs <= 83 then t = 25000",
+      "support": 260,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -69.9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-69.9",
+      "precision": 0.972972972972973,
+      "predicted_value": 25000,
+      "recall": 0.8873239436619719,
+      "statement": "if a6 >= -69.9 then t = 25000",
+      "support": 259,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-69",
+      "precision": 0.972972972972973,
+      "predicted_value": 25000,
+      "recall": 0.8873239436619719,
+      "statement": "if a6 >= -69 then t = 25000",
+      "support": 259,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_69",
+      "precision": 0.972972972972973,
+      "predicted_value": 25000,
+      "recall": 0.8873239436619719,
+      "statement": "if a18 <= 69 then t = 25000",
+      "support": 259,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 69.9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_69.9",
+      "precision": 0.972972972972973,
+      "predicted_value": 25000,
+      "recall": 0.8873239436619719,
+      "statement": "if a18 <= 69.9 then t = 25000",
+      "support": 259,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 82
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_82",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a6 <= 82 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 82.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_82.8",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a6 <= 82.8 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -82.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-82.8",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a18 >= -82.8 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -82
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-82",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a18 >= -82 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 82
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_82",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a6_abs <= 82 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 82.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_82.5",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a6_abs <= 82.5 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 82
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_82",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a18_abs <= 82 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 82.5
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_82.5",
+      "precision": 0.97265625,
+      "predicted_value": 25000,
+      "recall": 0.8767605633802817,
+      "statement": "if a18_abs <= 82.5 then t = 25000",
+      "support": 256,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-68",
+      "precision": 0.9725490196078431,
+      "predicted_value": 25000,
+      "recall": 0.8732394366197183,
+      "statement": "if a6 >= -68 then t = 25000",
+      "support": 255,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 68
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_68",
+      "precision": 0.9725490196078431,
+      "predicted_value": 25000,
+      "recall": 0.8732394366197183,
+      "statement": "if a18 <= 68 then t = 25000",
+      "support": 255,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_81",
+      "precision": 0.9722222222222222,
+      "predicted_value": 25000,
+      "recall": 0.8626760563380281,
+      "statement": "if a6 <= 81 then t = 25000",
+      "support": 252,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-81",
+      "precision": 0.9722222222222222,
+      "predicted_value": 25000,
+      "recall": 0.8626760563380281,
+      "statement": "if a18 >= -81 then t = 25000",
+      "support": 252,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_81",
+      "precision": 0.9722222222222222,
+      "predicted_value": 25000,
+      "recall": 0.8626760563380281,
+      "statement": "if a6_abs <= 81 then t = 25000",
+      "support": 252,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_81",
+      "precision": 0.9722222222222222,
+      "predicted_value": 25000,
+      "recall": 0.8626760563380281,
+      "statement": "if a18_abs <= 81 then t = 25000",
+      "support": 252,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": -57.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_-57.8",
+      "precision": 0.9721115537848606,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a6 >= -57.8 then t = 25000",
+      "support": 251,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 0
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_0",
+      "precision": 0.9721115537848606,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a6 >= 0 then t = 25000",
+      "support": 251,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 0
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_0",
+      "precision": 0.9721115537848606,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a18 <= 0 then t = 25000",
+      "support": 251,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": 57.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_57.8",
+      "precision": 0.9721115537848606,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a18 <= 57.8 then t = 25000",
+      "support": 251,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_negative",
+        "op": "==",
+        "value": false
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_negative_==_False",
+      "precision": 0.9721115537848606,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if a6_negative == False then t = 25000",
+      "support": 251,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "reverse_resonance",
+        "op": "==",
+        "value": false
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_reverse_resonance_==_False",
+      "precision": 0.9721115537848606,
+      "predicted_value": 25000,
+      "recall": 0.8591549295774648,
+      "statement": "if reverse_resonance == False then t = 25000",
+      "support": 251,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -70
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-70",
+      "precision": 0.971830985915493,
+      "predicted_value": 25000,
+      "recall": 0.4859154929577465,
+      "statement": "if a18 <= -70 then t = 25000",
+      "support": 142,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_>=_9",
+      "precision": 0.9711934156378601,
+      "predicted_value": 25000,
+      "recall": 0.8309859154929577,
+      "statement": "if a6 >= 9 then t = 25000",
+      "support": 243,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -9
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_<=_-9",
+      "precision": 0.9711934156378601,
+      "predicted_value": 25000,
+      "recall": 0.8309859154929577,
+      "statement": "if a18 <= -9 then t = 25000",
+      "support": 243,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_positive",
+        "op": "==",
+        "value": true
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_positive_==_True",
+      "precision": 0.9711934156378601,
+      "predicted_value": 25000,
+      "recall": 0.8309859154929577,
+      "statement": "if a6_positive == True then t = 25000",
+      "support": 243,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 80
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_80",
+      "precision": 0.9710743801652892,
+      "predicted_value": 25000,
+      "recall": 0.8274647887323944,
+      "statement": "if a6 <= 80 then t = 25000",
+      "support": 242,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 80.75
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_80.75",
+      "precision": 0.9710743801652892,
+      "predicted_value": 25000,
+      "recall": 0.8274647887323944,
+      "statement": "if a6 <= 80.75 then t = 25000",
+      "support": 242,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -80.75
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-80.75",
+      "precision": 0.9710743801652892,
+      "predicted_value": 25000,
+      "recall": 0.8274647887323944,
+      "statement": "if a18 >= -80.75 then t = 25000",
+      "support": 242,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -80
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-80",
+      "precision": 0.9710743801652892,
+      "predicted_value": 25000,
+      "recall": 0.8274647887323944,
+      "statement": "if a18 >= -80 then t = 25000",
+      "support": 242,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 79
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_79",
+      "precision": 0.9705882352941176,
+      "predicted_value": 25000,
+      "recall": 0.8133802816901409,
+      "statement": "if a6 <= 79 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -79
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-79",
+      "precision": 0.9705882352941176,
+      "predicted_value": 25000,
+      "recall": 0.8133802816901409,
+      "statement": "if a18 >= -79 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 80
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_80",
+      "precision": 0.9705882352941176,
+      "predicted_value": 25000,
+      "recall": 0.8133802816901409,
+      "statement": "if a6_abs <= 80 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 80.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_80.8",
+      "precision": 0.9705882352941176,
+      "predicted_value": 25000,
+      "recall": 0.8133802816901409,
+      "statement": "if a6_abs <= 80.8 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 80
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_80",
+      "precision": 0.9705882352941176,
+      "predicted_value": 25000,
+      "recall": 0.8133802816901409,
+      "statement": "if a18_abs <= 80 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 80.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_80.8",
+      "precision": 0.9705882352941176,
+      "predicted_value": 25000,
+      "recall": 0.8133802816901409,
+      "statement": "if a18_abs <= 80.8 then t = 25000",
+      "support": 238,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "paired_resonance",
+        "op": "==",
+        "value": true
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_paired_resonance_==_True",
+      "precision": 0.9702127659574468,
+      "predicted_value": 25000,
+      "recall": 0.8028169014084507,
+      "statement": "if paired_resonance == True then t = 25000",
+      "support": 235,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 78
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_78",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a6 <= 78 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 78.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_78.7",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a6 <= 78.7 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -78.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-78.7",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a18 >= -78.7 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -78
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-78",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a18 >= -78 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 79
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_79",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a6_abs <= 79 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 79.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_79.1",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a6_abs <= 79.1 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 79
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_79",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a18_abs <= 79 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 79.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_79.1",
+      "precision": 0.9700854700854701,
+      "predicted_value": 25000,
+      "recall": 0.7992957746478874,
+      "statement": "if a18_abs <= 79.1 then t = 25000",
+      "support": 234,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 70.6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_70.6",
+      "precision": 0.9696969696969697,
+      "predicted_value": 25000,
+      "recall": 0.4507042253521127,
+      "statement": "if a6 >= 70.6 then t = 25000",
+      "support": 132,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_>=_71",
+      "precision": 0.9696969696969697,
+      "predicted_value": 25000,
+      "recall": 0.4507042253521127,
+      "statement": "if a6 >= 71 then t = 25000",
+      "support": 132,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_73",
+      "precision": 0.9695652173913043,
+      "predicted_value": 25000,
+      "recall": 0.7852112676056338,
+      "statement": "if a6 <= 73 then t = 25000",
+      "support": 230,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-73",
+      "precision": 0.9695652173913043,
+      "predicted_value": 25000,
+      "recall": 0.7852112676056338,
+      "statement": "if a18 >= -73 then t = 25000",
+      "support": 230,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 78
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_78",
+      "precision": 0.9695652173913043,
+      "predicted_value": 25000,
+      "recall": 0.7852112676056338,
+      "statement": "if a6_abs <= 78 then t = 25000",
+      "support": 230,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 78
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_78",
+      "precision": 0.9695652173913043,
+      "predicted_value": 25000,
+      "recall": 0.7852112676056338,
+      "statement": "if a18_abs <= 78 then t = 25000",
+      "support": 230,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_73",
+      "precision": 0.9690265486725663,
+      "predicted_value": 25000,
+      "recall": 0.7711267605633803,
+      "statement": "if a6_abs <= 73 then t = 25000",
+      "support": 226,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 75
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_75",
+      "precision": 0.9690265486725663,
+      "predicted_value": 25000,
+      "recall": 0.7711267605633803,
+      "statement": "if a6_abs <= 75 then t = 25000",
+      "support": 226,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_73",
+      "precision": 0.9690265486725663,
+      "predicted_value": 25000,
+      "recall": 0.7711267605633803,
+      "statement": "if a18_abs <= 73 then t = 25000",
+      "support": 226,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 75
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_75",
+      "precision": 0.9690265486725663,
+      "predicted_value": 25000,
+      "recall": 0.7711267605633803,
+      "statement": "if a18_abs <= 75 then t = 25000",
+      "support": 226,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 71.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_71.7",
+      "precision": 0.96875,
+      "predicted_value": 25000,
+      "recall": 0.43661971830985913,
+      "statement": "if a6_abs >= 71.7 then t = 25000",
+      "support": 128,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a6_abs_>=_72",
+      "precision": 0.96875,
+      "predicted_value": 25000,
+      "recall": 0.43661971830985913,
+      "statement": "if a6_abs >= 72 then t = 25000",
+      "support": 128,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "r",
+        "op": ">=",
+        "value": 4
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_r_>=_4",
+      "precision": 0.9682539682539683,
+      "predicted_value": 25000,
+      "recall": 0.4295774647887324,
+      "statement": "if r >= 4 then t = 25000",
+      "support": 126,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-71",
+      "precision": 0.9682539682539683,
+      "predicted_value": 25000,
+      "recall": 0.4295774647887324,
+      "statement": "if a18 <= -71 then t = 25000",
+      "support": 126,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -70.6
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_<=_-70.6",
+      "precision": 0.9682539682539683,
+      "predicted_value": 25000,
+      "recall": 0.4295774647887324,
+      "statement": "if a18 <= -70.6 then t = 25000",
+      "support": 126,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -72.65
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-72.65",
+      "precision": 0.9681818181818181,
+      "predicted_value": 25000,
+      "recall": 0.75,
+      "statement": "if a18 >= -72.65 then t = 25000",
+      "support": 220,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": ">=",
+        "value": -72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_>=_-72",
+      "precision": 0.9681818181818181,
+      "predicted_value": 25000,
+      "recall": 0.75,
+      "statement": "if a18 >= -72 then t = 25000",
+      "support": 220,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_72",
+      "precision": 0.9678899082568807,
+      "predicted_value": 25000,
+      "recall": 0.7429577464788732,
+      "statement": "if a6 <= 72 then t = 25000",
+      "support": 218,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 72.65
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_<=_72.65",
+      "precision": 0.9678899082568807,
+      "predicted_value": 25000,
+      "recall": 0.7429577464788732,
+      "statement": "if a6 <= 72.65 then t = 25000",
+      "support": 218,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 71.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_71.7",
+      "precision": 0.967741935483871,
+      "predicted_value": 25000,
+      "recall": 0.4225352112676056,
+      "statement": "if a18_abs >= 71.7 then t = 25000",
+      "support": 124,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": ">=",
+        "value": 72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        187,
+        188,
+        189,
+        190
+      ],
+      "name": "t_a18_abs_>=_72",
+      "precision": 0.967741935483871,
+      "predicted_value": 25000,
+      "recall": 0.4225352112676056,
+      "statement": "if a18_abs >= 72 then t = 25000",
+      "support": 124,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a18_abs",
+        "op": "<=",
+        "value": 72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a18_abs_<=_72",
+      "precision": 0.9669811320754716,
+      "predicted_value": 25000,
+      "recall": 0.721830985915493,
+      "statement": "if a18_abs <= 72 then t = 25000",
+      "support": 212,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 72
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_a6_abs_<=_72",
+      "precision": 0.9666666666666667,
+      "predicted_value": 25000,
+      "recall": 0.7147887323943662,
+      "statement": "if a6_abs <= 72 then t = 25000",
+      "support": 210,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_amplitude",
+        "op": ">=",
+        "value": 1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_amplitude_>=_1",
+      "precision": 0.9527027027027027,
+      "predicted_value": 25000,
+      "recall": 0.4964788732394366,
+      "statement": "if support_amplitude >= 1 then t = 25000",
+      "support": 148,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "support_index",
+        "op": "<=",
+        "value": 13
+      },
+      "confidence": "medium",
+      "exceptions": [
+        0,
+        100,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "name": "t_support_index_<=_13",
+      "precision": 0.9513888888888888,
+      "predicted_value": 25000,
+      "recall": 0.4823943661971831,
+      "statement": "if support_index <= 13 then t = 25000",
+      "support": 144,
+      "target": "t"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_70",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.9636363636363636,
+      "statement": "if a6 <= 70 then r = 2",
+      "support": 159,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 70.6
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_70.6",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.9636363636363636,
+      "statement": "if a6 <= 70.6 then r = 2",
+      "support": 159,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "==",
+        "value": "low"
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_threshold_zone_==_low",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.9636363636363636,
+      "statement": "if threshold_zone == low then r = 2",
+      "support": 159,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 69
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_69",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.8545454545454545,
+      "statement": "if a6 <= 69 then r = 2",
+      "support": 141,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 70
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_70",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.8181818181818182,
+      "statement": "if a6_abs <= 70 then r = 2",
+      "support": 135,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 68
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_68",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.7575757575757576,
+      "statement": "if a6 <= 68 then r = 2",
+      "support": 125,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 68.55
+      },
+      "confidence": "high",
+      "exceptions": [],
+      "name": "r_a6_<=_68.55",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.7575757575757576,
+      "statement": "if a6 <= 68.55 then r = 2",
+      "support": 125,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 67
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_67",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.7333333333333333,
+      "statement": "if a6 <= 67 then r = 2",
+      "support": 121,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 66
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_66",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.7090909090909091,
+      "statement": "if a6 <= 66 then r = 2",
+      "support": 117,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 66.5
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_66.5",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.7090909090909091,
+      "statement": "if a6 <= 66.5 then r = 2",
+      "support": 117,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 65
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_65",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6848484848484848,
+      "statement": "if a6 <= 65 then r = 2",
+      "support": 113,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 64
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_64",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6606060606060606,
+      "statement": "if a6 <= 64 then r = 2",
+      "support": 109,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 64.45
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_64.45",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6606060606060606,
+      "statement": "if a6 <= 64.45 then r = 2",
+      "support": 109,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 69
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_69",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6606060606060606,
+      "statement": "if a6_abs <= 69 then r = 2",
+      "support": 109,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 72.65
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_72.65",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.6293103448275862,
+      "statement": "if a6 >= 72.65 then r = 6",
+      "support": 73,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 73
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_73",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.6293103448275862,
+      "statement": "if a6 >= 73 then r = 6",
+      "support": 73,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 60
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_60",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6242424242424243,
+      "statement": "if a6 <= 60 then r = 2",
+      "support": 103,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 54
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_54",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6,
+      "statement": "if a6 <= 54 then r = 2",
+      "support": 99,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 56.4
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_56.4",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.6,
+      "statement": "if a6 <= 56.4 then r = 2",
+      "support": 99,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 48
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_48",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.5757575757575758,
+      "statement": "if a6 <= 48 then r = 2",
+      "support": 95,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 45
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_45",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.5515151515151515,
+      "statement": "if a6 <= 45 then r = 2",
+      "support": 91,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 46.05
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_46.05",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.5515151515151515,
+      "statement": "if a6 <= 46.05 then r = 2",
+      "support": 91,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 68
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_68",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.5393939393939394,
+      "statement": "if a6_abs <= 68 then r = 2",
+      "support": 89,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 68.3
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_68.3",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.5393939393939394,
+      "statement": "if a6_abs <= 68.3 then r = 2",
+      "support": 89,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 40
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_40",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.5272727272727272,
+      "statement": "if a6 <= 40 then r = 2",
+      "support": 87,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 78
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_78",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.5258620689655172,
+      "statement": "if a6 >= 78 then r = 6",
+      "support": 61,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 36
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_36",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.503030303030303,
+      "statement": "if a6 <= 36 then r = 2",
+      "support": 83,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 37.2
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_37.2",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.503030303030303,
+      "statement": "if a6 <= 37.2 then r = 2",
+      "support": 83,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 78.7
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_78.7",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.49137931034482757,
+      "statement": "if a6 >= 78.7 then r = 6",
+      "support": 57,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 79
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_79",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.49137931034482757,
+      "statement": "if a6 >= 79 then r = 6",
+      "support": 57,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 67
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_67",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4909090909090909,
+      "statement": "if a6_abs <= 67 then r = 2",
+      "support": 81,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 32
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_32",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.47878787878787876,
+      "statement": "if a6 <= 32 then r = 2",
+      "support": 79,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 66
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_66",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4666666666666667,
+      "statement": "if a6_abs <= 66 then r = 2",
+      "support": 77,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 66.6
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_66.6",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4666666666666667,
+      "statement": "if a6_abs <= 66.6 then r = 2",
+      "support": 77,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 80
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_80",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.45689655172413796,
+      "statement": "if a6 >= 80 then r = 6",
+      "support": 53,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 30
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_30",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.45454545454545453,
+      "statement": "if a6 <= 30 then r = 2",
+      "support": 75,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 30.5
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_30.5",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.45454545454545453,
+      "statement": "if a6 <= 30.5 then r = 2",
+      "support": 75,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 65
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_65",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.44242424242424244,
+      "statement": "if a6_abs <= 65 then r = 2",
+      "support": 73,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 28
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_28",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.4303030303030303,
+      "statement": "if a6 <= 28 then r = 2",
+      "support": 71,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 80.75
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_80.75",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.4224137931034483,
+      "statement": "if a6 >= 80.75 then r = 6",
+      "support": 49,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 81
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_>=_81",
+      "precision": 1.0,
+      "predicted_value": 6,
+      "recall": 0.4224137931034483,
+      "statement": "if a6 >= 81 then r = 6",
+      "support": 49,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 64
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_64",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.41818181818181815,
+      "statement": "if a6_abs <= 64 then r = 2",
+      "support": 69,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 64.9
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_abs_<=_64.9",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.41818181818181815,
+      "statement": "if a6_abs <= 64.9 then r = 2",
+      "support": 69,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 9
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_9",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.40606060606060607,
+      "statement": "if a6 <= 9 then r = 2",
+      "support": 67,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 12.8
+      },
+      "confidence": "medium",
+      "exceptions": [],
+      "name": "r_a6_<=_12.8",
+      "precision": 1.0,
+      "predicted_value": 2,
+      "recall": 0.40606060606060607,
+      "statement": "if a6 <= 12.8 then r = 2",
+      "support": 67,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": ">=",
+        "value": 72
+      },
+      "confidence": "high",
+      "exceptions": [
+        185,
+        186
+      ],
+      "name": "r_a6_>=_72",
+      "precision": 0.9821428571428571,
+      "predicted_value": 6,
+      "recall": 0.9482758620689655,
+      "statement": "if a6 >= 72 then r = 6",
+      "support": 112,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "threshold_zone",
+        "op": "==",
+        "value": "high"
+      },
+      "confidence": "high",
+      "exceptions": [
+        185,
+        186
+      ],
+      "name": "r_threshold_zone_==_high",
+      "precision": 0.9821428571428571,
+      "predicted_value": 6,
+      "recall": 0.9482758620689655,
+      "statement": "if threshold_zone == high then r = 6",
+      "support": 112,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "feature": "a6",
+            "op": ">=",
+            "value": 72
+          },
+          {
+            "feature": "a6_positive",
+            "op": "==",
+            "value": true
+          }
+        ]
+      },
+      "confidence": "high",
+      "exceptions": [
+        185,
+        186
+      ],
+      "name": "r_a6_>=_72_and_a6_positive_==_True",
+      "precision": 0.9821428571428571,
+      "predicted_value": 6,
+      "recall": 0.9482758620689655,
+      "statement": "if a6 >= 72 and a6_positive == True then r = 6",
+      "support": 112,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 75
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_75",
+      "precision": 0.9384615384615385,
+      "predicted_value": 6,
+      "recall": 0.5258620689655172,
+      "statement": "if a6_abs >= 75 then r = 6",
+      "support": 65,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 78
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_78",
+      "precision": 0.9384615384615385,
+      "predicted_value": 6,
+      "recall": 0.5258620689655172,
+      "statement": "if a6_abs >= 78 then r = 6",
+      "support": 65,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -78
+      },
+      "confidence": "medium",
+      "exceptions": [
+        165,
+        166,
+        167,
+        168
+      ],
+      "name": "r_a18_<=_-78",
+      "precision": 0.9344262295081968,
+      "predicted_value": 6,
+      "recall": 0.49137931034482757,
+      "statement": "if a18 <= -78 then r = 6",
+      "support": 61,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 79
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_79",
+      "precision": 0.9344262295081968,
+      "predicted_value": 6,
+      "recall": 0.49137931034482757,
+      "statement": "if a6_abs >= 79 then r = 6",
+      "support": 61,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -79
+      },
+      "confidence": "medium",
+      "exceptions": [
+        165,
+        166,
+        167,
+        168
+      ],
+      "name": "r_a18_<=_-79",
+      "precision": 0.9298245614035088,
+      "predicted_value": 6,
+      "recall": 0.45689655172413796,
+      "statement": "if a18 <= -79 then r = 6",
+      "support": 57,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -78.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        165,
+        166,
+        167,
+        168
+      ],
+      "name": "r_a18_<=_-78.7",
+      "precision": 0.9298245614035088,
+      "predicted_value": 6,
+      "recall": 0.45689655172413796,
+      "statement": "if a18 <= -78.7 then r = 6",
+      "support": 57,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 79.1
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_79.1",
+      "precision": 0.9298245614035088,
+      "predicted_value": 6,
+      "recall": 0.45689655172413796,
+      "statement": "if a6_abs >= 79.1 then r = 6",
+      "support": 57,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 80
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_80",
+      "precision": 0.9298245614035088,
+      "predicted_value": 6,
+      "recall": 0.45689655172413796,
+      "statement": "if a6_abs >= 80 then r = 6",
+      "support": 57,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a18",
+        "op": "<=",
+        "value": -80
+      },
+      "confidence": "medium",
+      "exceptions": [
+        165,
+        166,
+        167,
+        168
+      ],
+      "name": "r_a18_<=_-80",
+      "precision": 0.9245283018867925,
+      "predicted_value": 6,
+      "recall": 0.4224137931034483,
+      "statement": "if a18 <= -80 then r = 6",
+      "support": 53,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 80.8
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_80.8",
+      "precision": 0.9245283018867925,
+      "predicted_value": 6,
+      "recall": 0.4224137931034483,
+      "statement": "if a6_abs >= 80.8 then r = 6",
+      "support": 53,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 81
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "name": "r_a6_abs_>=_81",
+      "precision": 0.9245283018867925,
+      "predicted_value": 6,
+      "recall": 0.4224137931034483,
+      "statement": "if a6_abs >= 81 then r = 6",
+      "support": 53,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6",
+        "op": "<=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        125,
+        126,
+        194,
+        199,
+        224,
+        229,
+        234,
+        239,
+        244,
+        249,
+        284,
+        286,
+        288,
+        290
+      ],
+      "name": "r_a6_<=_71",
+      "precision": 0.9217877094972067,
+      "predicted_value": 2,
+      "recall": 1.0,
+      "statement": "if a6 <= 71 then r = 2",
+      "support": 179,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 71
+      },
+      "confidence": "medium",
+      "exceptions": [
+        125,
+        126,
+        194,
+        199,
+        224,
+        229,
+        234,
+        239,
+        244,
+        249,
+        284,
+        286,
+        288,
+        290
+      ],
+      "name": "r_a6_abs_<=_71",
+      "precision": 0.9141104294478528,
+      "predicted_value": 2,
+      "recall": 0.9030303030303031,
+      "statement": "if a6_abs <= 71 then r = 2",
+      "support": 163,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": "<=",
+        "value": 71.7
+      },
+      "confidence": "medium",
+      "exceptions": [
+        125,
+        126,
+        194,
+        199,
+        224,
+        229,
+        234,
+        239,
+        244,
+        249,
+        284,
+        286,
+        288,
+        290
+      ],
+      "name": "r_a6_abs_<=_71.7",
+      "precision": 0.9141104294478528,
+      "predicted_value": 2,
+      "recall": 0.9030303030303031,
+      "statement": "if a6_abs <= 71.7 then r = 2",
+      "support": 163,
+      "target": "r"
+    },
+    {
+      "condition": {
+        "feature": "a6_abs",
+        "op": ">=",
+        "value": 73
+      },
+      "confidence": "medium",
+      "exceptions": [
+        149,
+        150,
+        151,
+        152,
+        271,
+        275,
+        279,
+        283
+      ],
+      "name": "r_a6_abs_>=_73",
+      "precision": 0.9012345679012346,
+      "predicted_value": 6,
+      "recall": 0.6293103448275862,
+      "statement": "if a6_abs >= 73 then r = 6",
+      "support": 81,
+      "target": "r"
+    }
+  ]
+}

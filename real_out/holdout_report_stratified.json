@@ -1,0 +1,114 @@
+{
+  "combined": {
+    "accuracy": 0.9830508474576272,
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        33,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        23
+      ]
+    ],
+    "failed_predictions": [
+      {
+        "actual": "25000|4",
+        "index": 186,
+        "predicted": "25000|6"
+      }
+    ],
+    "labels": [
+      "24979|6",
+      "25000|2",
+      "25000|4",
+      "25000|6"
+    ],
+    "macro_f1": 0.9113475177304964
+  },
+  "features": [
+    "support_index",
+    "support_amplitude",
+    "a6",
+    "a18",
+    "abs_support_amplitude",
+    "a6_positive",
+    "a6_negative",
+    "a6_abs",
+    "a18_abs",
+    "active_support_slots",
+    "paired_resonance",
+    "reverse_resonance",
+    "support_face",
+    "support_bucket",
+    "threshold_zone"
+  ],
+  "r": {
+    "accuracy": 0.9830508474576272,
+    "confusion_matrix": [
+      [
+        33,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        24
+      ]
+    ],
+    "failed_predictions": [
+      {
+        "actual": "4",
+        "index": 186,
+        "predicted": "6"
+      }
+    ],
+    "labels": [
+      "2",
+      "4",
+      "6"
+    ],
+    "macro_f1": 0.8820861678004533
+  },
+  "t": {
+    "accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        58
+      ]
+    ],
+    "failed_predictions": [],
+    "labels": [
+      "24979",
+      "25000"
+    ],
+    "macro_f1": 1.0
+  }
+}

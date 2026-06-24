@@ -1,0 +1,383 @@
+{
+  "candidate_features": [
+    "support_index",
+    "support_amplitude",
+    "a6",
+    "a18",
+    "abs_support_amplitude",
+    "a6_positive",
+    "a6_negative",
+    "a6_abs",
+    "a18_abs",
+    "active_support_slots",
+    "paired_resonance",
+    "reverse_resonance",
+    "support_face",
+    "support_bucket",
+    "threshold_zone"
+  ],
+  "identified_coordinates": {
+    "a18_predictive_value_for_r": {
+      "feature": "a18",
+      "mutual_info": 0.5263384762197048,
+      "tree_accuracy": 0.8522727272727273,
+      "tree_macro_f1": 0.578405017921147,
+      "tree_rule": "|--- a18 <= -71.50\n|   |--- a18 <= -81.50\n|   |   |--- class: 6\n|   |--- a18 >  -81.50\n|   |   |--- a18 <= -80.50\n|   |   |   |--- class: 6\n|   |   |--- a18 >  -80.50\n|   |   |   |--- class: 6\n|--- a18 >  -71.50\n|   |--- a18 <= -18.50\n|   |   |--- a18 <= -70.50\n|   |   |   |--- class: 2\n|   |   |--- a18 >  -70.50\n|   |   |   |--- class: 2\n|   |--- a18 >  -18.50\n|   |   |--- a18 <= 34.00\n|   |   |   |--- class: 6\n|   |   |--- a18 >  34.00\n|   |   |   |--- class: 2\n"
+    },
+    "r_coordinate": "threshold_zone",
+    "reverse_orientation": {
+      "feature": "reverse_resonance",
+      "mutual_info": 0.08627696561518368,
+      "tree_accuracy": 0.5681818181818182,
+      "tree_macro_f1": 0.24154589371980675,
+      "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 2\n|--- reverse_resonance >  0.50\n|   |--- class: 2\n"
+    },
+    "t_coordinate": "support_face"
+  },
+  "n_rows": 291,
+  "target_cols": [
+    "t",
+    "r"
+  ],
+  "targets": {
+    "combined": {
+      "baseline": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "rankings": [
+        {
+          "feature": "threshold_zone",
+          "mutual_info": 1.234007535275604,
+          "tree_accuracy": 0.9431818181818182,
+          "tree_macro_f1": 0.5212654133818476,
+          "tree_rule": "|--- threshold_zone_low <= 0.50\n|   |--- threshold_zone_high <= 0.50\n|   |   |--- class: 25000|4\n|   |--- threshold_zone_high >  0.50\n|   |   |--- class: 25000|6\n|--- threshold_zone_low >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "a6",
+          "mutual_info": 0.7740863200277617,
+          "tree_accuracy": 0.9431818181818182,
+          "tree_macro_f1": 0.5212654133818476,
+          "tree_rule": "|--- a6 <= 70.50\n|   |--- a6 <= 18.50\n|   |   |--- a6 <= 4.50\n|   |   |   |--- class: 25000|2\n|   |   |--- a6 >  4.50\n|   |   |   |--- class: 25000|2\n|   |--- a6 >  18.50\n|   |   |--- class: 25000|2\n|--- a6 >  70.50\n|   |--- a6 <= 71.50\n|   |   |--- class: 25000|4\n|   |--- a6 >  71.50\n|   |   |--- a6 <= 72.50\n|   |   |   |--- class: 25000|6\n|   |   |--- a6 >  72.50\n|   |   |   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "a6_abs",
+          "mutual_info": 0.6252828521827745,
+          "tree_accuracy": 0.8522727272727273,
+          "tree_macro_f1": 0.351,
+          "tree_rule": "|--- a6_abs <= 71.50\n|   |--- a6_abs <= 70.50\n|   |   |--- a6_abs <= 18.50\n|   |   |   |--- class: 25000|2\n|   |   |--- a6_abs >  18.50\n|   |   |   |--- class: 25000|2\n|   |--- a6_abs >  70.50\n|   |   |--- class: 25000|2\n|--- a6_abs >  71.50\n|   |--- a6_abs <= 72.50\n|   |   |--- class: 25000|6\n|   |--- a6_abs >  72.50\n|   |   |--- a6_abs <= 81.50\n|   |   |   |--- class: 25000|6\n|   |   |--- a6_abs >  81.50\n|   |   |   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "a18",
+          "mutual_info": 0.6130220239616033,
+          "tree_accuracy": 0.8409090909090909,
+          "tree_macro_f1": 0.45111111111111113,
+          "tree_rule": "|--- a18 <= -71.50\n|   |--- a18 <= -81.50\n|   |   |--- class: 25000|6\n|   |--- a18 >  -81.50\n|   |   |--- a18 <= -80.50\n|   |   |   |--- class: 25000|2\n|   |   |--- a18 >  -80.50\n|   |   |   |--- class: 25000|6\n|--- a18 >  -71.50\n|   |--- a18 <= -18.50\n|   |   |--- a18 <= -70.50\n|   |   |   |--- class: 25000|4\n|   |   |--- a18 >  -70.50\n|   |   |   |--- class: 25000|2\n|   |--- a18 >  -18.50\n|   |   |--- a18 <= 34.00\n|   |   |   |--- class: 25000|6\n|   |   |--- a18 >  34.00\n|   |   |   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "a18_abs",
+          "mutual_info": 0.5290747434536276,
+          "tree_accuracy": 0.8181818181818182,
+          "tree_macro_f1": 0.33644653219121307,
+          "tree_rule": "|--- a18_abs <= 71.50\n|   |--- a18_abs <= 18.50\n|   |   |--- a18_abs <= 4.50\n|   |   |   |--- class: 25000|6\n|   |   |--- a18_abs >  4.50\n|   |   |   |--- class: 25000|6\n|   |--- a18_abs >  18.50\n|   |   |--- a18_abs <= 70.50\n|   |   |   |--- class: 25000|2\n|   |   |--- a18_abs >  70.50\n|   |   |   |--- class: 25000|2\n|--- a18_abs >  71.50\n|   |--- a18_abs <= 81.50\n|   |   |--- a18_abs <= 80.50\n|   |   |   |--- class: 25000|6\n|   |   |--- a18_abs >  80.50\n|   |   |   |--- class: 25000|2\n|   |--- a18_abs >  81.50\n|   |   |--- class: 25000|6\n"
+        },
+        {
+          "feature": "support_face",
+          "mutual_info": 0.22685234409439523,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2785185185185185,
+          "tree_rule": "|--- support_face_x13_x15_x17 <= 0.50\n|   |--- class: 24979|6\n|--- support_face_x13_x15_x17 >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "support_bucket",
+          "mutual_info": 0.22685234409439523,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2785185185185185,
+          "tree_rule": "|--- support_bucket_x13_x15_x17 <= 0.50\n|   |--- class: 24979|6\n|--- support_bucket_x13_x15_x17 >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "active_support_slots",
+          "mutual_info": 0.19897658666400603,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2785185185185185,
+          "tree_rule": "|--- active_support_slots_12 <= 0.50\n|   |--- active_support_slots_15 <= 0.50\n|   |   |--- active_support_slots_17 <= 0.50\n|   |   |   |--- class: 25000|2\n|   |   |--- active_support_slots_17 >  0.50\n|   |   |   |--- class: 25000|2\n|   |--- active_support_slots_15 >  0.50\n|   |   |--- class: 25000|2\n|--- active_support_slots_12 >  0.50\n|   |--- class: 24979|6\n"
+        },
+        {
+          "feature": "support_index",
+          "mutual_info": 0.18986844647793544,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2785185185185185,
+          "tree_rule": "|--- support_index <= 12.50\n|   |--- class: 24979|6\n|--- support_index >  12.50\n|   |--- support_index <= 14.00\n|   |   |--- class: 25000|2\n|   |--- support_index >  14.00\n|   |   |--- support_index <= 16.00\n|   |   |   |--- class: 25000|2\n|   |   |--- support_index >  16.00\n|   |   |   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "abs_support_amplitude",
+          "mutual_info": 0.1368507106475838,
+          "tree_accuracy": 0.5795454545454546,
+          "tree_macro_f1": 0.35901116427432217,
+          "tree_rule": "|--- abs_support_amplitude <= 1.50\n|   |--- class: 25000|2\n|--- abs_support_amplitude >  1.50\n|   |--- abs_support_amplitude <= 15.00\n|   |   |--- abs_support_amplitude <= 7.50\n|   |   |   |--- class: 25000|6\n|   |   |--- abs_support_amplitude >  7.50\n|   |   |   |--- class: 25000|6\n|   |--- abs_support_amplitude >  15.00\n|   |   |--- abs_support_amplitude <= 2865252.50\n|   |   |   |--- class: 25000|4\n|   |   |--- abs_support_amplitude >  2865252.50\n|   |   |   |--- class: 24979|2\n"
+        },
+        {
+          "feature": "support_amplitude",
+          "mutual_info": 0.11612764849307666,
+          "tree_accuracy": 0.5909090909090909,
+          "tree_macro_f1": 0.5592956592956593,
+          "tree_rule": "|--- support_amplitude <= 1.50\n|   |--- support_amplitude <= -1.50\n|   |   |--- support_amplitude <= -7.50\n|   |   |   |--- class: 25000|4\n|   |   |--- support_amplitude >  -7.50\n|   |   |   |--- class: 25000|6\n|   |--- support_amplitude >  -1.50\n|   |   |--- support_amplitude <= 0.00\n|   |   |   |--- class: 25000|2\n|   |   |--- support_amplitude >  0.00\n|   |   |   |--- class: 25000|2\n|--- support_amplitude >  1.50\n|   |--- support_amplitude <= 2865252.50\n|   |   |--- support_amplitude <= 3.50\n|   |   |   |--- class: 25000|6\n|   |   |--- support_amplitude >  3.50\n|   |   |   |--- class: 24979|6\n|   |--- support_amplitude >  2865252.50\n|   |   |--- class: 24979|2\n"
+        },
+        {
+          "feature": "a6_positive",
+          "mutual_info": 0.10948163857208755,
+          "tree_accuracy": 0.5568181818181818,
+          "tree_macro_f1": 0.14306569343065695,
+          "tree_rule": "|--- a6_positive <= 0.50\n|   |--- class: 25000|2\n|--- a6_positive >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "a6_negative",
+          "mutual_info": 0.08916956761043915,
+          "tree_accuracy": 0.5568181818181818,
+          "tree_macro_f1": 0.14306569343065695,
+          "tree_rule": "|--- a6_negative <= 0.50\n|   |--- class: 25000|2\n|--- a6_negative >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "reverse_resonance",
+          "mutual_info": 0.08916956761043915,
+          "tree_accuracy": 0.5568181818181818,
+          "tree_macro_f1": 0.14306569343065695,
+          "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 25000|2\n|--- reverse_resonance >  0.50\n|   |--- class: 25000|2\n"
+        },
+        {
+          "feature": "paired_resonance",
+          "mutual_info": 0.052401229669603415,
+          "tree_accuracy": 0.5568181818181818,
+          "tree_macro_f1": 0.14306569343065695,
+          "tree_rule": "|--- paired_resonance <= 0.50\n|   |--- class: 25000|2\n|--- paired_resonance >  0.50\n|   |--- class: 25000|2\n"
+        }
+      ]
+    },
+    "r": {
+      "baseline": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "rankings": [
+        {
+          "feature": "threshold_zone",
+          "mutual_info": 1.2317500906992342,
+          "tree_accuracy": 0.9431818181818182,
+          "tree_macro_f1": 0.8283716485657057,
+          "tree_rule": "|--- threshold_zone_low <= 0.50\n|   |--- threshold_zone_boundary <= 0.50\n|   |   |--- class: 6\n|   |--- threshold_zone_boundary >  0.50\n|   |   |--- class: 4\n|--- threshold_zone_low >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "a6",
+          "mutual_info": 0.6980361868802112,
+          "tree_accuracy": 0.9431818181818182,
+          "tree_macro_f1": 0.8283716485657057,
+          "tree_rule": "|--- a6 <= 70.50\n|   |--- class: 2\n|--- a6 >  70.50\n|   |--- a6 <= 71.50\n|   |   |--- class: 4\n|   |--- a6 >  71.50\n|   |   |--- a6 <= 72.50\n|   |   |   |--- class: 6\n|   |   |--- a6 >  72.50\n|   |   |   |--- class: 6\n"
+        },
+        {
+          "feature": "a6_abs",
+          "mutual_info": 0.534334589004184,
+          "tree_accuracy": 0.8977272727272727,
+          "tree_macro_f1": 0.6091859185918592,
+          "tree_rule": "|--- a6_abs <= 71.50\n|   |--- a6_abs <= 70.50\n|   |   |--- class: 2\n|   |--- a6_abs >  70.50\n|   |   |--- class: 2\n|--- a6_abs >  71.50\n|   |--- a6_abs <= 81.50\n|   |   |--- a6_abs <= 80.50\n|   |   |   |--- class: 6\n|   |   |--- a6_abs >  80.50\n|   |   |   |--- class: 6\n|   |--- a6_abs >  81.50\n|   |   |--- class: 6\n"
+        },
+        {
+          "feature": "a18",
+          "mutual_info": 0.5263384762197048,
+          "tree_accuracy": 0.8522727272727273,
+          "tree_macro_f1": 0.578405017921147,
+          "tree_rule": "|--- a18 <= -71.50\n|   |--- a18 <= -81.50\n|   |   |--- class: 6\n|   |--- a18 >  -81.50\n|   |   |--- a18 <= -80.50\n|   |   |   |--- class: 6\n|   |   |--- a18 >  -80.50\n|   |   |   |--- class: 6\n|--- a18 >  -71.50\n|   |--- a18 <= -18.50\n|   |   |--- a18 <= -70.50\n|   |   |   |--- class: 2\n|   |   |--- a18 >  -70.50\n|   |   |   |--- class: 2\n|   |--- a18 >  -18.50\n|   |   |--- a18 <= 34.00\n|   |   |   |--- class: 6\n|   |   |--- a18 >  34.00\n|   |   |   |--- class: 2\n"
+        },
+        {
+          "feature": "a18_abs",
+          "mutual_info": 0.45194392231974323,
+          "tree_accuracy": 0.8068181818181818,
+          "tree_macro_f1": 0.5474014336917562,
+          "tree_rule": "|--- a18_abs <= 71.50\n|   |--- a18_abs <= 18.50\n|   |   |--- a18_abs <= 4.50\n|   |   |   |--- class: 6\n|   |   |--- a18_abs >  4.50\n|   |   |   |--- class: 6\n|   |--- a18_abs >  18.50\n|   |   |--- a18_abs <= 70.50\n|   |   |   |--- class: 2\n|   |   |--- a18_abs >  70.50\n|   |   |   |--- class: 2\n|--- a18_abs >  71.50\n|   |--- a18_abs <= 81.50\n|   |   |--- a18_abs <= 80.50\n|   |   |   |--- class: 6\n|   |   |--- a18_abs >  80.50\n|   |   |   |--- class: 2\n|   |--- a18_abs >  81.50\n|   |   |--- class: 6\n"
+        },
+        {
+          "feature": "a6_positive",
+          "mutual_info": 0.10589858141887594,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.24154589371980675,
+          "tree_rule": "|--- a6_positive <= 0.50\n|   |--- class: 2\n|--- a6_positive >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "a6_negative",
+          "mutual_info": 0.08627696561518368,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.24154589371980675,
+          "tree_rule": "|--- a6_negative <= 0.50\n|   |--- class: 2\n|--- a6_negative >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "reverse_resonance",
+          "mutual_info": 0.08627696561518368,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.24154589371980675,
+          "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 2\n|--- reverse_resonance >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "abs_support_amplitude",
+          "mutual_info": 0.0685809918479996,
+          "tree_accuracy": 0.5568181818181818,
+          "tree_macro_f1": 0.25996810207336524,
+          "tree_rule": "|--- abs_support_amplitude <= 1.50\n|   |--- class: 2\n|--- abs_support_amplitude >  1.50\n|   |--- abs_support_amplitude <= 15.00\n|   |   |--- abs_support_amplitude <= 7.50\n|   |   |   |--- class: 6\n|   |   |--- abs_support_amplitude >  7.50\n|   |   |   |--- class: 6\n|   |--- abs_support_amplitude >  15.00\n|   |   |--- class: 4\n"
+        },
+        {
+          "feature": "active_support_slots",
+          "mutual_info": 0.056937243424457024,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2729940043372879,
+          "tree_rule": "|--- active_support_slots_15 <= 0.50\n|   |--- active_support_slots_12 <= 0.50\n|   |   |--- active_support_slots_17 <= 0.50\n|   |   |   |--- class: 2\n|   |   |--- active_support_slots_17 >  0.50\n|   |   |   |--- class: 2\n|   |--- active_support_slots_12 >  0.50\n|   |   |--- class: 6\n|--- active_support_slots_15 >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "paired_resonance",
+          "mutual_info": 0.04781793346287011,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.24154589371980675,
+          "tree_rule": "|--- paired_resonance <= 0.50\n|   |--- class: 2\n|--- paired_resonance >  0.50\n|   |--- class: 2\n"
+        },
+        {
+          "feature": "support_amplitude",
+          "mutual_info": 0.02925633658130522,
+          "tree_accuracy": 0.5795454545454546,
+          "tree_macro_f1": 0.2644574398960364,
+          "tree_rule": "|--- support_amplitude <= -1.50\n|   |--- support_amplitude <= -7.50\n|   |   |--- class: 4\n|   |--- support_amplitude >  -7.50\n|   |   |--- class: 6\n|--- support_amplitude >  -1.50\n|   |--- support_amplitude <= 1.50\n|   |   |--- support_amplitude <= 0.00\n|   |   |   |--- class: 2\n|   |   |--- support_amplitude >  0.00\n|   |   |   |--- class: 2\n|   |--- support_amplitude >  1.50\n|   |   |--- support_amplitude <= 15.00\n|   |   |   |--- class: 6\n|   |   |--- support_amplitude >  15.00\n|   |   |   |--- class: 2\n"
+        },
+        {
+          "feature": "support_index",
+          "mutual_info": 0.02809686526676014,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2729940043372879,
+          "tree_rule": "|--- support_index <= 14.00\n|   |--- support_index <= 12.50\n|   |   |--- class: 6\n|   |--- support_index >  12.50\n|   |   |--- class: 2\n|--- support_index >  14.00\n|   |--- support_index <= 16.00\n|   |   |--- class: 2\n|   |--- support_index >  16.00\n|   |   |--- class: 2\n"
+        },
+        {
+          "feature": "support_face",
+          "mutual_info": 0.004213367058290035,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2729940043372879,
+          "tree_rule": "|--- support_face_x12_base <= 0.50\n|   |--- class: 2\n|--- support_face_x12_base >  0.50\n|   |--- class: 6\n"
+        },
+        {
+          "feature": "support_bucket",
+          "mutual_info": 0.004213367058290035,
+          "tree_accuracy": 0.5681818181818182,
+          "tree_macro_f1": 0.2729940043372879,
+          "tree_rule": "|--- support_bucket_x12_base <= 0.50\n|   |--- class: 2\n|--- support_bucket_x12_base >  0.50\n|   |--- class: 6\n"
+        }
+      ]
+    },
+    "t": {
+      "baseline": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "rankings": [
+        {
+          "feature": "support_face",
+          "mutual_info": 0.22685234409439617,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- support_face_x13_x15_x17 <= 0.50\n|   |--- class: 24979\n|--- support_face_x13_x15_x17 >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "support_bucket",
+          "mutual_info": 0.22685234409439617,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- support_bucket_x13_x15_x17 <= 0.50\n|   |--- class: 24979\n|--- support_bucket_x13_x15_x17 >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "support_index",
+          "mutual_info": 0.15126771072781353,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- support_index <= 12.50\n|   |--- class: 24979\n|--- support_index >  12.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "active_support_slots",
+          "mutual_info": 0.14431592915317223,
+          "tree_accuracy": 1.0,
+          "tree_macro_f1": 1.0,
+          "tree_rule": "|--- active_support_slots_12 <= 0.50\n|   |--- class: 25000\n|--- active_support_slots_12 >  0.50\n|   |--- class: 24979\n"
+        },
+        {
+          "feature": "a18_abs",
+          "mutual_info": 0.048628365280678265,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- a18_abs <= 18.50\n|   |--- a18_abs <= 4.50\n|   |   |--- class: 25000\n|   |--- a18_abs >  4.50\n|   |   |--- class: 25000\n|--- a18_abs >  18.50\n|   |--- a18_abs <= 71.50\n|   |   |--- class: 25000\n|   |--- a18_abs >  71.50\n|   |   |--- a18_abs <= 72.50\n|   |   |   |--- class: 25000\n|   |   |--- a18_abs >  72.50\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "support_amplitude",
+          "mutual_info": 0.045688488842240305,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- support_amplitude <= 2865247.50\n|   |--- support_amplitude <= 3.50\n|   |   |--- support_amplitude <= 0.00\n|   |   |   |--- class: 25000\n|   |   |--- support_amplitude >  0.00\n|   |   |   |--- class: 25000\n|   |--- support_amplitude >  3.50\n|   |   |--- class: 25000\n|--- support_amplitude >  2865247.50\n|   |--- class: 24979\n"
+        },
+        {
+          "feature": "a6_abs",
+          "mutual_info": 0.034167087030783305,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- a6_abs <= 18.50\n|   |--- a6_abs <= 4.50\n|   |   |--- class: 25000\n|   |--- a6_abs >  4.50\n|   |   |--- class: 25000\n|--- a6_abs >  18.50\n|   |--- a6_abs <= 71.50\n|   |   |--- class: 25000\n|   |--- a6_abs >  71.50\n|   |   |--- a6_abs <= 72.50\n|   |   |   |--- class: 25000\n|   |   |--- a6_abs >  72.50\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "abs_support_amplitude",
+          "mutual_info": 0.03233641531561404,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- abs_support_amplitude <= 2865252.50\n|   |--- abs_support_amplitude <= 3.50\n|   |   |--- abs_support_amplitude <= 1.50\n|   |   |   |--- class: 25000\n|   |   |--- abs_support_amplitude >  1.50\n|   |   |   |--- class: 25000\n|   |--- abs_support_amplitude >  3.50\n|   |   |--- abs_support_amplitude <= 7.50\n|   |   |   |--- class: 25000\n|   |   |--- abs_support_amplitude >  7.50\n|   |   |   |--- class: 25000\n|--- abs_support_amplitude >  2865252.50\n|   |--- class: 24979\n"
+        },
+        {
+          "feature": "a6",
+          "mutual_info": 0.02447584512525336,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- a6 <= 18.50\n|   |--- a6 <= 4.50\n|   |   |--- class: 25000\n|   |--- a6 >  4.50\n|   |   |--- class: 25000\n|--- a6 >  18.50\n|   |--- a6 <= 71.50\n|   |   |--- class: 25000\n|   |--- a6 >  71.50\n|   |   |--- a6 <= 72.50\n|   |   |   |--- class: 25000\n|   |   |--- a6 >  72.50\n|   |   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "a18",
+          "mutual_info": 0.023252225955351147,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- a18 <= -18.50\n|   |--- a18 <= -71.50\n|   |   |--- a18 <= -72.50\n|   |   |   |--- class: 25000\n|   |   |--- a18 >  -72.50\n|   |   |   |--- class: 25000\n|   |--- a18 >  -71.50\n|   |   |--- class: 25000\n|--- a18 >  -18.50\n|   |--- a18 <= -4.50\n|   |   |--- class: 25000\n|   |--- a18 >  -4.50\n|   |   |--- class: 25000\n"
+        },
+        {
+          "feature": "paired_resonance",
+          "mutual_info": 0.005211665590574899,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- paired_resonance <= 0.50\n|   |--- class: 25000\n|--- paired_resonance >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "a6_positive",
+          "mutual_info": 0.004394372382861431,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- a6_positive <= 0.50\n|   |--- class: 25000\n|--- a6_positive >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "threshold_zone",
+          "mutual_info": 0.004171898410974158,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- threshold_zone_boundary <= 0.50\n|   |--- threshold_zone_low <= 0.50\n|   |   |--- class: 25000\n|   |--- threshold_zone_low >  0.50\n|   |   |--- class: 25000\n|--- threshold_zone_boundary >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "a6_negative",
+          "mutual_info": 0.003603939376581669,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- a6_negative <= 0.50\n|   |--- class: 25000\n|--- a6_negative >  0.50\n|   |--- class: 25000\n"
+        },
+        {
+          "feature": "reverse_resonance",
+          "mutual_info": 0.003603939376581669,
+          "tree_accuracy": 0.9772727272727273,
+          "tree_macro_f1": 0.4942528735632184,
+          "tree_rule": "|--- reverse_resonance <= 0.50\n|   |--- class: 25000\n|--- reverse_resonance >  0.50\n|   |--- class: 25000\n"
+        }
+      ]
+    }
+  }
+}

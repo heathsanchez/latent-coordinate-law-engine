@@ -1,0 +1,86 @@
+{
+  "combined": {
+    "accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        33,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        22
+      ]
+    ],
+    "failed_predictions": [],
+    "labels": [
+      "25000|2",
+      "25000|4",
+      "25000|6"
+    ],
+    "macro_f1": 1.0
+  },
+  "features": [
+    "support_index",
+    "support_amplitude",
+    "a6",
+    "a18",
+    "abs_support_amplitude",
+    "a6_positive",
+    "a6_negative",
+    "a6_abs",
+    "a18_abs",
+    "active_support_slots",
+    "paired_resonance",
+    "reverse_resonance",
+    "support_face",
+    "support_bucket",
+    "threshold_zone"
+  ],
+  "r": {
+    "accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        33,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        22
+      ]
+    ],
+    "failed_predictions": [],
+    "labels": [
+      "2",
+      "4",
+      "6"
+    ],
+    "macro_f1": 1.0
+  },
+  "t": {
+    "accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        58
+      ]
+    ],
+    "failed_predictions": [],
+    "labels": [
+      "25000"
+    ],
+    "macro_f1": 1.0
+  }
+}

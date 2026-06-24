@@ -1,0 +1,1783 @@
+domain,target,rank,feature,mutual_info,tree_accuracy,tree_macro_f1,tree_rule
+IGP24,t,1,support_face,0.22685234409439617,1.0,1.0,"|--- support_face_x13_x15_x17 <= 0.50
+|   |--- class: 24979
+|--- support_face_x13_x15_x17 >  0.50
+|   |--- class: 25000
+"
+IGP24,t,2,support_bucket,0.22685234409439617,1.0,1.0,"|--- support_bucket_x13_x15_x17 <= 0.50
+|   |--- class: 24979
+|--- support_bucket_x13_x15_x17 >  0.50
+|   |--- class: 25000
+"
+IGP24,t,3,support_index,0.15126771072781353,1.0,1.0,"|--- support_index <= 12.50
+|   |--- class: 24979
+|--- support_index >  12.50
+|   |--- class: 25000
+"
+IGP24,t,4,active_support_slots,0.14431592915317223,1.0,1.0,"|--- active_support_slots_12 <= 0.50
+|   |--- class: 25000
+|--- active_support_slots_12 >  0.50
+|   |--- class: 24979
+"
+IGP24,t,5,a18_abs,0.048628365280678265,0.9772727272727273,0.4942528735632184,"|--- a18_abs <= 18.50
+|   |--- a18_abs <= 4.50
+|   |   |--- class: 25000
+|   |--- a18_abs >  4.50
+|   |   |--- class: 25000
+|--- a18_abs >  18.50
+|   |--- a18_abs <= 71.50
+|   |   |--- class: 25000
+|   |--- a18_abs >  71.50
+|   |   |--- a18_abs <= 72.50
+|   |   |   |--- class: 25000
+|   |   |--- a18_abs >  72.50
+|   |   |   |--- class: 25000
+"
+IGP24,t,6,support_amplitude,0.045688488842240305,0.9772727272727273,0.4942528735632184,"|--- support_amplitude <= 2865247.50
+|   |--- support_amplitude <= 3.50
+|   |   |--- support_amplitude <= 0.00
+|   |   |   |--- class: 25000
+|   |   |--- support_amplitude >  0.00
+|   |   |   |--- class: 25000
+|   |--- support_amplitude >  3.50
+|   |   |--- class: 25000
+|--- support_amplitude >  2865247.50
+|   |--- class: 24979
+"
+IGP24,t,7,a6_abs,0.034167087030783305,0.9772727272727273,0.4942528735632184,"|--- a6_abs <= 18.50
+|   |--- a6_abs <= 4.50
+|   |   |--- class: 25000
+|   |--- a6_abs >  4.50
+|   |   |--- class: 25000
+|--- a6_abs >  18.50
+|   |--- a6_abs <= 71.50
+|   |   |--- class: 25000
+|   |--- a6_abs >  71.50
+|   |   |--- a6_abs <= 72.50
+|   |   |   |--- class: 25000
+|   |   |--- a6_abs >  72.50
+|   |   |   |--- class: 25000
+"
+IGP24,t,8,abs_support_amplitude,0.03233641531561404,0.9772727272727273,0.4942528735632184,"|--- abs_support_amplitude <= 2865252.50
+|   |--- abs_support_amplitude <= 3.50
+|   |   |--- abs_support_amplitude <= 1.50
+|   |   |   |--- class: 25000
+|   |   |--- abs_support_amplitude >  1.50
+|   |   |   |--- class: 25000
+|   |--- abs_support_amplitude >  3.50
+|   |   |--- abs_support_amplitude <= 7.50
+|   |   |   |--- class: 25000
+|   |   |--- abs_support_amplitude >  7.50
+|   |   |   |--- class: 25000
+|--- abs_support_amplitude >  2865252.50
+|   |--- class: 24979
+"
+IGP24,t,9,a6,0.02447584512525336,0.9772727272727273,0.4942528735632184,"|--- a6 <= 18.50
+|   |--- a6 <= 4.50
+|   |   |--- class: 25000
+|   |--- a6 >  4.50
+|   |   |--- class: 25000
+|--- a6 >  18.50
+|   |--- a6 <= 71.50
+|   |   |--- class: 25000
+|   |--- a6 >  71.50
+|   |   |--- a6 <= 72.50
+|   |   |   |--- class: 25000
+|   |   |--- a6 >  72.50
+|   |   |   |--- class: 25000
+"
+IGP24,t,10,a18,0.023252225955351147,0.9772727272727273,0.4942528735632184,"|--- a18 <= -18.50
+|   |--- a18 <= -71.50
+|   |   |--- a18 <= -72.50
+|   |   |   |--- class: 25000
+|   |   |--- a18 >  -72.50
+|   |   |   |--- class: 25000
+|   |--- a18 >  -71.50
+|   |   |--- class: 25000
+|--- a18 >  -18.50
+|   |--- a18 <= -4.50
+|   |   |--- class: 25000
+|   |--- a18 >  -4.50
+|   |   |--- class: 25000
+"
+IGP24,t,11,paired_resonance,0.005211665590574899,0.9772727272727273,0.4942528735632184,"|--- paired_resonance <= 0.50
+|   |--- class: 25000
+|--- paired_resonance >  0.50
+|   |--- class: 25000
+"
+IGP24,t,12,a6_positive,0.004394372382861431,0.9772727272727273,0.4942528735632184,"|--- a6_positive <= 0.50
+|   |--- class: 25000
+|--- a6_positive >  0.50
+|   |--- class: 25000
+"
+IGP24,t,13,threshold_zone,0.004171898410974158,0.9772727272727273,0.4942528735632184,"|--- threshold_zone_boundary <= 0.50
+|   |--- threshold_zone_low <= 0.50
+|   |   |--- class: 25000
+|   |--- threshold_zone_low >  0.50
+|   |   |--- class: 25000
+|--- threshold_zone_boundary >  0.50
+|   |--- class: 25000
+"
+IGP24,t,14,a6_negative,0.003603939376581669,0.9772727272727273,0.4942528735632184,"|--- a6_negative <= 0.50
+|   |--- class: 25000
+|--- a6_negative >  0.50
+|   |--- class: 25000
+"
+IGP24,t,15,reverse_resonance,0.003603939376581669,0.9772727272727273,0.4942528735632184,"|--- reverse_resonance <= 0.50
+|   |--- class: 25000
+|--- reverse_resonance >  0.50
+|   |--- class: 25000
+"
+IGP24,r,1,threshold_zone,1.2317500906992342,0.9431818181818182,0.8283716485657057,"|--- threshold_zone_low <= 0.50
+|   |--- threshold_zone_boundary <= 0.50
+|   |   |--- class: 6
+|   |--- threshold_zone_boundary >  0.50
+|   |   |--- class: 4
+|--- threshold_zone_low >  0.50
+|   |--- class: 2
+"
+IGP24,r,2,a6,0.6980361868802112,0.9431818181818182,0.8283716485657057,"|--- a6 <= 70.50
+|   |--- class: 2
+|--- a6 >  70.50
+|   |--- a6 <= 71.50
+|   |   |--- class: 4
+|   |--- a6 >  71.50
+|   |   |--- a6 <= 72.50
+|   |   |   |--- class: 6
+|   |   |--- a6 >  72.50
+|   |   |   |--- class: 6
+"
+IGP24,r,3,a6_abs,0.534334589004184,0.8977272727272727,0.6091859185918592,"|--- a6_abs <= 71.50
+|   |--- a6_abs <= 70.50
+|   |   |--- class: 2
+|   |--- a6_abs >  70.50
+|   |   |--- class: 2
+|--- a6_abs >  71.50
+|   |--- a6_abs <= 81.50
+|   |   |--- a6_abs <= 80.50
+|   |   |   |--- class: 6
+|   |   |--- a6_abs >  80.50
+|   |   |   |--- class: 6
+|   |--- a6_abs >  81.50
+|   |   |--- class: 6
+"
+IGP24,r,4,a18,0.5263384762197048,0.8522727272727273,0.578405017921147,"|--- a18 <= -71.50
+|   |--- a18 <= -81.50
+|   |   |--- class: 6
+|   |--- a18 >  -81.50
+|   |   |--- a18 <= -80.50
+|   |   |   |--- class: 6
+|   |   |--- a18 >  -80.50
+|   |   |   |--- class: 6
+|--- a18 >  -71.50
+|   |--- a18 <= -18.50
+|   |   |--- a18 <= -70.50
+|   |   |   |--- class: 2
+|   |   |--- a18 >  -70.50
+|   |   |   |--- class: 2
+|   |--- a18 >  -18.50
+|   |   |--- a18 <= 34.00
+|   |   |   |--- class: 6
+|   |   |--- a18 >  34.00
+|   |   |   |--- class: 2
+"
+IGP24,r,5,a18_abs,0.45194392231974323,0.8068181818181818,0.5474014336917562,"|--- a18_abs <= 71.50
+|   |--- a18_abs <= 18.50
+|   |   |--- a18_abs <= 4.50
+|   |   |   |--- class: 6
+|   |   |--- a18_abs >  4.50
+|   |   |   |--- class: 6
+|   |--- a18_abs >  18.50
+|   |   |--- a18_abs <= 70.50
+|   |   |   |--- class: 2
+|   |   |--- a18_abs >  70.50
+|   |   |   |--- class: 2
+|--- a18_abs >  71.50
+|   |--- a18_abs <= 81.50
+|   |   |--- a18_abs <= 80.50
+|   |   |   |--- class: 6
+|   |   |--- a18_abs >  80.50
+|   |   |   |--- class: 2
+|   |--- a18_abs >  81.50
+|   |   |--- class: 6
+"
+IGP24,r,6,a6_positive,0.10589858141887594,0.5681818181818182,0.24154589371980675,"|--- a6_positive <= 0.50
+|   |--- class: 2
+|--- a6_positive >  0.50
+|   |--- class: 2
+"
+IGP24,r,7,a6_negative,0.08627696561518368,0.5681818181818182,0.24154589371980675,"|--- a6_negative <= 0.50
+|   |--- class: 2
+|--- a6_negative >  0.50
+|   |--- class: 2
+"
+IGP24,r,8,reverse_resonance,0.08627696561518368,0.5681818181818182,0.24154589371980675,"|--- reverse_resonance <= 0.50
+|   |--- class: 2
+|--- reverse_resonance >  0.50
+|   |--- class: 2
+"
+IGP24,r,9,abs_support_amplitude,0.0685809918479996,0.5568181818181818,0.25996810207336524,"|--- abs_support_amplitude <= 1.50
+|   |--- class: 2
+|--- abs_support_amplitude >  1.50
+|   |--- abs_support_amplitude <= 15.00
+|   |   |--- abs_support_amplitude <= 7.50
+|   |   |   |--- class: 6
+|   |   |--- abs_support_amplitude >  7.50
+|   |   |   |--- class: 6
+|   |--- abs_support_amplitude >  15.00
+|   |   |--- class: 4
+"
+IGP24,r,10,active_support_slots,0.056937243424457024,0.5681818181818182,0.2729940043372879,"|--- active_support_slots_15 <= 0.50
+|   |--- active_support_slots_12 <= 0.50
+|   |   |--- active_support_slots_17 <= 0.50
+|   |   |   |--- class: 2
+|   |   |--- active_support_slots_17 >  0.50
+|   |   |   |--- class: 2
+|   |--- active_support_slots_12 >  0.50
+|   |   |--- class: 6
+|--- active_support_slots_15 >  0.50
+|   |--- class: 2
+"
+IGP24,r,11,paired_resonance,0.04781793346287011,0.5681818181818182,0.24154589371980675,"|--- paired_resonance <= 0.50
+|   |--- class: 2
+|--- paired_resonance >  0.50
+|   |--- class: 2
+"
+IGP24,r,12,support_amplitude,0.02925633658130522,0.5795454545454546,0.2644574398960364,"|--- support_amplitude <= -1.50
+|   |--- support_amplitude <= -7.50
+|   |   |--- class: 4
+|   |--- support_amplitude >  -7.50
+|   |   |--- class: 6
+|--- support_amplitude >  -1.50
+|   |--- support_amplitude <= 1.50
+|   |   |--- support_amplitude <= 0.00
+|   |   |   |--- class: 2
+|   |   |--- support_amplitude >  0.00
+|   |   |   |--- class: 2
+|   |--- support_amplitude >  1.50
+|   |   |--- support_amplitude <= 15.00
+|   |   |   |--- class: 6
+|   |   |--- support_amplitude >  15.00
+|   |   |   |--- class: 2
+"
+IGP24,r,13,support_index,0.02809686526676014,0.5681818181818182,0.2729940043372879,"|--- support_index <= 14.00
+|   |--- support_index <= 12.50
+|   |   |--- class: 6
+|   |--- support_index >  12.50
+|   |   |--- class: 2
+|--- support_index >  14.00
+|   |--- support_index <= 16.00
+|   |   |--- class: 2
+|   |--- support_index >  16.00
+|   |   |--- class: 2
+"
+IGP24,r,14,support_face,0.004213367058290035,0.5681818181818182,0.2729940043372879,"|--- support_face_x12_base <= 0.50
+|   |--- class: 2
+|--- support_face_x12_base >  0.50
+|   |--- class: 6
+"
+IGP24,r,15,support_bucket,0.004213367058290035,0.5681818181818182,0.2729940043372879,"|--- support_bucket_x12_base <= 0.50
+|   |--- class: 2
+|--- support_bucket_x12_base >  0.50
+|   |--- class: 6
+"
+IGP24,combined,1,threshold_zone,1.234007535275604,0.9431818181818182,0.5212654133818476,"|--- threshold_zone_low <= 0.50
+|   |--- threshold_zone_high <= 0.50
+|   |   |--- class: 25000|4
+|   |--- threshold_zone_high >  0.50
+|   |   |--- class: 25000|6
+|--- threshold_zone_low >  0.50
+|   |--- class: 25000|2
+"
+IGP24,combined,2,a6,0.7740863200277617,0.9431818181818182,0.5212654133818476,"|--- a6 <= 70.50
+|   |--- a6 <= 18.50
+|   |   |--- a6 <= 4.50
+|   |   |   |--- class: 25000|2
+|   |   |--- a6 >  4.50
+|   |   |   |--- class: 25000|2
+|   |--- a6 >  18.50
+|   |   |--- class: 25000|2
+|--- a6 >  70.50
+|   |--- a6 <= 71.50
+|   |   |--- class: 25000|4
+|   |--- a6 >  71.50
+|   |   |--- a6 <= 72.50
+|   |   |   |--- class: 25000|6
+|   |   |--- a6 >  72.50
+|   |   |   |--- class: 25000|6
+"
+IGP24,combined,3,a6_abs,0.6252828521827745,0.8522727272727273,0.351,"|--- a6_abs <= 71.50
+|   |--- a6_abs <= 70.50
+|   |   |--- a6_abs <= 18.50
+|   |   |   |--- class: 25000|2
+|   |   |--- a6_abs >  18.50
+|   |   |   |--- class: 25000|2
+|   |--- a6_abs >  70.50
+|   |   |--- class: 25000|2
+|--- a6_abs >  71.50
+|   |--- a6_abs <= 72.50
+|   |   |--- class: 25000|6
+|   |--- a6_abs >  72.50
+|   |   |--- a6_abs <= 81.50
+|   |   |   |--- class: 25000|6
+|   |   |--- a6_abs >  81.50
+|   |   |   |--- class: 25000|6
+"
+IGP24,combined,4,a18,0.6130220239616033,0.8409090909090909,0.45111111111111113,"|--- a18 <= -71.50
+|   |--- a18 <= -81.50
+|   |   |--- class: 25000|6
+|   |--- a18 >  -81.50
+|   |   |--- a18 <= -80.50
+|   |   |   |--- class: 25000|2
+|   |   |--- a18 >  -80.50
+|   |   |   |--- class: 25000|6
+|--- a18 >  -71.50
+|   |--- a18 <= -18.50
+|   |   |--- a18 <= -70.50
+|   |   |   |--- class: 25000|4
+|   |   |--- a18 >  -70.50
+|   |   |   |--- class: 25000|2
+|   |--- a18 >  -18.50
+|   |   |--- a18 <= 34.00
+|   |   |   |--- class: 25000|6
+|   |   |--- a18 >  34.00
+|   |   |   |--- class: 25000|2
+"
+IGP24,combined,5,a18_abs,0.5290747434536276,0.8181818181818182,0.33644653219121307,"|--- a18_abs <= 71.50
+|   |--- a18_abs <= 18.50
+|   |   |--- a18_abs <= 4.50
+|   |   |   |--- class: 25000|6
+|   |   |--- a18_abs >  4.50
+|   |   |   |--- class: 25000|6
+|   |--- a18_abs >  18.50
+|   |   |--- a18_abs <= 70.50
+|   |   |   |--- class: 25000|2
+|   |   |--- a18_abs >  70.50
+|   |   |   |--- class: 25000|2
+|--- a18_abs >  71.50
+|   |--- a18_abs <= 81.50
+|   |   |--- a18_abs <= 80.50
+|   |   |   |--- class: 25000|6
+|   |   |--- a18_abs >  80.50
+|   |   |   |--- class: 25000|2
+|   |--- a18_abs >  81.50
+|   |   |--- class: 25000|6
+"
+IGP24,combined,6,support_face,0.22685234409439523,0.5681818181818182,0.2785185185185185,"|--- support_face_x13_x15_x17 <= 0.50
+|   |--- class: 24979|6
+|--- support_face_x13_x15_x17 >  0.50
+|   |--- class: 25000|2
+"
+IGP24,combined,7,support_bucket,0.22685234409439523,0.5681818181818182,0.2785185185185185,"|--- support_bucket_x13_x15_x17 <= 0.50
+|   |--- class: 24979|6
+|--- support_bucket_x13_x15_x17 >  0.50
+|   |--- class: 25000|2
+"
+IGP24,combined,8,active_support_slots,0.19897658666400603,0.5681818181818182,0.2785185185185185,"|--- active_support_slots_12 <= 0.50
+|   |--- active_support_slots_15 <= 0.50
+|   |   |--- active_support_slots_17 <= 0.50
+|   |   |   |--- class: 25000|2
+|   |   |--- active_support_slots_17 >  0.50
+|   |   |   |--- class: 25000|2
+|   |--- active_support_slots_15 >  0.50
+|   |   |--- class: 25000|2
+|--- active_support_slots_12 >  0.50
+|   |--- class: 24979|6
+"
+IGP24,combined,9,support_index,0.18986844647793544,0.5681818181818182,0.2785185185185185,"|--- support_index <= 12.50
+|   |--- class: 24979|6
+|--- support_index >  12.50
+|   |--- support_index <= 14.00
+|   |   |--- class: 25000|2
+|   |--- support_index >  14.00
+|   |   |--- support_index <= 16.00
+|   |   |   |--- class: 25000|2
+|   |   |--- support_index >  16.00
+|   |   |   |--- class: 25000|2
+"
+IGP24,combined,10,abs_support_amplitude,0.1368507106475838,0.5795454545454546,0.35901116427432217,"|--- abs_support_amplitude <= 1.50
+|   |--- class: 25000|2
+|--- abs_support_amplitude >  1.50
+|   |--- abs_support_amplitude <= 15.00
+|   |   |--- abs_support_amplitude <= 7.50
+|   |   |   |--- class: 25000|6
+|   |   |--- abs_support_amplitude >  7.50
+|   |   |   |--- class: 25000|6
+|   |--- abs_support_amplitude >  15.00
+|   |   |--- abs_support_amplitude <= 2865252.50
+|   |   |   |--- class: 25000|4
+|   |   |--- abs_support_amplitude >  2865252.50
+|   |   |   |--- class: 24979|2
+"
+IGP24,combined,11,support_amplitude,0.11612764849307666,0.5909090909090909,0.5592956592956593,"|--- support_amplitude <= 1.50
+|   |--- support_amplitude <= -1.50
+|   |   |--- support_amplitude <= -7.50
+|   |   |   |--- class: 25000|4
+|   |   |--- support_amplitude >  -7.50
+|   |   |   |--- class: 25000|6
+|   |--- support_amplitude >  -1.50
+|   |   |--- support_amplitude <= 0.00
+|   |   |   |--- class: 25000|2
+|   |   |--- support_amplitude >  0.00
+|   |   |   |--- class: 25000|2
+|--- support_amplitude >  1.50
+|   |--- support_amplitude <= 2865252.50
+|   |   |--- support_amplitude <= 3.50
+|   |   |   |--- class: 25000|6
+|   |   |--- support_amplitude >  3.50
+|   |   |   |--- class: 24979|6
+|   |--- support_amplitude >  2865252.50
+|   |   |--- class: 24979|2
+"
+IGP24,combined,12,a6_positive,0.10948163857208755,0.5568181818181818,0.14306569343065695,"|--- a6_positive <= 0.50
+|   |--- class: 25000|2
+|--- a6_positive >  0.50
+|   |--- class: 25000|2
+"
+IGP24,combined,13,a6_negative,0.08916956761043915,0.5568181818181818,0.14306569343065695,"|--- a6_negative <= 0.50
+|   |--- class: 25000|2
+|--- a6_negative >  0.50
+|   |--- class: 25000|2
+"
+IGP24,combined,14,reverse_resonance,0.08916956761043915,0.5568181818181818,0.14306569343065695,"|--- reverse_resonance <= 0.50
+|   |--- class: 25000|2
+|--- reverse_resonance >  0.50
+|   |--- class: 25000|2
+"
+IGP24,combined,15,paired_resonance,0.052401229669603415,0.5568181818181818,0.14306569343065695,"|--- paired_resonance <= 0.50
+|   |--- class: 25000|2
+|--- paired_resonance >  0.50
+|   |--- class: 25000|2
+"
+ETP,implication_true,1,idempotence_indicator,0.12960085540524813,0.6777777777777778,0.6709116126591854,"|--- idempotence_indicator <= 0.50
+|   |--- class: 0
+|--- idempotence_indicator >  0.50
+|   |--- class: 1
+"
+ETP,implication_true,2,projection_indicator,0.07741404209833047,0.7555555555555555,0.6953846153846155,"|--- projection_indicator <= 0.50
+|   |--- class: 0
+|--- projection_indicator >  0.50
+|   |--- class: 1
+"
+ETP,implication_true,3,diagonal_indicator,0.03035344521190586,0.6111111111111112,0.5785953177257526,"|--- diagonal_indicator <= 0.50
+|   |--- class: 0
+|--- diagonal_indicator >  0.50
+|   |--- class: 1
+"
+ETP,implication_true,4,repeated_variables,0.02834242946753074,0.6222222222222222,0.3835616438356164,"|--- repeated_variables <= 2.50
+|   |--- repeated_variables <= 1.50
+|   |   |--- repeated_variables <= 0.50
+|   |   |   |--- class: 0
+|   |   |--- repeated_variables >  0.50
+|   |   |   |--- class: 0
+|   |--- repeated_variables >  1.50
+|   |   |--- class: 0
+|--- repeated_variables >  2.50
+|   |--- repeated_variables <= 3.50
+|   |   |--- class: 0
+|   |--- repeated_variables >  3.50
+|   |   |--- class: 0
+"
+ETP,implication_true,5,symmetry,0.02457146195595894,0.6,0.4743672939649578,"|--- symmetry <= 0.58
+|   |--- symmetry <= 0.05
+|   |   |--- symmetry <= 0.05
+|   |   |   |--- class: 0
+|   |   |--- symmetry >  0.05
+|   |   |   |--- class: 1
+|   |--- symmetry >  0.05
+|   |   |--- symmetry <= 0.15
+|   |   |   |--- class: 0
+|   |   |--- symmetry >  0.15
+|   |   |   |--- class: 0
+|--- symmetry >  0.58
+|   |--- symmetry <= 0.81
+|   |   |--- symmetry <= 0.61
+|   |   |   |--- class: 1
+|   |   |--- symmetry >  0.61
+|   |   |   |--- class: 0
+|   |--- symmetry >  0.81
+|   |   |--- symmetry <= 0.93
+|   |   |   |--- class: 1
+|   |   |--- symmetry >  0.93
+|   |   |   |--- class: 0
+"
+ETP,implication_true,6,depth,0.021760293242155226,0.6777777777777778,0.5824668053111501,"|--- depth <= 6.50
+|   |--- depth <= 1.50
+|   |   |--- class: 1
+|   |--- depth >  1.50
+|   |   |--- depth <= 5.50
+|   |   |   |--- class: 0
+|   |   |--- depth >  5.50
+|   |   |   |--- class: 0
+|--- depth >  6.50
+|   |--- class: 0
+"
+ETP,implication_true,7,affine_indicator,0.014646573580498368,0.6777777777777778,0.6404463424714149,"|--- affine_indicator <= 0.50
+|   |--- class: 0
+|--- affine_indicator >  0.50
+|   |--- class: 1
+"
+ETP,implication_true,8,variable_count,0.010186707809874074,0.6,0.5015384615384615,"|--- variable_count <= 6.50
+|   |--- variable_count <= 3.50
+|   |   |--- variable_count <= 2.50
+|   |   |   |--- class: 0
+|   |   |--- variable_count >  2.50
+|   |   |   |--- class: 0
+|   |--- variable_count >  3.50
+|   |   |--- variable_count <= 4.50
+|   |   |   |--- class: 0
+|   |   |--- variable_count >  4.50
+|   |   |   |--- class: 0
+|--- variable_count >  6.50
+|   |--- variable_count <= 7.50
+|   |   |--- class: 1
+|   |--- variable_count >  7.50
+|   |   |--- class: 0
+"
+ETP,proof_found,1,depth,0.09547252064276868,0.8111111111111111,0.44785276073619634,"|--- depth <= 5.50
+|   |--- depth <= 1.50
+|   |   |--- class: 0
+|   |--- depth >  1.50
+|   |   |--- depth <= 2.50
+|   |   |   |--- class: 0
+|   |   |--- depth >  2.50
+|   |   |   |--- class: 0
+|--- depth >  5.50
+|   |--- class: 0
+"
+ETP,proof_found,2,projection_indicator,0.08353787767448684,0.8111111111111111,0.44785276073619634,"|--- projection_indicator <= 0.50
+|   |--- class: 0
+|--- projection_indicator >  0.50
+|   |--- class: 0
+"
+ETP,proof_found,3,variable_count,0.07707123060365717,0.8111111111111111,0.44785276073619634,"|--- variable_count <= 6.50
+|   |--- variable_count <= 2.50
+|   |   |--- class: 0
+|   |--- variable_count >  2.50
+|   |   |--- variable_count <= 5.50
+|   |   |   |--- class: 0
+|   |   |--- variable_count >  5.50
+|   |   |   |--- class: 0
+|--- variable_count >  6.50
+|   |--- class: 0
+"
+ETP,proof_found,4,idempotence_indicator,0.0457832644161289,0.8111111111111111,0.44785276073619634,"|--- idempotence_indicator <= 0.50
+|   |--- class: 0
+|--- idempotence_indicator >  0.50
+|   |--- class: 0
+"
+ETP,proof_found,5,symmetry,0.025763406604114136,0.8,0.4444444444444444,"|--- symmetry <= 0.72
+|   |--- symmetry <= 0.56
+|   |   |--- symmetry <= 0.55
+|   |   |   |--- class: 0
+|   |   |--- symmetry >  0.55
+|   |   |   |--- class: 1
+|   |--- symmetry >  0.56
+|   |   |--- class: 0
+|--- symmetry >  0.72
+|   |--- symmetry <= 0.80
+|   |   |--- symmetry <= 0.78
+|   |   |   |--- class: 0
+|   |   |--- symmetry >  0.78
+|   |   |   |--- class: 1
+|   |--- symmetry >  0.80
+|   |   |--- symmetry <= 0.82
+|   |   |   |--- class: 0
+|   |   |--- symmetry >  0.82
+|   |   |   |--- class: 0
+"
+ETP,proof_found,6,repeated_variables,0.0028991166513245847,0.8111111111111111,0.44785276073619634,"|--- repeated_variables <= 2.50
+|   |--- repeated_variables <= 1.50
+|   |   |--- repeated_variables <= 0.50
+|   |   |   |--- class: 0
+|   |   |--- repeated_variables >  0.50
+|   |   |   |--- class: 0
+|   |--- repeated_variables >  1.50
+|   |   |--- class: 0
+|--- repeated_variables >  2.50
+|   |--- repeated_variables <= 3.50
+|   |   |--- class: 0
+|   |--- repeated_variables >  3.50
+|   |   |--- class: 0
+"
+ETP,proof_found,7,affine_indicator,0.0,0.8111111111111111,0.44785276073619634,"|--- affine_indicator <= 0.50
+|   |--- class: 0
+|--- affine_indicator >  0.50
+|   |--- class: 0
+"
+ETP,proof_found,8,diagonal_indicator,0.0,0.8111111111111111,0.44785276073619634,"|--- diagonal_indicator <= 0.50
+|   |--- class: 0
+|--- diagonal_indicator >  0.50
+|   |--- class: 0
+"
+ETP,countermodel_found,1,idempotence_indicator,0.10653471364432887,0.7888888888888889,0.7876040243448019,"|--- idempotence_indicator <= 0.50
+|   |--- class: 1
+|--- idempotence_indicator >  0.50
+|   |--- class: 0
+"
+ETP,countermodel_found,2,projection_indicator,0.09371062913656747,0.6888888888888889,0.6022727272727273,"|--- projection_indicator <= 0.50
+|   |--- class: 1
+|--- projection_indicator >  0.50
+|   |--- class: 0
+"
+ETP,countermodel_found,3,repeated_variables,0.037691382449825284,0.6111111111111112,0.3793103448275862,"|--- repeated_variables <= 2.50
+|   |--- repeated_variables <= 0.50
+|   |   |--- class: 1
+|   |--- repeated_variables >  0.50
+|   |   |--- repeated_variables <= 1.50
+|   |   |   |--- class: 1
+|   |   |--- repeated_variables >  1.50
+|   |   |   |--- class: 1
+|--- repeated_variables >  2.50
+|   |--- repeated_variables <= 3.50
+|   |   |--- class: 1
+|   |--- repeated_variables >  3.50
+|   |   |--- class: 1
+"
+ETP,countermodel_found,4,diagonal_indicator,0.035483663225465145,0.6222222222222222,0.587823275862069,"|--- diagonal_indicator <= 0.50
+|   |--- class: 1
+|--- diagonal_indicator >  0.50
+|   |--- class: 0
+"
+ETP,countermodel_found,5,symmetry,0.022778957369110397,0.5555555555555556,0.5150862068965517,"|--- symmetry <= 0.71
+|   |--- symmetry <= 0.06
+|   |   |--- symmetry <= 0.03
+|   |   |   |--- class: 1
+|   |   |--- symmetry >  0.03
+|   |   |   |--- class: 0
+|   |--- symmetry >  0.06
+|   |   |--- symmetry <= 0.13
+|   |   |   |--- class: 1
+|   |   |--- symmetry >  0.13
+|   |   |   |--- class: 1
+|--- symmetry >  0.71
+|   |--- symmetry <= 0.98
+|   |   |--- symmetry <= 0.72
+|   |   |   |--- class: 0
+|   |   |--- symmetry >  0.72
+|   |   |   |--- class: 0
+|   |--- symmetry >  0.98
+|   |   |--- class: 1
+"
+ETP,countermodel_found,6,depth,0.014510904159052762,0.6777777777777778,0.5569512816160245,"|--- depth <= 6.50
+|   |--- depth <= 1.50
+|   |   |--- class: 0
+|   |--- depth >  1.50
+|   |   |--- depth <= 4.50
+|   |   |   |--- class: 1
+|   |   |--- depth >  4.50
+|   |   |   |--- class: 1
+|--- depth >  6.50
+|   |--- class: 1
+"
+ETP,countermodel_found,7,affine_indicator,0.004294747222307604,0.5777777777777777,0.525,"|--- affine_indicator <= 0.50
+|   |--- class: 1
+|--- affine_indicator >  0.50
+|   |--- class: 0
+"
+ETP,countermodel_found,8,variable_count,0.003628735745537792,0.5666666666666667,0.4222222222222222,"|--- variable_count <= 6.50
+|   |--- variable_count <= 4.50
+|   |   |--- variable_count <= 3.50
+|   |   |   |--- class: 1
+|   |   |--- variable_count >  3.50
+|   |   |   |--- class: 1
+|   |--- variable_count >  4.50
+|   |   |--- variable_count <= 5.50
+|   |   |   |--- class: 1
+|   |   |--- variable_count >  5.50
+|   |   |   |--- class: 1
+|--- variable_count >  6.50
+|   |--- variable_count <= 7.50
+|   |   |--- class: 0
+|   |--- variable_count >  7.50
+|   |   |--- class: 1
+"
+ETP,combined,1,projection_indicator,0.2179686962224363,0.6444444444444445,0.25925925925925924,"|--- projection_indicator <= 0.50
+|   |--- class: 0|0|1
+|--- projection_indicator >  0.50
+|   |--- class: 1|1|0
+"
+ETP,combined,2,variable_count,0.15107193350993242,0.5444444444444444,0.2463002114164905,"|--- variable_count <= 6.50
+|   |--- variable_count <= 3.50
+|   |   |--- variable_count <= 2.50
+|   |   |   |--- class: 0|0|1
+|   |   |--- variable_count >  2.50
+|   |   |   |--- class: 0|0|1
+|   |--- variable_count >  3.50
+|   |   |--- variable_count <= 4.50
+|   |   |   |--- class: 0|0|1
+|   |   |--- variable_count >  4.50
+|   |   |   |--- class: 0|0|1
+|--- variable_count >  6.50
+|   |--- variable_count <= 7.50
+|   |   |--- class: 1|0|0
+|   |--- variable_count >  7.50
+|   |   |--- class: 0|0|1
+"
+ETP,combined,3,idempotence_indicator,0.13580675925029384,0.6111111111111112,0.1896551724137931,"|--- idempotence_indicator <= 0.50
+|   |--- class: 0|0|1
+|--- idempotence_indicator >  0.50
+|   |--- class: 0|0|1
+"
+ETP,combined,4,depth,0.11875813858122708,0.6111111111111112,0.1896551724137931,"|--- depth <= 5.50
+|   |--- depth <= 1.50
+|   |   |--- class: 0|0|1
+|   |--- depth >  1.50
+|   |   |--- depth <= 3.50
+|   |   |   |--- class: 0|0|1
+|   |   |--- depth >  3.50
+|   |   |   |--- class: 0|0|1
+|--- depth >  5.50
+|   |--- depth <= 6.50
+|   |   |--- class: 0|0|1
+|   |--- depth >  6.50
+|   |   |--- class: 0|0|1
+"
+ETP,combined,5,symmetry,0.053498981412521296,0.5777777777777777,0.2370229007633588,"|--- symmetry <= 0.78
+|   |--- symmetry <= 0.02
+|   |   |--- class: 1|0|0
+|   |--- symmetry >  0.02
+|   |   |--- symmetry <= 0.74
+|   |   |   |--- class: 0|0|1
+|   |   |--- symmetry >  0.74
+|   |   |   |--- class: 0|0|1
+|--- symmetry >  0.78
+|   |--- symmetry <= 0.94
+|   |   |--- symmetry <= 0.80
+|   |   |   |--- class: 1|1|0
+|   |   |--- symmetry >  0.80
+|   |   |   |--- class: 1|0|0
+|   |--- symmetry >  0.94
+|   |   |--- symmetry <= 0.97
+|   |   |   |--- class: 0|0|1
+|   |   |--- symmetry >  0.97
+|   |   |   |--- class: 0|0|1
+"
+ETP,combined,6,affine_indicator,0.047395305626467765,0.6111111111111112,0.1896551724137931,"|--- affine_indicator <= 0.50
+|   |--- class: 0|0|1
+|--- affine_indicator >  0.50
+|   |--- class: 0|0|1
+"
+ETP,combined,7,diagonal_indicator,0.029996760859683613,0.6111111111111112,0.1896551724137931,"|--- diagonal_indicator <= 0.50
+|   |--- class: 0|0|1
+|--- diagonal_indicator >  0.50
+|   |--- class: 0|0|1
+"
+ETP,combined,8,repeated_variables,0.028305030887253668,0.6111111111111112,0.1896551724137931,"|--- repeated_variables <= 0.50
+|   |--- class: 0|0|1
+|--- repeated_variables >  0.50
+|   |--- repeated_variables <= 2.50
+|   |   |--- repeated_variables <= 1.50
+|   |   |   |--- class: 0|0|1
+|   |   |--- repeated_variables >  1.50
+|   |   |   |--- class: 0|0|1
+|   |--- repeated_variables >  2.50
+|   |   |--- repeated_variables <= 3.50
+|   |   |   |--- class: 0|0|1
+|   |   |--- repeated_variables >  3.50
+|   |   |   |--- class: 0|0|1
+"
+ARC,task_family,1,symmetry,0.47482359754209535,0.6222222222222222,0.3906432748538011,"|--- symmetry <= 0.72
+|   |--- symmetry <= 0.26
+|   |   |--- symmetry <= 0.24
+|   |   |   |--- class: topology_count
+|   |   |--- symmetry >  0.24
+|   |   |   |--- class: topology_count
+|   |--- symmetry >  0.26
+|   |   |--- symmetry <= 0.28
+|   |   |   |--- class: object_move
+|   |   |--- symmetry >  0.28
+|   |   |   |--- class: topology_count
+|--- symmetry >  0.72
+|   |--- symmetry <= 0.78
+|   |   |--- symmetry <= 0.77
+|   |   |   |--- class: symmetry_fill
+|   |   |--- symmetry >  0.77
+|   |   |   |--- class: recolor
+|   |--- symmetry >  0.78
+|   |   |--- class: symmetry_fill
+"
+ARC,task_family,2,hole_count,0.17516098441079553,0.4666666666666667,0.2913393558523174,"|--- hole_count <= 1.50
+|   |--- hole_count <= 0.50
+|   |   |--- class: object_move
+|   |--- hole_count >  0.50
+|   |   |--- class: object_move
+|--- hole_count >  1.50
+|   |--- hole_count <= 2.50
+|   |   |--- class: topology_count
+|   |--- hole_count >  2.50
+|   |   |--- class: topology_count
+"
+ARC,task_family,3,object_count,0.12186591793272772,0.43333333333333335,0.34285714285714286,"|--- object_count <= 5.50
+|   |--- object_count <= 1.50
+|   |   |--- class: object_move
+|   |--- object_count >  1.50
+|   |   |--- object_count <= 3.50
+|   |   |   |--- class: symmetry_fill
+|   |   |--- object_count >  3.50
+|   |   |   |--- class: symmetry_fill
+|--- object_count >  5.50
+|   |--- object_count <= 7.50
+|   |   |--- object_count <= 6.50
+|   |   |   |--- class: topology_count
+|   |   |--- object_count >  6.50
+|   |   |   |--- class: topology_count
+|   |--- object_count >  7.50
+|   |   |--- class: topology_count
+"
+ARC,task_family,4,connected_components,0.06866576864361296,0.4111111111111111,0.2721454173067076,"|--- connected_components <= 6.50
+|   |--- connected_components <= 2.50
+|   |   |--- connected_components <= 1.50
+|   |   |   |--- class: topology_count
+|   |   |--- connected_components >  1.50
+|   |   |   |--- class: object_move
+|   |--- connected_components >  2.50
+|   |   |--- connected_components <= 4.50
+|   |   |   |--- class: symmetry_fill
+|   |   |--- connected_components >  4.50
+|   |   |   |--- class: topology_count
+|--- connected_components >  6.50
+|   |--- connected_components <= 8.50
+|   |   |--- connected_components <= 7.50
+|   |   |   |--- class: topology_count
+|   |   |--- connected_components >  7.50
+|   |   |   |--- class: topology_count
+|   |--- connected_components >  8.50
+|   |   |--- class: topology_count
+"
+ARC,task_family,5,colors,0.043354992171919626,0.34444444444444444,0.1828774062816616,"|--- colors <= 6.50
+|   |--- colors <= 2.50
+|   |   |--- class: topology_count
+|   |--- colors >  2.50
+|   |   |--- colors <= 3.50
+|   |   |   |--- class: symmetry_fill
+|   |   |--- colors >  3.50
+|   |   |   |--- class: topology_count
+|--- colors >  6.50
+|   |--- class: topology_count
+"
+ARC,task_family,6,translation_detected,0.019363017078684486,0.4,0.14285714285714285,"|--- translation_detected <= 0.50
+|   |--- class: topology_count
+|--- translation_detected >  0.50
+|   |--- class: topology_count
+"
+ARC,task_family,7,rotation_detected,0.0,0.4,0.14285714285714285,"|--- rotation_detected <= 0.50
+|   |--- class: topology_count
+|--- rotation_detected >  0.50
+|   |--- class: topology_count
+"
+ARC,successful_solver,1,symmetry,0.6178886119956863,0.7222222222222222,0.4381188118811881,"|--- symmetry <= 0.72
+|   |--- symmetry <= 0.71
+|   |   |--- symmetry <= 0.62
+|   |   |   |--- class: component_solver
+|   |   |--- symmetry >  0.62
+|   |   |   |--- class: component_solver
+|   |--- symmetry >  0.71
+|   |   |--- class: transform_solver
+|--- symmetry >  0.72
+|   |--- class: mirror_solver
+"
+ARC,successful_solver,2,hole_count,0.24761879305699952,0.4777777777777778,0.3384300788296637,"|--- hole_count <= 1.50
+|   |--- hole_count <= 0.50
+|   |   |--- class: transform_solver
+|   |--- hole_count >  0.50
+|   |   |--- class: mirror_solver
+|--- hole_count >  1.50
+|   |--- hole_count <= 2.50
+|   |   |--- class: component_solver
+|   |--- hole_count >  2.50
+|   |   |--- class: component_solver
+"
+ARC,successful_solver,3,object_count,0.18662914887956772,0.36666666666666664,0.31078904991948464,"|--- object_count <= 4.50
+|   |--- object_count <= 1.50
+|   |   |--- class: transform_solver
+|   |--- object_count >  1.50
+|   |   |--- object_count <= 3.50
+|   |   |   |--- class: mirror_solver
+|   |   |--- object_count >  3.50
+|   |   |   |--- class: palette_solver
+|--- object_count >  4.50
+|   |--- object_count <= 7.50
+|   |   |--- object_count <= 5.50
+|   |   |   |--- class: component_solver
+|   |   |--- object_count >  5.50
+|   |   |   |--- class: component_solver
+|   |--- object_count >  7.50
+|   |   |--- class: component_solver
+"
+ARC,successful_solver,4,connected_components,0.1142242015649102,0.36666666666666664,0.2567901234567901,"|--- connected_components <= 4.50
+|   |--- connected_components <= 2.50
+|   |   |--- connected_components <= 1.50
+|   |   |   |--- class: transform_solver
+|   |   |--- connected_components >  1.50
+|   |   |   |--- class: transform_solver
+|   |--- connected_components >  2.50
+|   |   |--- connected_components <= 3.50
+|   |   |   |--- class: mirror_solver
+|   |   |--- connected_components >  3.50
+|   |   |   |--- class: mirror_solver
+|--- connected_components >  4.50
+|   |--- connected_components <= 6.50
+|   |   |--- connected_components <= 5.50
+|   |   |   |--- class: component_solver
+|   |   |--- connected_components >  5.50
+|   |   |   |--- class: component_solver
+|   |--- connected_components >  6.50
+|   |   |--- connected_components <= 7.50
+|   |   |   |--- class: component_solver
+|   |   |--- connected_components >  7.50
+|   |   |   |--- class: component_solver
+"
+ARC,successful_solver,5,translation_detected,0.02410979122636059,0.4222222222222222,0.1484375,"|--- translation_detected <= 0.50
+|   |--- class: component_solver
+|--- translation_detected >  0.50
+|   |--- class: component_solver
+"
+ARC,successful_solver,6,colors,0.018893140046513324,0.4111111111111111,0.20816029900332228,"|--- colors <= 3.50
+|   |--- colors <= 2.50
+|   |   |--- class: component_solver
+|   |--- colors >  2.50
+|   |   |--- class: mirror_solver
+|--- colors >  3.50
+|   |--- colors <= 5.50
+|   |   |--- colors <= 4.50
+|   |   |   |--- class: component_solver
+|   |   |--- colors >  4.50
+|   |   |   |--- class: component_solver
+|   |--- colors >  5.50
+|   |   |--- colors <= 6.50
+|   |   |   |--- class: component_solver
+|   |   |--- colors >  6.50
+|   |   |   |--- class: component_solver
+"
+ARC,successful_solver,7,rotation_detected,0.0,0.4222222222222222,0.1484375,"|--- rotation_detected <= 0.50
+|   |--- class: component_solver
+|--- rotation_detected >  0.50
+|   |--- class: component_solver
+"
+ARC,combined,1,symmetry,0.6008845573734036,0.7222222222222222,0.18996145466733705,"|--- symmetry <= 0.72
+|   |--- symmetry <= 0.71
+|   |   |--- symmetry <= 0.02
+|   |   |   |--- class: topology_count|component_solver
+|   |   |--- symmetry >  0.02
+|   |   |   |--- class: topology_count|component_solver
+|   |--- symmetry >  0.71
+|   |   |--- class: object_move|transform_solver
+|--- symmetry >  0.72
+|   |--- symmetry <= 0.76
+|   |   |--- symmetry <= 0.75
+|   |   |   |--- class: symmetry_fill|mirror_solver
+|   |   |--- symmetry >  0.75
+|   |   |   |--- class: object_move|mirror_solver
+|   |--- symmetry >  0.76
+|   |   |--- symmetry <= 0.88
+|   |   |   |--- class: symmetry_fill|mirror_solver
+|   |   |--- symmetry >  0.88
+|   |   |   |--- class: symmetry_fill|mirror_solver
+"
+ARC,combined,2,hole_count,0.2722033033588698,0.4666666666666667,0.13558467741935484,"|--- hole_count <= 1.50
+|   |--- hole_count <= 0.50
+|   |   |--- class: object_move|transform_solver
+|   |--- hole_count >  0.50
+|   |   |--- class: object_move|transform_solver
+|--- hole_count >  1.50
+|   |--- hole_count <= 2.50
+|   |   |--- class: topology_count|component_solver
+|   |--- hole_count >  2.50
+|   |   |--- class: topology_count|component_solver
+"
+ARC,combined,3,object_count,0.16919397054427554,0.35555555555555557,0.11207677411294353,"|--- object_count <= 4.50
+|   |--- object_count <= 1.50
+|   |   |--- class: object_move|transform_solver
+|   |--- object_count >  1.50
+|   |   |--- object_count <= 2.50
+|   |   |   |--- class: symmetry_fill|mirror_solver
+|   |   |--- object_count >  2.50
+|   |   |   |--- class: object_move|transform_solver
+|--- object_count >  4.50
+|   |--- object_count <= 7.50
+|   |   |--- object_count <= 6.50
+|   |   |   |--- class: topology_count|component_solver
+|   |   |--- object_count >  6.50
+|   |   |   |--- class: topology_count|component_solver
+|   |--- object_count >  7.50
+|   |   |--- class: topology_count|component_solver
+"
+ARC,combined,4,connected_components,0.10810306824342764,0.4666666666666667,0.1625732540207094,"|--- connected_components <= 6.50
+|   |--- connected_components <= 2.50
+|   |   |--- connected_components <= 1.50
+|   |   |   |--- class: object_move|transform_solver
+|   |   |--- connected_components >  1.50
+|   |   |   |--- class: object_move|transform_solver
+|   |--- connected_components >  2.50
+|   |   |--- connected_components <= 4.50
+|   |   |   |--- class: symmetry_fill|mirror_solver
+|   |   |--- connected_components >  4.50
+|   |   |   |--- class: topology_count|component_solver
+|--- connected_components >  6.50
+|   |--- connected_components <= 7.50
+|   |   |--- class: topology_count|component_solver
+|   |--- connected_components >  7.50
+|   |   |--- connected_components <= 8.50
+|   |   |   |--- class: topology_count|component_solver
+|   |   |--- connected_components >  8.50
+|   |   |   |--- class: topology_count|component_solver
+"
+ARC,combined,5,colors,0.05882978774642211,0.24444444444444444,0.07977717048560017,"|--- colors <= 5.50
+|   |--- colors <= 2.50
+|   |   |--- class: object_move|transform_solver
+|   |--- colors >  2.50
+|   |   |--- colors <= 3.50
+|   |   |   |--- class: symmetry_fill|mirror_solver
+|   |   |--- colors >  3.50
+|   |   |   |--- class: symmetry_fill|mirror_solver
+|--- colors >  5.50
+|   |--- colors <= 6.50
+|   |   |--- class: topology_count|component_solver
+|   |--- colors >  6.50
+|   |   |--- class: topology_count|component_solver
+"
+ARC,combined,6,translation_detected,0.025602252648076362,0.4666666666666667,0.07954545454545454,"|--- translation_detected <= 0.50
+|   |--- class: topology_count|component_solver
+|--- translation_detected >  0.50
+|   |--- class: topology_count|component_solver
+"
+ARC,combined,7,rotation_detected,0.0054081196633619655,0.4666666666666667,0.07954545454545454,"|--- rotation_detected <= 0.50
+|   |--- class: topology_count|component_solver
+|--- rotation_detected >  0.50
+|   |--- class: topology_count|component_solver
+"
+MAZE,best_representation,1,graph_nodes,0.5082524200560314,0.4666666666666667,0.4190076824583867,"|--- graph_nodes <= 376.50
+|   |--- graph_nodes <= 44.00
+|   |   |--- graph_nodes <= 34.50
+|   |   |   |--- class: skeleton_graph
+|   |   |--- graph_nodes >  34.50
+|   |   |   |--- class: skeleton_graph
+|   |--- graph_nodes >  44.00
+|   |   |--- graph_nodes <= 165.00
+|   |   |   |--- class: graph
+|   |   |--- graph_nodes >  165.00
+|   |   |   |--- class: graph
+|--- graph_nodes >  376.50
+|   |--- graph_nodes <= 791.50
+|   |   |--- graph_nodes <= 705.50
+|   |   |   |--- class: raw_grid
+|   |   |--- graph_nodes >  705.50
+|   |   |   |--- class: skeleton_graph
+|   |--- graph_nodes >  791.50
+|   |   |--- graph_nodes <= 817.50
+|   |   |   |--- class: distance_field
+|   |   |--- graph_nodes >  817.50
+|   |   |   |--- class: distance_field
+"
+MAZE,best_representation,2,wall_density,0.4787936237842876,0.6222222222222222,0.3961827646038172,"|--- wall_density <= 0.44
+|   |--- wall_density <= 0.41
+|   |   |--- wall_density <= 0.24
+|   |   |   |--- class: graph
+|   |   |--- wall_density >  0.24
+|   |   |   |--- class: graph
+|   |--- wall_density >  0.41
+|   |   |--- wall_density <= 0.42
+|   |   |   |--- class: raw_grid
+|   |   |--- wall_density >  0.42
+|   |   |   |--- class: graph
+|--- wall_density >  0.44
+|   |--- class: skeleton_graph
+"
+MAZE,best_representation,3,grid_size,0.40919604462625037,0.45555555555555555,0.3739673485444532,"|--- grid_size <= 23.50
+|   |--- grid_size <= 14.50
+|   |   |--- grid_size <= 13.50
+|   |   |   |--- class: graph
+|   |   |--- grid_size >  13.50
+|   |   |   |--- class: skeleton_graph
+|   |--- grid_size >  14.50
+|   |   |--- grid_size <= 21.50
+|   |   |   |--- class: graph
+|   |   |--- grid_size >  21.50
+|   |   |   |--- class: graph
+|--- grid_size >  23.50
+|   |--- grid_size <= 37.50
+|   |   |--- grid_size <= 33.50
+|   |   |   |--- class: raw_grid
+|   |   |--- grid_size >  33.50
+|   |   |   |--- class: distance_field
+|   |--- grid_size >  37.50
+|   |   |--- grid_size <= 38.50
+|   |   |   |--- class: skeleton_graph
+|   |   |--- grid_size >  38.50
+|   |   |   |--- class: skeleton_graph
+"
+MAZE,best_representation,4,skeleton_nodes,0.40013740627390093,0.4888888888888889,0.3715406162464986,"|--- skeleton_nodes <= 84.50
+|   |--- skeleton_nodes <= 62.50
+|   |   |--- skeleton_nodes <= 25.50
+|   |   |   |--- class: graph
+|   |   |--- skeleton_nodes >  25.50
+|   |   |   |--- class: graph
+|   |--- skeleton_nodes >  62.50
+|   |   |--- skeleton_nodes <= 81.50
+|   |   |   |--- class: skeleton_graph
+|   |   |--- skeleton_nodes >  81.50
+|   |   |   |--- class: graph
+|--- skeleton_nodes >  84.50
+|   |--- skeleton_nodes <= 180.50
+|   |   |--- skeleton_nodes <= 154.50
+|   |   |   |--- class: raw_grid
+|   |   |--- skeleton_nodes >  154.50
+|   |   |   |--- class: distance_field
+|   |--- skeleton_nodes >  180.50
+|   |   |--- skeleton_nodes <= 310.00
+|   |   |   |--- class: raw_grid
+|   |   |--- skeleton_nodes >  310.00
+|   |   |   |--- class: raw_grid
+"
+MAZE,best_representation,5,corridor_width,0.27098349547919476,0.3,0.29969581650616134,"|--- corridor_width <= 2.50
+|   |--- corridor_width <= 1.50
+|   |   |--- class: graph
+|   |--- corridor_width >  1.50
+|   |   |--- class: raw_grid
+|--- corridor_width >  2.50
+|   |--- corridor_width <= 3.50
+|   |   |--- class: skeleton_graph
+|   |--- corridor_width >  3.50
+|   |   |--- class: distance_field
+"
+MAZE,best_representation,6,distance_entropy,0.24766031991463455,0.4777777777777778,0.29494882064975525,"|--- distance_entropy <= 1.24
+|   |--- distance_entropy <= 0.66
+|   |   |--- distance_entropy <= 0.64
+|   |   |   |--- class: graph
+|   |   |--- distance_entropy >  0.64
+|   |   |   |--- class: graph
+|   |--- distance_entropy >  0.66
+|   |   |--- distance_entropy <= 0.69
+|   |   |   |--- class: skeleton_graph
+|   |   |--- distance_entropy >  0.69
+|   |   |   |--- class: graph
+|--- distance_entropy >  1.24
+|   |--- class: skeleton_graph
+"
+MAZE,best_representation,7,branch_factor,0.03239384208702356,0.34444444444444444,0.20692883895131087,"|--- branch_factor <= 2.78
+|   |--- branch_factor <= 1.22
+|   |   |--- branch_factor <= 1.17
+|   |   |   |--- class: distance_field
+|   |   |--- branch_factor >  1.17
+|   |   |   |--- class: raw_grid
+|   |--- branch_factor >  1.22
+|   |   |--- branch_factor <= 1.29
+|   |   |   |--- class: graph
+|   |   |--- branch_factor >  1.29
+|   |   |   |--- class: graph
+|--- branch_factor >  2.78
+|   |--- branch_factor <= 3.59
+|   |   |--- branch_factor <= 3.34
+|   |   |   |--- class: skeleton_graph
+|   |   |--- branch_factor >  3.34
+|   |   |   |--- class: skeleton_graph
+|   |--- branch_factor >  3.59
+|   |   |--- branch_factor <= 3.71
+|   |   |   |--- class: graph
+|   |   |--- branch_factor >  3.71
+|   |   |   |--- class: graph
+"
+MAZE,combined,1,graph_nodes,0.5082524200560314,0.4666666666666667,0.4190076824583867,"|--- graph_nodes <= 376.50
+|   |--- graph_nodes <= 44.00
+|   |   |--- graph_nodes <= 34.50
+|   |   |   |--- class: skeleton_graph
+|   |   |--- graph_nodes >  34.50
+|   |   |   |--- class: skeleton_graph
+|   |--- graph_nodes >  44.00
+|   |   |--- graph_nodes <= 165.00
+|   |   |   |--- class: graph
+|   |   |--- graph_nodes >  165.00
+|   |   |   |--- class: graph
+|--- graph_nodes >  376.50
+|   |--- graph_nodes <= 791.50
+|   |   |--- graph_nodes <= 705.50
+|   |   |   |--- class: raw_grid
+|   |   |--- graph_nodes >  705.50
+|   |   |   |--- class: skeleton_graph
+|   |--- graph_nodes >  791.50
+|   |   |--- graph_nodes <= 817.50
+|   |   |   |--- class: distance_field
+|   |   |--- graph_nodes >  817.50
+|   |   |   |--- class: distance_field
+"
+MAZE,combined,2,wall_density,0.4787936237842876,0.6222222222222222,0.3961827646038172,"|--- wall_density <= 0.44
+|   |--- wall_density <= 0.41
+|   |   |--- wall_density <= 0.24
+|   |   |   |--- class: graph
+|   |   |--- wall_density >  0.24
+|   |   |   |--- class: graph
+|   |--- wall_density >  0.41
+|   |   |--- wall_density <= 0.42
+|   |   |   |--- class: raw_grid
+|   |   |--- wall_density >  0.42
+|   |   |   |--- class: graph
+|--- wall_density >  0.44
+|   |--- class: skeleton_graph
+"
+MAZE,combined,3,grid_size,0.40919604462625037,0.45555555555555555,0.3739673485444532,"|--- grid_size <= 23.50
+|   |--- grid_size <= 14.50
+|   |   |--- grid_size <= 13.50
+|   |   |   |--- class: graph
+|   |   |--- grid_size >  13.50
+|   |   |   |--- class: skeleton_graph
+|   |--- grid_size >  14.50
+|   |   |--- grid_size <= 21.50
+|   |   |   |--- class: graph
+|   |   |--- grid_size >  21.50
+|   |   |   |--- class: graph
+|--- grid_size >  23.50
+|   |--- grid_size <= 37.50
+|   |   |--- grid_size <= 33.50
+|   |   |   |--- class: raw_grid
+|   |   |--- grid_size >  33.50
+|   |   |   |--- class: distance_field
+|   |--- grid_size >  37.50
+|   |   |--- grid_size <= 38.50
+|   |   |   |--- class: skeleton_graph
+|   |   |--- grid_size >  38.50
+|   |   |   |--- class: skeleton_graph
+"
+MAZE,combined,4,skeleton_nodes,0.40013740627390093,0.4888888888888889,0.3715406162464986,"|--- skeleton_nodes <= 84.50
+|   |--- skeleton_nodes <= 62.50
+|   |   |--- skeleton_nodes <= 25.50
+|   |   |   |--- class: graph
+|   |   |--- skeleton_nodes >  25.50
+|   |   |   |--- class: graph
+|   |--- skeleton_nodes >  62.50
+|   |   |--- skeleton_nodes <= 81.50
+|   |   |   |--- class: skeleton_graph
+|   |   |--- skeleton_nodes >  81.50
+|   |   |   |--- class: graph
+|--- skeleton_nodes >  84.50
+|   |--- skeleton_nodes <= 180.50
+|   |   |--- skeleton_nodes <= 154.50
+|   |   |   |--- class: raw_grid
+|   |   |--- skeleton_nodes >  154.50
+|   |   |   |--- class: distance_field
+|   |--- skeleton_nodes >  180.50
+|   |   |--- skeleton_nodes <= 310.00
+|   |   |   |--- class: raw_grid
+|   |   |--- skeleton_nodes >  310.00
+|   |   |   |--- class: raw_grid
+"
+MAZE,combined,5,corridor_width,0.27098349547919476,0.3,0.29969581650616134,"|--- corridor_width <= 2.50
+|   |--- corridor_width <= 1.50
+|   |   |--- class: graph
+|   |--- corridor_width >  1.50
+|   |   |--- class: raw_grid
+|--- corridor_width >  2.50
+|   |--- corridor_width <= 3.50
+|   |   |--- class: skeleton_graph
+|   |--- corridor_width >  3.50
+|   |   |--- class: distance_field
+"
+MAZE,combined,6,distance_entropy,0.24766031991463455,0.4777777777777778,0.29494882064975525,"|--- distance_entropy <= 1.24
+|   |--- distance_entropy <= 0.66
+|   |   |--- distance_entropy <= 0.64
+|   |   |   |--- class: graph
+|   |   |--- distance_entropy >  0.64
+|   |   |   |--- class: graph
+|   |--- distance_entropy >  0.66
+|   |   |--- distance_entropy <= 0.69
+|   |   |   |--- class: skeleton_graph
+|   |   |--- distance_entropy >  0.69
+|   |   |   |--- class: graph
+|--- distance_entropy >  1.24
+|   |--- class: skeleton_graph
+"
+MAZE,combined,7,branch_factor,0.03239384208702356,0.34444444444444444,0.20692883895131087,"|--- branch_factor <= 2.78
+|   |--- branch_factor <= 1.22
+|   |   |--- branch_factor <= 1.17
+|   |   |   |--- class: distance_field
+|   |   |--- branch_factor >  1.17
+|   |   |   |--- class: raw_grid
+|   |--- branch_factor >  1.22
+|   |   |--- branch_factor <= 1.29
+|   |   |   |--- class: graph
+|   |   |--- branch_factor >  1.29
+|   |   |   |--- class: graph
+|--- branch_factor >  2.78
+|   |--- branch_factor <= 3.59
+|   |   |--- branch_factor <= 3.34
+|   |   |   |--- class: skeleton_graph
+|   |   |--- branch_factor >  3.34
+|   |   |   |--- class: skeleton_graph
+|   |--- branch_factor >  3.59
+|   |   |--- branch_factor <= 3.71
+|   |   |   |--- class: graph
+|   |   |--- branch_factor >  3.71
+|   |   |   |--- class: graph
+"
+CA,wolfram_class,1,transition_count,0.728498755296288,0.8701298701298701,0.47685185185185186,"|--- transition_count <= 5.00
+|   |--- transition_count <= 3.00
+|   |   |--- class: complex
+|   |--- transition_count >  3.00
+|   |   |--- class: complex
+|--- transition_count >  5.00
+|   |--- class: chaotic
+"
+CA,wolfram_class,2,local_entropy,0.30565453924951935,0.7142857142857143,0.39338235294117646,"|--- local_entropy <= 0.68
+|   |--- class: periodic
+|--- local_entropy >  0.68
+|   |--- local_entropy <= 0.88
+|   |   |--- class: complex
+|   |--- local_entropy >  0.88
+|   |   |--- local_entropy <= 0.98
+|   |   |   |--- class: complex
+|   |   |--- local_entropy >  0.98
+|   |   |   |--- class: complex
+"
+CA,wolfram_class,3,rule_density,0.26657009678113663,0.7142857142857143,0.39338235294117646,"|--- rule_density <= 0.19
+|   |--- class: periodic
+|--- rule_density >  0.19
+|   |--- rule_density <= 0.81
+|   |   |--- rule_density <= 0.69
+|   |   |   |--- class: complex
+|   |   |--- rule_density >  0.69
+|   |   |   |--- class: complex
+|   |--- rule_density >  0.81
+|   |   |--- class: periodic
+"
+CA,wolfram_class,4,rule,0.2502449627938801,0.6363636363636364,0.2589922039682805,"|--- rule <= 40.50
+|   |--- rule <= 4.00
+|   |   |--- class: periodic
+|   |--- rule >  4.00
+|   |   |--- rule <= 33.00
+|   |   |   |--- class: complex
+|   |   |--- rule >  33.00
+|   |   |   |--- class: complex
+|--- rule >  40.50
+|   |--- rule <= 218.50
+|   |   |--- rule <= 43.50
+|   |   |   |--- class: chaotic
+|   |   |--- rule >  43.50
+|   |   |   |--- class: complex
+|   |--- rule >  218.50
+|   |   |--- rule <= 251.50
+|   |   |   |--- class: complex
+|   |   |--- rule >  251.50
+|   |   |   |--- class: periodic
+"
+CA,wolfram_class,5,mirror_asymmetry,0.16848485582218342,0.6233766233766234,0.2557773109243697,"|--- mirror_asymmetry <= 3.00
+|   |--- mirror_asymmetry <= 1.00
+|   |   |--- class: periodic
+|   |--- mirror_asymmetry >  1.00
+|   |   |--- class: complex
+|--- mirror_asymmetry >  3.00
+|   |--- mirror_asymmetry <= 5.00
+|   |   |--- class: complex
+|   |--- mirror_asymmetry >  5.00
+|   |   |--- mirror_asymmetry <= 7.00
+|   |   |   |--- class: complex
+|   |   |--- mirror_asymmetry >  7.00
+|   |   |   |--- class: complex
+"
+CA,wolfram_class,6,quiescent_one,0.0519565313622794,0.6363636363636364,0.19444444444444445,"|--- quiescent_one <= 0.50
+|   |--- class: complex
+|--- quiescent_one >  0.50
+|   |--- class: complex
+"
+CA,wolfram_class,7,quiescent_zero,0.04572690315111849,0.6363636363636364,0.19444444444444445,"|--- quiescent_zero <= 0.50
+|   |--- class: complex
+|--- quiescent_zero >  0.50
+|   |--- class: complex
+"
+CA,combined,1,transition_count,0.728498755296288,0.8701298701298701,0.47685185185185186,"|--- transition_count <= 5.00
+|   |--- transition_count <= 3.00
+|   |   |--- class: complex
+|   |--- transition_count >  3.00
+|   |   |--- class: complex
+|--- transition_count >  5.00
+|   |--- class: chaotic
+"
+CA,combined,2,local_entropy,0.30565453924951935,0.7142857142857143,0.39338235294117646,"|--- local_entropy <= 0.68
+|   |--- class: periodic
+|--- local_entropy >  0.68
+|   |--- local_entropy <= 0.88
+|   |   |--- class: complex
+|   |--- local_entropy >  0.88
+|   |   |--- local_entropy <= 0.98
+|   |   |   |--- class: complex
+|   |   |--- local_entropy >  0.98
+|   |   |   |--- class: complex
+"
+CA,combined,3,rule_density,0.26657009678113663,0.7142857142857143,0.39338235294117646,"|--- rule_density <= 0.19
+|   |--- class: periodic
+|--- rule_density >  0.19
+|   |--- rule_density <= 0.81
+|   |   |--- rule_density <= 0.69
+|   |   |   |--- class: complex
+|   |   |--- rule_density >  0.69
+|   |   |   |--- class: complex
+|   |--- rule_density >  0.81
+|   |   |--- class: periodic
+"
+CA,combined,4,rule,0.2502449627938801,0.6363636363636364,0.2589922039682805,"|--- rule <= 40.50
+|   |--- rule <= 4.00
+|   |   |--- class: periodic
+|   |--- rule >  4.00
+|   |   |--- rule <= 33.00
+|   |   |   |--- class: complex
+|   |   |--- rule >  33.00
+|   |   |   |--- class: complex
+|--- rule >  40.50
+|   |--- rule <= 218.50
+|   |   |--- rule <= 43.50
+|   |   |   |--- class: chaotic
+|   |   |--- rule >  43.50
+|   |   |   |--- class: complex
+|   |--- rule >  218.50
+|   |   |--- rule <= 251.50
+|   |   |   |--- class: complex
+|   |   |--- rule >  251.50
+|   |   |   |--- class: periodic
+"
+CA,combined,5,mirror_asymmetry,0.16848485582218342,0.6233766233766234,0.2557773109243697,"|--- mirror_asymmetry <= 3.00
+|   |--- mirror_asymmetry <= 1.00
+|   |   |--- class: periodic
+|   |--- mirror_asymmetry >  1.00
+|   |   |--- class: complex
+|--- mirror_asymmetry >  3.00
+|   |--- mirror_asymmetry <= 5.00
+|   |   |--- class: complex
+|   |--- mirror_asymmetry >  5.00
+|   |   |--- mirror_asymmetry <= 7.00
+|   |   |   |--- class: complex
+|   |   |--- mirror_asymmetry >  7.00
+|   |   |   |--- class: complex
+"
+CA,combined,6,quiescent_one,0.0519565313622794,0.6363636363636364,0.19444444444444445,"|--- quiescent_one <= 0.50
+|   |--- class: complex
+|--- quiescent_one >  0.50
+|   |--- class: complex
+"
+CA,combined,7,quiescent_zero,0.04572690315111849,0.6363636363636364,0.19444444444444445,"|--- quiescent_zero <= 0.50
+|   |--- class: complex
+|--- quiescent_zero >  0.50
+|   |--- class: complex
+"
+PHASE,phase,1,effective_control,0.8935194717460797,0.9791666666666666,0.960377358490566,"|--- effective_control <= 0.30
+|   |--- class: subcritical
+|--- effective_control >  0.30
+|   |--- effective_control <= 0.39
+|   |   |--- class: critical
+|   |--- effective_control >  0.39
+|   |   |--- class: supercritical
+"
+PHASE,phase,2,control_parameter,0.32332997828260446,0.6979166666666666,0.4804804804804805,"|--- control_parameter <= 0.56
+|   |--- control_parameter <= 0.29
+|   |   |--- class: subcritical
+|   |--- control_parameter >  0.29
+|   |   |--- control_parameter <= 0.41
+|   |   |   |--- class: subcritical
+|   |   |--- control_parameter >  0.41
+|   |   |   |--- class: subcritical
+|--- control_parameter >  0.56
+|   |--- control_parameter <= 0.93
+|   |   |--- control_parameter <= 0.68
+|   |   |   |--- class: supercritical
+|   |   |--- control_parameter >  0.68
+|   |   |   |--- class: supercritical
+|   |--- control_parameter >  0.93
+|   |   |--- control_parameter <= 0.98
+|   |   |   |--- class: supercritical
+|   |   |--- control_parameter >  0.98
+|   |   |   |--- class: supercritical
+"
+PHASE,phase,3,temperature,0.17911626461604913,0.6458333333333334,0.4435635123614663,"|--- temperature <= 1.57
+|   |--- temperature <= 0.82
+|   |   |--- temperature <= 0.79
+|   |   |   |--- class: supercritical
+|   |   |--- temperature >  0.79
+|   |   |   |--- class: subcritical
+|   |--- temperature >  0.82
+|   |   |--- temperature <= 1.08
+|   |   |   |--- class: supercritical
+|   |   |--- temperature >  1.08
+|   |   |   |--- class: supercritical
+|--- temperature >  1.57
+|   |--- temperature <= 2.74
+|   |   |--- temperature <= 2.60
+|   |   |   |--- class: subcritical
+|   |   |--- temperature >  2.60
+|   |   |   |--- class: supercritical
+|   |--- temperature >  2.74
+|   |   |--- temperature <= 3.01
+|   |   |   |--- class: subcritical
+|   |   |--- temperature >  3.01
+|   |   |   |--- class: subcritical
+"
+PHASE,phase,4,coupling,0.11785873962587412,0.65625,0.45761494252873564,"|--- coupling <= 1.07
+|   |--- coupling <= 0.58
+|   |   |--- class: subcritical
+|   |--- coupling >  0.58
+|   |   |--- coupling <= 0.61
+|   |   |   |--- class: subcritical
+|   |   |--- coupling >  0.61
+|   |   |   |--- class: subcritical
+|--- coupling >  1.07
+|   |--- coupling <= 1.82
+|   |   |--- coupling <= 1.77
+|   |   |   |--- class: supercritical
+|   |   |--- coupling >  1.77
+|   |   |   |--- class: subcritical
+|   |--- coupling >  1.82
+|   |   |--- coupling <= 1.89
+|   |   |   |--- class: supercritical
+|   |   |--- coupling >  1.89
+|   |   |   |--- class: supercritical
+"
+PHASE,phase,5,noise,0.07936472166616038,0.5520833333333334,0.3322305764411027,"|--- noise <= 0.15
+|   |--- noise <= 0.13
+|   |   |--- noise <= 0.11
+|   |   |   |--- class: subcritical
+|   |   |--- noise >  0.11
+|   |   |   |--- class: subcritical
+|   |--- noise >  0.13
+|   |   |--- noise <= 0.14
+|   |   |   |--- class: supercritical
+|   |   |--- noise >  0.14
+|   |   |   |--- class: supercritical
+|--- noise >  0.15
+|   |--- noise <= 0.15
+|   |   |--- noise <= 0.15
+|   |   |   |--- class: subcritical
+|   |   |--- noise >  0.15
+|   |   |   |--- class: subcritical
+|   |--- noise >  0.15
+|   |   |--- noise <= 0.16
+|   |   |   |--- class: supercritical
+|   |   |--- noise >  0.16
+|   |   |   |--- class: subcritical
+"
+PHASE,phase,6,lattice_size,0.019825134152569035,0.5625,0.24,"|--- lattice_size <= 40.00
+|   |--- lattice_size <= 20.00
+|   |   |--- class: subcritical
+|   |--- lattice_size >  20.00
+|   |   |--- lattice_size <= 28.00
+|   |   |   |--- class: subcritical
+|   |   |--- lattice_size >  28.00
+|   |   |   |--- class: subcritical
+|--- lattice_size >  40.00
+|   |--- lattice_size <= 56.00
+|   |   |--- class: subcritical
+|   |--- lattice_size >  56.00
+|   |   |--- class: subcritical
+"
+PHASE,outbreak,1,effective_control,0.39644763751730916,0.9375,0.9243697478991597,"|--- effective_control <= 0.39
+|   |--- class: 0
+|--- effective_control >  0.39
+|   |--- effective_control <= 0.50
+|   |   |--- effective_control <= 0.48
+|   |   |   |--- class: 1
+|   |   |--- effective_control >  0.48
+|   |   |   |--- class: 0
+|   |--- effective_control >  0.50
+|   |   |--- effective_control <= 0.62
+|   |   |   |--- class: 1
+|   |   |--- effective_control >  0.62
+|   |   |   |--- class: 1
+"
+PHASE,outbreak,2,control_parameter,0.18087176780124836,0.75,0.49825783972125437,"|--- control_parameter <= 0.61
+|   |--- control_parameter <= 0.31
+|   |   |--- control_parameter <= 0.19
+|   |   |   |--- class: 0
+|   |   |--- control_parameter >  0.19
+|   |   |   |--- class: 0
+|   |--- control_parameter >  0.31
+|   |   |--- control_parameter <= 0.34
+|   |   |   |--- class: 0
+|   |   |--- control_parameter >  0.34
+|   |   |   |--- class: 0
+|--- control_parameter >  0.61
+|   |--- control_parameter <= 0.99
+|   |   |--- control_parameter <= 0.63
+|   |   |   |--- class: 1
+|   |   |--- control_parameter >  0.63
+|   |   |   |--- class: 0
+|   |--- control_parameter >  0.99
+|   |   |--- control_parameter <= 1.00
+|   |   |   |--- class: 1
+|   |   |--- control_parameter >  1.00
+|   |   |   |--- class: 0
+"
+PHASE,outbreak,3,noise,0.13917004115711218,0.75,0.4661723818350324,"|--- noise <= 0.14
+|   |--- noise <= 0.07
+|   |   |--- noise <= 0.05
+|   |   |   |--- class: 0
+|   |   |--- noise >  0.05
+|   |   |   |--- class: 0
+|   |--- noise >  0.07
+|   |   |--- noise <= 0.07
+|   |   |   |--- class: 1
+|   |   |--- noise >  0.07
+|   |   |   |--- class: 0
+|--- noise >  0.14
+|   |--- class: 0
+"
+PHASE,outbreak,4,temperature,0.09671440929394981,0.6979166666666666,0.6026830312544598,"|--- temperature <= 1.74
+|   |--- temperature <= 0.52
+|   |   |--- class: 1
+|   |--- temperature >  0.52
+|   |   |--- temperature <= 1.12
+|   |   |   |--- class: 1
+|   |   |--- temperature >  1.12
+|   |   |   |--- class: 0
+|--- temperature >  1.74
+|   |--- temperature <= 1.88
+|   |   |--- class: 0
+|   |--- temperature >  1.88
+|   |   |--- temperature <= 1.95
+|   |   |   |--- class: 0
+|   |   |--- temperature >  1.95
+|   |   |   |--- class: 0
+"
+PHASE,outbreak,5,coupling,0.06274372281118312,0.6458333333333334,0.5619967793880838,"|--- coupling <= 1.23
+|   |--- coupling <= 0.73
+|   |   |--- coupling <= 0.58
+|   |   |   |--- class: 0
+|   |   |--- coupling >  0.58
+|   |   |   |--- class: 0
+|   |--- coupling >  0.73
+|   |   |--- coupling <= 0.77
+|   |   |   |--- class: 1
+|   |   |--- coupling >  0.77
+|   |   |   |--- class: 0
+|--- coupling >  1.23
+|   |--- coupling <= 1.57
+|   |   |--- coupling <= 1.41
+|   |   |   |--- class: 0
+|   |   |--- coupling >  1.41
+|   |   |   |--- class: 0
+|   |--- coupling >  1.57
+|   |   |--- coupling <= 1.94
+|   |   |   |--- class: 1
+|   |   |--- coupling >  1.94
+|   |   |   |--- class: 0
+"
+PHASE,outbreak,6,lattice_size,0.006059565586087334,0.7395833333333334,0.4251497005988024,"|--- lattice_size <= 28.00
+|   |--- lattice_size <= 20.00
+|   |   |--- class: 0
+|   |--- lattice_size >  20.00
+|   |   |--- class: 0
+|--- lattice_size >  28.00
+|   |--- lattice_size <= 56.00
+|   |   |--- lattice_size <= 40.00
+|   |   |   |--- class: 0
+|   |   |--- lattice_size >  40.00
+|   |   |   |--- class: 0
+|   |--- lattice_size >  56.00
+|   |   |--- class: 0
+"
+PHASE,combined,1,effective_control,0.9065230655070418,0.8958333333333334,0.6858002602472348,"|--- effective_control <= 0.30
+|   |--- class: subcritical|0
+|--- effective_control >  0.30
+|   |--- effective_control <= 0.39
+|   |   |--- class: critical|0
+|   |--- effective_control >  0.39
+|   |   |--- effective_control <= 1.18
+|   |   |   |--- class: supercritical|1
+|   |   |--- effective_control >  1.18
+|   |   |   |--- class: supercritical|1
+"
+PHASE,combined,2,control_parameter,0.29481007222401967,0.6354166666666666,0.3348214285714286,"|--- control_parameter <= 0.56
+|   |--- control_parameter <= 0.30
+|   |   |--- control_parameter <= 0.19
+|   |   |   |--- class: subcritical|0
+|   |   |--- control_parameter >  0.19
+|   |   |   |--- class: subcritical|0
+|   |--- control_parameter >  0.30
+|   |   |--- control_parameter <= 0.34
+|   |   |   |--- class: subcritical|0
+|   |   |--- control_parameter >  0.34
+|   |   |   |--- class: subcritical|0
+|--- control_parameter >  0.56
+|   |--- control_parameter <= 0.93
+|   |   |--- control_parameter <= 0.68
+|   |   |   |--- class: supercritical|1
+|   |   |--- control_parameter >  0.68
+|   |   |   |--- class: supercritical|1
+|   |--- control_parameter >  0.93
+|   |   |--- control_parameter <= 0.98
+|   |   |   |--- class: supercritical|1
+|   |   |--- control_parameter >  0.98
+|   |   |   |--- class: supercritical|1
+"
+PHASE,combined,3,noise,0.2551807452607393,0.5416666666666666,0.23130341880341881,"|--- noise <= 0.14
+|   |--- noise <= 0.14
+|   |   |--- noise <= 0.02
+|   |   |   |--- class: subcritical|0
+|   |   |--- noise >  0.02
+|   |   |   |--- class: subcritical|0
+|   |--- noise >  0.14
+|   |   |--- class: supercritical|1
+|--- noise >  0.14
+|   |--- noise <= 0.15
+|   |   |--- noise <= 0.14
+|   |   |   |--- class: supercritical|0
+|   |   |--- noise >  0.14
+|   |   |   |--- class: supercritical|0
+|   |--- noise >  0.15
+|   |   |--- noise <= 0.15
+|   |   |   |--- class: subcritical|0
+|   |   |--- noise >  0.15
+|   |   |   |--- class: subcritical|0
+"
+PHASE,combined,4,temperature,0.14043783270401433,0.625,0.31916099773242634,"|--- temperature <= 1.70
+|   |--- temperature <= 1.27
+|   |   |--- temperature <= 1.11
+|   |   |   |--- class: supercritical|1
+|   |   |--- temperature >  1.11
+|   |   |   |--- class: subcritical|0
+|   |--- temperature >  1.27
+|   |   |--- temperature <= 1.43
+|   |   |   |--- class: supercritical|1
+|   |   |--- temperature >  1.43
+|   |   |   |--- class: subcritical|0
+|--- temperature >  1.70
+|   |--- temperature <= 3.36
+|   |   |--- temperature <= 2.74
+|   |   |   |--- class: subcritical|0
+|   |   |--- temperature >  2.74
+|   |   |   |--- class: subcritical|0
+|   |--- temperature >  3.36
+|   |   |--- temperature <= 3.41
+|   |   |   |--- class: supercritical|0
+|   |   |--- temperature >  3.41
+|   |   |   |--- class: subcritical|0
+"
+PHASE,combined,5,coupling,0.1274509252436824,0.5208333333333334,0.19962453066332916,"|--- coupling <= 1.07
+|   |--- coupling <= 0.58
+|   |   |--- class: subcritical|0
+|   |--- coupling >  0.58
+|   |   |--- coupling <= 0.61
+|   |   |   |--- class: subcritical|0
+|   |   |--- coupling >  0.61
+|   |   |   |--- class: subcritical|0
+|--- coupling >  1.07
+|   |--- coupling <= 1.81
+|   |   |--- coupling <= 1.77
+|   |   |   |--- class: subcritical|0
+|   |   |--- coupling >  1.77
+|   |   |   |--- class: subcritical|0
+|   |--- coupling >  1.81
+|   |   |--- coupling <= 1.96
+|   |   |   |--- class: supercritical|1
+|   |   |--- coupling >  1.96
+|   |   |   |--- class: subcritical|0
+"
+PHASE,combined,6,lattice_size,0.016443349475877778,0.5625,0.18,"|--- lattice_size <= 40.00
+|   |--- lattice_size <= 20.00
+|   |   |--- class: subcritical|0
+|   |--- lattice_size >  20.00
+|   |   |--- lattice_size <= 28.00
+|   |   |   |--- class: subcritical|0
+|   |   |--- lattice_size >  28.00
+|   |   |   |--- class: subcritical|0
+|--- lattice_size >  40.00
+|   |--- lattice_size <= 56.00
+|   |   |--- class: subcritical|0
+|   |--- lattice_size >  56.00
+|   |   |--- class: subcritical|0
+"

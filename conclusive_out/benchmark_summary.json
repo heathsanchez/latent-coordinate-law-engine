@@ -1,0 +1,161 @@
+{
+  "blind_transfer_accuracy": 1.0,
+  "domain_summaries": [
+    {
+      "all_feature_accuracy": 0.9863013698630136,
+      "cluster_ari": 0.07253478504127873,
+      "coordinate_accuracy": 0.958904109589041,
+      "domain": "IGP24",
+      "expected_coordinates_recovered": [
+        "a6",
+        "threshold_zone"
+      ],
+      "law_count": 406,
+      "rows": 291,
+      "surviving_law_count": 389,
+      "targets": [
+        "t",
+        "r"
+      ],
+      "top_coordinates": [
+        "threshold_zone",
+        "a6",
+        "a6_abs",
+        "a18",
+        "a18_abs"
+      ]
+    },
+    {
+      "all_feature_accuracy": 0.8666666666666667,
+      "cluster_ari": 0.31733816241051704,
+      "coordinate_accuracy": 0.7333333333333333,
+      "domain": "ETP",
+      "expected_coordinates_recovered": [
+        "depth",
+        "idempotence_indicator",
+        "projection_indicator"
+      ],
+      "law_count": 20,
+      "rows": 300,
+      "surviving_law_count": 18,
+      "targets": [
+        "implication_true",
+        "proof_found",
+        "countermodel_found"
+      ],
+      "top_coordinates": [
+        "projection_indicator",
+        "variable_count",
+        "idempotence_indicator",
+        "depth",
+        "symmetry"
+      ]
+    },
+    {
+      "all_feature_accuracy": 0.9333333333333333,
+      "cluster_ari": 0.14410871929324032,
+      "coordinate_accuracy": 0.88,
+      "domain": "ARC",
+      "expected_coordinates_recovered": [
+        "connected_components",
+        "hole_count",
+        "symmetry"
+      ],
+      "law_count": 145,
+      "rows": 300,
+      "surviving_law_count": 89,
+      "targets": [
+        "task_family",
+        "successful_solver"
+      ],
+      "top_coordinates": [
+        "symmetry",
+        "hole_count",
+        "object_count",
+        "connected_components",
+        "colors"
+      ]
+    },
+    {
+      "all_feature_accuracy": 1.0,
+      "cluster_ari": 0.30747271664721676,
+      "coordinate_accuracy": 0.9733333333333334,
+      "domain": "MAZE",
+      "expected_coordinates_recovered": [
+        "graph_nodes",
+        "skeleton_nodes",
+        "wall_density"
+      ],
+      "law_count": 86,
+      "rows": 300,
+      "surviving_law_count": 75,
+      "targets": [
+        "best_representation"
+      ],
+      "top_coordinates": [
+        "graph_nodes",
+        "wall_density",
+        "grid_size",
+        "skeleton_nodes",
+        "corridor_width"
+      ]
+    },
+    {
+      "all_feature_accuracy": 1.0,
+      "cluster_ari": 0.09278043382606486,
+      "coordinate_accuracy": 1.0,
+      "domain": "CA",
+      "expected_coordinates_recovered": [
+        "local_entropy",
+        "mirror_asymmetry",
+        "rule_density",
+        "transition_count"
+      ],
+      "law_count": 16,
+      "rows": 256,
+      "surviving_law_count": 16,
+      "targets": [
+        "wolfram_class"
+      ],
+      "top_coordinates": [
+        "transition_count",
+        "local_entropy",
+        "rule_density",
+        "rule",
+        "mirror_asymmetry"
+      ]
+    },
+    {
+      "all_feature_accuracy": 0.9875,
+      "cluster_ari": 0.17281468912722275,
+      "coordinate_accuracy": 1.0,
+      "domain": "PHASE",
+      "expected_coordinates_recovered": [
+        "control_parameter",
+        "coupling",
+        "effective_control",
+        "temperature"
+      ],
+      "law_count": 660,
+      "rows": 320,
+      "surviving_law_count": 482,
+      "targets": [
+        "phase",
+        "outbreak"
+      ],
+      "top_coordinates": [
+        "effective_control",
+        "control_parameter",
+        "noise",
+        "temperature",
+        "coupling"
+      ]
+    }
+  ],
+  "mean_all_feature_accuracy": 0.9623002283105023,
+  "mean_compression_ratio": 0.6557539682539683,
+  "mean_coordinate_accuracy": 0.9242617960426179,
+  "mean_search_cost_ratio": 409.5693357631134,
+  "total_counterexamples": 4720,
+  "total_laws": 1333
+}

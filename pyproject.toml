@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latent-coordinate-law-engine"
+version = "0.1.0"
+description = "Latent coordinate discovery, law induction, and counterexample search for polynomial-like records."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "pytest",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+latent-law = "latent_law.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

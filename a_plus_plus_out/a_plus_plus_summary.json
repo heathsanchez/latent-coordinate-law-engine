@@ -1,0 +1,104 @@
+{
+  "compression_score": 0.75,
+  "human_comparison": [
+    {
+      "decision_tree_coordinates_accuracy": 0.8253968253968254,
+      "decision_tree_coordinates_macro_f1": 0.45079365079365075,
+      "domain": "ETP_RAW",
+      "nearest_neighbors_accuracy": 0.6984126984126984,
+      "nearest_neighbors_macro_f1": 0.42570074505798233,
+      "random_forest_accuracy": 0.8650793650793651,
+      "random_forest_macro_f1": 0.570650377884422
+    }
+  ],
+  "human_comparison_score": 1.0,
+  "invention_score": 1.0,
+  "prediction_score": 0.411734693877551,
+  "real_dataset_download_count": 0,
+  "rediscovery": [
+    {
+      "best_abs_correlation": 0.9096464598469197,
+      "best_reconstruction": "coord_mul__height__times__velocity__times__mass",
+      "compression_ratio": 0.8333333333333334,
+      "expected_formula_hit_top12": true,
+      "hidden_coordinate": "total_energy",
+      "invented_accuracy": 0.8888888888888888,
+      "probe": "FEYNMAN_LIKE_ENERGY",
+      "raw_accuracy": 0.873015873015873,
+      "source": "offline_physics_surrogate",
+      "top_invented_coordinates": [
+        "coord_mul__observed_range__times__drag__times__observed_range",
+        "coord_mul__observed_range__times__velocity__times__observed_range",
+        "coord_sum__observed_range__plus__height",
+        "coord_mul__observed_range__times__velocity__times__mass",
+        "coord_mul__observed_range__times__mass__times__velocity"
+      ],
+      "unknown_prediction_accuracy": 0.5510204081632653,
+      "unknown_prediction_macro_f1": 0.3546009481135139
+    },
+    {
+      "best_abs_correlation": 0.9999999999999998,
+      "best_reconstruction": "coord_mul__pressure__times__volume__over__moles",
+      "compression_ratio": 1.25,
+      "expected_formula_hit_top12": true,
+      "hidden_coordinate": "temperature",
+      "invented_accuracy": 0.9761904761904762,
+      "probe": "GAS_LAW_TEMPERATURE",
+      "raw_accuracy": 0.873015873015873,
+      "source": "offline_science_surrogate",
+      "top_invented_coordinates": [
+        "coord_mul__pressure__times__volume__over__moles",
+        "coord_ratio__pressure__over__moles",
+        "coord_ratio__moles__over__pressure",
+        "coord_ratio__moles__over__volume",
+        "coord_ratio__volume__over__moles"
+      ],
+      "unknown_prediction_accuracy": 0.047619047619047616,
+      "unknown_prediction_macro_f1": 0.045454545454545456
+    },
+    {
+      "best_abs_correlation": 0.9999999999999996,
+      "best_reconstruction": "coord_entropy__rule_density",
+      "compression_ratio": 0.625,
+      "expected_formula_hit_top12": true,
+      "hidden_coordinate": "local_entropy",
+      "invented_accuracy": 0.961038961038961,
+      "probe": "CA_ENTROPY",
+      "raw_accuracy": 0.961038961038961,
+      "source": "generated_elementary_ca",
+      "top_invented_coordinates": [
+        "coord_pca_2",
+        "coord_mul__mirror_asymmetry__times__transition_count__times__mirror_asymmetry",
+        "coord_mul__mirror_asymmetry__times__transition_count__times__transition_count",
+        "coord_mul__rule_density__times__transition_count__times__transition_count",
+        "coord_diff__rule_density__minus__transition_count"
+      ],
+      "unknown_prediction_accuracy": 0.9666666666666667,
+      "unknown_prediction_macro_f1": 0.7412984261501211
+    },
+    {
+      "best_abs_correlation": 1.0,
+      "best_reconstruction": "coord_mul__coupling__times__control_parameter__over__temperature",
+      "compression_ratio": 0.8333333333333334,
+      "expected_formula_hit_top12": true,
+      "hidden_coordinate": "effective_control",
+      "invented_accuracy": 0.9523809523809523,
+      "probe": "PHASE_EFFECTIVE_CONTROL",
+      "raw_accuracy": 0.8253968253968254,
+      "source": "generated_phase_transition",
+      "top_invented_coordinates": [
+        "coord_mul__coupling__times__control_parameter__over__temperature",
+        "coord_ratio__temperature__over__control_parameter",
+        "coord_ratio__control_parameter__over__temperature",
+        "coord_mul__coupling__times__control_parameter__times__coupling",
+        "coord_mul__coupling__times__control_parameter"
+      ],
+      "unknown_prediction_accuracy": 0.08163265306122448,
+      "unknown_prediction_macro_f1": 0.061068702290076333
+    }
+  ],
+  "rediscovery_score": 0.75,
+  "status": "A+ not justified: coordinate invention succeeded on controlled/offline probes, but no live real-data downloads were available in this restricted run.",
+  "transfer_score": 1.0,
+  "verdict": "B) General methodology"
+}

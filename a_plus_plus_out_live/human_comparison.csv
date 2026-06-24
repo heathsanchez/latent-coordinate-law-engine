@@ -1,0 +1,2 @@
+domain,random_forest_accuracy,random_forest_macro_f1,decision_tree_coordinates_accuracy,decision_tree_coordinates_macro_f1,nearest_neighbors_accuracy,nearest_neighbors_macro_f1
+ETP_RAW,0.8650793650793651,0.570650377884422,0.8253968253968254,0.45079365079365075,0.6984126984126984,0.42570074505798233

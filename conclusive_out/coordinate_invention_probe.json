@@ -1,0 +1,164 @@
+{
+  "invented_coordinate_hits": [
+    "coord_mul__coupling__times__control_parameter__over__temperature"
+  ],
+  "probe": "phase_effective_control_withheld",
+  "raw_columns": [
+    "domain",
+    "control_parameter",
+    "lattice_size",
+    "temperature",
+    "coupling",
+    "noise",
+    "phase",
+    "outbreak",
+    "map_cost",
+    "route_cost"
+  ],
+  "rows": 420,
+  "success": true,
+  "synthesized_feature_count": 85,
+  "top_coordinates": [
+    {
+      "feature": "coord_mul__coupling__times__control_parameter__over__temperature",
+      "mutual_info": 0.9293022147561341,
+      "tree_accuracy": 0.9047619047619048,
+      "tree_macro_f1": 0.7159090909090909,
+      "tree_rule": "|--- coord_mul__coupling__times__control_parameter__over__temperature <= 0.31\n|   |--- class: subcritical|0\n|--- coord_mul__coupling__times__control_parameter__over__temperature >  0.31\n|   |--- coord_mul__coupling__times__control_parameter__over__temperature <= 0.39\n|   |   |--- class: critical|0\n|   |--- coord_mul__coupling__times__control_parameter__over__temperature >  0.39\n|   |   |--- coord_mul__coupling__times__control_parameter__over__temperature <= 0.64\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter__over__temperature >  0.64\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_ratio__temperature__over__control_parameter",
+      "mutual_info": 0.444309074565405,
+      "tree_accuracy": 0.6904761904761905,
+      "tree_macro_f1": 0.3723404255319149,
+      "tree_rule": "|--- coord_ratio__temperature__over__control_parameter <= 4.54\n|   |--- coord_ratio__temperature__over__control_parameter <= 2.01\n|   |   |--- coord_ratio__temperature__over__control_parameter <= 1.63\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_ratio__temperature__over__control_parameter >  1.63\n|   |   |   |--- class: supercritical|1\n|   |--- coord_ratio__temperature__over__control_parameter >  2.01\n|   |   |--- coord_ratio__temperature__over__control_parameter <= 3.29\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_ratio__temperature__over__control_parameter >  3.29\n|   |   |   |--- class: subcritical|0\n|--- coord_ratio__temperature__over__control_parameter >  4.54\n|   |--- coord_ratio__temperature__over__control_parameter <= 5.47\n|   |   |--- coord_ratio__temperature__over__control_parameter <= 4.80\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_ratio__temperature__over__control_parameter >  4.80\n|   |   |   |--- class: subcritical|0\n|   |--- coord_ratio__temperature__over__control_parameter >  5.47\n|   |   |--- class: subcritical|0\n"
+    },
+    {
+      "feature": "coord_ratio__control_parameter__over__temperature",
+      "mutual_info": 0.44351819406133486,
+      "tree_accuracy": 0.6904761904761905,
+      "tree_macro_f1": 0.3723404255319149,
+      "tree_rule": "|--- coord_ratio__control_parameter__over__temperature <= 0.22\n|   |--- coord_ratio__control_parameter__over__temperature <= 0.18\n|   |   |--- class: subcritical|0\n|   |--- coord_ratio__control_parameter__over__temperature >  0.18\n|   |   |--- coord_ratio__control_parameter__over__temperature <= 0.21\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_ratio__control_parameter__over__temperature >  0.21\n|   |   |   |--- class: subcritical|0\n|--- coord_ratio__control_parameter__over__temperature >  0.22\n|   |--- coord_ratio__control_parameter__over__temperature <= 0.50\n|   |   |--- coord_ratio__control_parameter__over__temperature <= 0.30\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_ratio__control_parameter__over__temperature >  0.30\n|   |   |   |--- class: supercritical|1\n|   |--- coord_ratio__control_parameter__over__temperature >  0.50\n|   |   |--- coord_ratio__control_parameter__over__temperature <= 0.62\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_ratio__control_parameter__over__temperature >  0.62\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_mul__coupling__times__control_parameter",
+      "mutual_info": 0.4069759684861538,
+      "tree_accuracy": 0.6666666666666666,
+      "tree_macro_f1": 0.35820713238886176,
+      "tree_rule": "|--- coord_mul__coupling__times__control_parameter <= 0.74\n|   |--- coord_mul__coupling__times__control_parameter <= 0.54\n|   |   |--- coord_mul__coupling__times__control_parameter <= 0.33\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__coupling__times__control_parameter >  0.33\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__coupling__times__control_parameter >  0.54\n|   |   |--- coord_mul__coupling__times__control_parameter <= 0.59\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter >  0.59\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__coupling__times__control_parameter >  0.74\n|   |--- coord_mul__coupling__times__control_parameter <= 1.25\n|   |   |--- coord_mul__coupling__times__control_parameter <= 1.22\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter >  1.22\n|   |   |   |--- class: supercritical|0\n|   |--- coord_mul__coupling__times__control_parameter >  1.25\n|   |   |--- coord_mul__coupling__times__control_parameter <= 1.29\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter >  1.29\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_mul__control_parameter__times__noise__over__temperature",
+      "mutual_info": 0.31243099956657905,
+      "tree_accuracy": 0.6349206349206349,
+      "tree_macro_f1": 0.4420003512469266,
+      "tree_rule": "|--- coord_mul__control_parameter__times__noise__over__temperature <= 0.03\n|   |--- coord_mul__control_parameter__times__noise__over__temperature <= 0.02\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature <= 0.00\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature >  0.00\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__control_parameter__times__noise__over__temperature >  0.02\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature <= 0.03\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature >  0.03\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__control_parameter__times__noise__over__temperature >  0.03\n|   |--- coord_mul__control_parameter__times__noise__over__temperature <= 0.06\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature <= 0.04\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature >  0.04\n|   |   |   |--- class: supercritical|1\n|   |--- coord_mul__control_parameter__times__noise__over__temperature >  0.06\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature <= 0.14\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__control_parameter__times__noise__over__temperature >  0.14\n|   |   |   |--- class: supercritical|0\n"
+    },
+    {
+      "feature": "coord_mul__control_parameter__times__lattice_size__over__temperature",
+      "mutual_info": 0.30591980029144317,
+      "tree_accuracy": 0.6587301587301587,
+      "tree_macro_f1": 0.3522418757712875,
+      "tree_rule": "|--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 11.90\n|   |--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 5.46\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 4.20\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature >  4.20\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__control_parameter__times__lattice_size__over__temperature >  5.46\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 5.58\n|   |   |   |--- class: critical|0\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature >  5.58\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__control_parameter__times__lattice_size__over__temperature >  11.90\n|   |--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 31.89\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 13.31\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature >  13.31\n|   |   |   |--- class: supercritical|1\n|   |--- coord_mul__control_parameter__times__lattice_size__over__temperature >  31.89\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature <= 81.99\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__control_parameter__times__lattice_size__over__temperature >  81.99\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "control_parameter",
+      "mutual_info": 0.3010378752163332,
+      "tree_accuracy": 0.626984126984127,
+      "tree_macro_f1": 0.33759469696969696,
+      "tree_rule": "|--- control_parameter <= 0.51\n|   |--- control_parameter <= 0.31\n|   |   |--- control_parameter <= 0.20\n|   |   |   |--- class: subcritical|0\n|   |   |--- control_parameter >  0.20\n|   |   |   |--- class: subcritical|0\n|   |--- control_parameter >  0.31\n|   |   |--- control_parameter <= 0.48\n|   |   |   |--- class: subcritical|0\n|   |   |--- control_parameter >  0.48\n|   |   |   |--- class: subcritical|0\n|--- control_parameter >  0.51\n|   |--- control_parameter <= 0.59\n|   |   |--- control_parameter <= 0.52\n|   |   |   |--- class: supercritical|1\n|   |   |--- control_parameter >  0.52\n|   |   |   |--- class: subcritical|0\n|   |--- control_parameter >  0.59\n|   |   |--- control_parameter <= 0.72\n|   |   |   |--- class: supercritical|1\n|   |   |--- control_parameter >  0.72\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_abs__control_parameter",
+      "mutual_info": 0.3010378752163332,
+      "tree_accuracy": 0.626984126984127,
+      "tree_macro_f1": 0.33759469696969696,
+      "tree_rule": "|--- coord_abs__control_parameter <= 0.51\n|   |--- coord_abs__control_parameter <= 0.31\n|   |   |--- coord_abs__control_parameter <= 0.20\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_abs__control_parameter >  0.20\n|   |   |   |--- class: subcritical|0\n|   |--- coord_abs__control_parameter >  0.31\n|   |   |--- coord_abs__control_parameter <= 0.48\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_abs__control_parameter >  0.48\n|   |   |   |--- class: subcritical|0\n|--- coord_abs__control_parameter >  0.51\n|   |--- coord_abs__control_parameter <= 0.59\n|   |   |--- coord_abs__control_parameter <= 0.52\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_abs__control_parameter >  0.52\n|   |   |   |--- class: subcritical|0\n|   |--- coord_abs__control_parameter >  0.59\n|   |   |--- coord_abs__control_parameter <= 0.72\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_abs__control_parameter >  0.72\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_mul__temperature__times__lattice_size__over__control_parameter",
+      "mutual_info": 0.28601677841204065,
+      "tree_accuracy": 0.5952380952380952,
+      "tree_macro_f1": 0.3125,
+      "tree_rule": "|--- coord_mul__temperature__times__lattice_size__over__control_parameter <= 142.20\n|   |--- coord_mul__temperature__times__lattice_size__over__control_parameter <= 52.68\n|   |   |--- coord_mul__temperature__times__lattice_size__over__control_parameter <= 44.62\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__temperature__times__lattice_size__over__control_parameter >  44.62\n|   |   |   |--- class: supercritical|1\n|   |--- coord_mul__temperature__times__lattice_size__over__control_parameter >  52.68\n|   |   |--- coord_mul__temperature__times__lattice_size__over__control_parameter <= 92.03\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__temperature__times__lattice_size__over__control_parameter >  92.03\n|   |   |   |--- class: supercritical|1\n|--- coord_mul__temperature__times__lattice_size__over__control_parameter >  142.20\n|   |--- coord_mul__temperature__times__lattice_size__over__control_parameter <= 272.67\n|   |   |--- coord_mul__temperature__times__lattice_size__over__control_parameter <= 262.82\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__temperature__times__lattice_size__over__control_parameter >  262.82\n|   |   |   |--- class: supercritical|1\n|   |--- coord_mul__temperature__times__lattice_size__over__control_parameter >  272.67\n|   |   |--- class: subcritical|0\n"
+    },
+    {
+      "feature": "coord_sum__coupling__plus__control_parameter",
+      "mutual_info": 0.2766027333380683,
+      "tree_accuracy": 0.6666666666666666,
+      "tree_macro_f1": 0.35538814281035047,
+      "tree_rule": "|--- coord_sum__coupling__plus__control_parameter <= 2.01\n|   |--- coord_sum__coupling__plus__control_parameter <= 1.46\n|   |   |--- coord_sum__coupling__plus__control_parameter <= 1.28\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_sum__coupling__plus__control_parameter >  1.28\n|   |   |   |--- class: subcritical|0\n|   |--- coord_sum__coupling__plus__control_parameter >  1.46\n|   |   |--- coord_sum__coupling__plus__control_parameter <= 1.93\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_sum__coupling__plus__control_parameter >  1.93\n|   |   |   |--- class: subcritical|0\n|--- coord_sum__coupling__plus__control_parameter >  2.01\n|   |--- coord_sum__coupling__plus__control_parameter <= 2.29\n|   |   |--- coord_sum__coupling__plus__control_parameter <= 2.02\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_sum__coupling__plus__control_parameter >  2.02\n|   |   |   |--- class: supercritical|1\n|   |--- coord_sum__coupling__plus__control_parameter >  2.29\n|   |   |--- coord_sum__coupling__plus__control_parameter <= 2.69\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_sum__coupling__plus__control_parameter >  2.69\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_mul__coupling__times__control_parameter__over__lattice_size",
+      "mutual_info": 0.27274357571874575,
+      "tree_accuracy": 0.5793650793650794,
+      "tree_macro_f1": 0.30502788780211787,
+      "tree_rule": "|--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.01\n|   |--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.01\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.01\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.01\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.01\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.01\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.01\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.01\n|   |--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.03\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.02\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.02\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.03\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size <= 0.08\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter__over__lattice_size >  0.08\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_diff__temperature__minus__control_parameter",
+      "mutual_info": 0.2713520631764288,
+      "tree_accuracy": 0.5793650793650794,
+      "tree_macro_f1": 0.3210359686922874,
+      "tree_rule": "|--- coord_diff__temperature__minus__control_parameter <= 1.17\n|   |--- coord_diff__temperature__minus__control_parameter <= 0.49\n|   |   |--- coord_diff__temperature__minus__control_parameter <= 0.40\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_diff__temperature__minus__control_parameter >  0.40\n|   |   |   |--- class: supercritical|1\n|   |--- coord_diff__temperature__minus__control_parameter >  0.49\n|   |   |--- coord_diff__temperature__minus__control_parameter <= 0.65\n|   |   |   |--- class: supercritical|0\n|   |   |--- coord_diff__temperature__minus__control_parameter >  0.65\n|   |   |   |--- class: supercritical|1\n|--- coord_diff__temperature__minus__control_parameter >  1.17\n|   |--- coord_diff__temperature__minus__control_parameter <= 2.51\n|   |   |--- coord_diff__temperature__minus__control_parameter <= 1.33\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_diff__temperature__minus__control_parameter >  1.33\n|   |   |   |--- class: subcritical|0\n|   |--- coord_diff__temperature__minus__control_parameter >  2.51\n|   |   |--- coord_diff__temperature__minus__control_parameter <= 2.73\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_diff__temperature__minus__control_parameter >  2.73\n|   |   |   |--- class: subcritical|0\n"
+    },
+    {
+      "feature": "coord_mul__temperature__times__noise__over__control_parameter",
+      "mutual_info": 0.27044117781030486,
+      "tree_accuracy": 0.6349206349206349,
+      "tree_macro_f1": 0.3496987461325517,
+      "tree_rule": "|--- coord_mul__temperature__times__noise__over__control_parameter <= 0.48\n|   |--- coord_mul__temperature__times__noise__over__control_parameter <= 0.23\n|   |   |--- coord_mul__temperature__times__noise__over__control_parameter <= 0.01\n|   |   |   |--- class: critical|0\n|   |   |--- coord_mul__temperature__times__noise__over__control_parameter >  0.01\n|   |   |   |--- class: supercritical|1\n|   |--- coord_mul__temperature__times__noise__over__control_parameter >  0.23\n|   |   |--- coord_mul__temperature__times__noise__over__control_parameter <= 0.27\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__temperature__times__noise__over__control_parameter >  0.27\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__temperature__times__noise__over__control_parameter >  0.48\n|   |--- coord_mul__temperature__times__noise__over__control_parameter <= 0.63\n|   |   |--- coord_mul__temperature__times__noise__over__control_parameter <= 0.62\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__temperature__times__noise__over__control_parameter >  0.62\n|   |   |   |--- class: critical|0\n|   |--- coord_mul__temperature__times__noise__over__control_parameter >  0.63\n|   |   |--- class: subcritical|0\n"
+    },
+    {
+      "feature": "noise",
+      "mutual_info": 0.25787670143023567,
+      "tree_accuracy": 0.5,
+      "tree_macro_f1": 0.2887426900584795,
+      "tree_rule": "|--- noise <= 0.14\n|   |--- noise <= 0.05\n|   |   |--- noise <= 0.00\n|   |   |   |--- class: critical|0\n|   |   |--- noise >  0.00\n|   |   |   |--- class: subcritical|0\n|   |--- noise >  0.05\n|   |   |--- noise <= 0.14\n|   |   |   |--- class: subcritical|0\n|   |   |--- noise >  0.14\n|   |   |   |--- class: subcritical|0\n|--- noise >  0.14\n|   |--- noise <= 0.15\n|   |   |--- noise <= 0.15\n|   |   |   |--- class: supercritical|0\n|   |   |--- noise >  0.15\n|   |   |   |--- class: supercritical|0\n|   |--- noise >  0.15\n|   |   |--- noise <= 0.16\n|   |   |   |--- class: subcritical|0\n|   |   |--- noise >  0.16\n|   |   |   |--- class: supercritical|0\n"
+    },
+    {
+      "feature": "coord_abs__noise",
+      "mutual_info": 0.25787670143023567,
+      "tree_accuracy": 0.5,
+      "tree_macro_f1": 0.2887426900584795,
+      "tree_rule": "|--- coord_abs__noise <= 0.14\n|   |--- coord_abs__noise <= 0.05\n|   |   |--- coord_abs__noise <= 0.00\n|   |   |   |--- class: critical|0\n|   |   |--- coord_abs__noise >  0.00\n|   |   |   |--- class: subcritical|0\n|   |--- coord_abs__noise >  0.05\n|   |   |--- coord_abs__noise <= 0.14\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_abs__noise >  0.14\n|   |   |   |--- class: subcritical|0\n|--- coord_abs__noise >  0.14\n|   |--- coord_abs__noise <= 0.15\n|   |   |--- coord_abs__noise <= 0.15\n|   |   |   |--- class: supercritical|0\n|   |   |--- coord_abs__noise >  0.15\n|   |   |   |--- class: supercritical|0\n|   |--- coord_abs__noise >  0.15\n|   |   |--- coord_abs__noise <= 0.16\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_abs__noise >  0.16\n|   |   |   |--- class: supercritical|0\n"
+    },
+    {
+      "feature": "coord_mul__control_parameter__times__noise",
+      "mutual_info": 0.2508057870359581,
+      "tree_accuracy": 0.5793650793650794,
+      "tree_macro_f1": 0.3828778467908903,
+      "tree_rule": "|--- coord_mul__control_parameter__times__noise <= 0.05\n|   |--- coord_mul__control_parameter__times__noise <= 0.01\n|   |   |--- coord_mul__control_parameter__times__noise <= 0.00\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__control_parameter__times__noise >  0.00\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__control_parameter__times__noise >  0.01\n|   |   |--- coord_mul__control_parameter__times__noise <= 0.01\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__control_parameter__times__noise >  0.01\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__control_parameter__times__noise >  0.05\n|   |--- coord_mul__control_parameter__times__noise <= 0.12\n|   |   |--- coord_mul__control_parameter__times__noise <= 0.07\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__control_parameter__times__noise >  0.07\n|   |   |   |--- class: supercritical|1\n|   |--- coord_mul__control_parameter__times__noise >  0.12\n|   |   |--- coord_mul__control_parameter__times__noise <= 0.13\n|   |   |   |--- class: critical|0\n|   |   |--- coord_mul__control_parameter__times__noise >  0.13\n|   |   |   |--- class: supercritical|0\n"
+    },
+    {
+      "feature": "coord_mul__coupling__times__control_parameter__over__noise",
+      "mutual_info": 0.24891248450094738,
+      "tree_accuracy": 0.6031746031746031,
+      "tree_macro_f1": 0.3380952380952381,
+      "tree_rule": "|--- coord_mul__coupling__times__control_parameter__over__noise <= 4.78\n|   |--- coord_mul__coupling__times__control_parameter__over__noise <= 2.67\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise <= 2.14\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise >  2.14\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__coupling__times__control_parameter__over__noise >  2.67\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise <= 2.78\n|   |   |   |--- class: supercritical|0\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise >  2.78\n|   |   |   |--- class: subcritical|0\n|--- coord_mul__coupling__times__control_parameter__over__noise >  4.78\n|   |--- coord_mul__coupling__times__control_parameter__over__noise <= 9.97\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise <= 9.58\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise >  9.58\n|   |   |   |--- class: subcritical|0\n|   |--- coord_mul__coupling__times__control_parameter__over__noise >  9.97\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise <= 23.26\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_mul__coupling__times__control_parameter__over__noise >  23.26\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_diff__control_parameter__minus__noise",
+      "mutual_info": 0.24713245629910596,
+      "tree_accuracy": 0.626984126984127,
+      "tree_macro_f1": 0.3323008088108759,
+      "tree_rule": "|--- coord_diff__control_parameter__minus__noise <= 0.39\n|   |--- coord_diff__control_parameter__minus__noise <= 0.19\n|   |   |--- coord_diff__control_parameter__minus__noise <= 0.09\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_diff__control_parameter__minus__noise >  0.09\n|   |   |   |--- class: subcritical|0\n|   |--- coord_diff__control_parameter__minus__noise >  0.19\n|   |   |--- coord_diff__control_parameter__minus__noise <= 0.20\n|   |   |   |--- class: critical|0\n|   |   |--- coord_diff__control_parameter__minus__noise >  0.20\n|   |   |   |--- class: subcritical|0\n|--- coord_diff__control_parameter__minus__noise >  0.39\n|   |--- coord_diff__control_parameter__minus__noise <= 0.62\n|   |   |--- coord_diff__control_parameter__minus__noise <= 0.40\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_diff__control_parameter__minus__noise >  0.40\n|   |   |   |--- class: subcritical|0\n|   |--- coord_diff__control_parameter__minus__noise >  0.62\n|   |   |--- coord_diff__control_parameter__minus__noise <= 0.81\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_diff__control_parameter__minus__noise >  0.81\n|   |   |   |--- class: supercritical|1\n"
+    },
+    {
+      "feature": "coord_diff__temperature__minus__coupling",
+      "mutual_info": 0.24277023014553456,
+      "tree_accuracy": 0.6031746031746031,
+      "tree_macro_f1": 0.324423655195456,
+      "tree_rule": "|--- coord_diff__temperature__minus__coupling <= 0.21\n|   |--- coord_diff__temperature__minus__coupling <= -0.26\n|   |   |--- coord_diff__temperature__minus__coupling <= -0.52\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_diff__temperature__minus__coupling >  -0.52\n|   |   |   |--- class: supercritical|1\n|   |--- coord_diff__temperature__minus__coupling >  -0.26\n|   |   |--- coord_diff__temperature__minus__coupling <= -0.18\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_diff__temperature__minus__coupling >  -0.18\n|   |   |   |--- class: supercritical|1\n|--- coord_diff__temperature__minus__coupling >  0.21\n|   |--- coord_diff__temperature__minus__coupling <= 1.66\n|   |   |--- coord_diff__temperature__minus__coupling <= 1.65\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_diff__temperature__minus__coupling >  1.65\n|   |   |   |--- class: critical|0\n|   |--- coord_diff__temperature__minus__coupling >  1.66\n|   |   |--- coord_diff__temperature__minus__coupling <= 2.16\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_diff__temperature__minus__coupling >  2.16\n|   |   |   |--- class: subcritical|0\n"
+    },
+    {
+      "feature": "coord_sum__control_parameter__plus__noise",
+      "mutual_info": 0.24199944155756925,
+      "tree_accuracy": 0.6507936507936508,
+      "tree_macro_f1": 0.44018002855977156,
+      "tree_rule": "|--- coord_sum__control_parameter__plus__noise <= 0.60\n|   |--- coord_sum__control_parameter__plus__noise <= 0.34\n|   |   |--- coord_sum__control_parameter__plus__noise <= 0.27\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_sum__control_parameter__plus__noise >  0.27\n|   |   |   |--- class: subcritical|0\n|   |--- coord_sum__control_parameter__plus__noise >  0.34\n|   |   |--- coord_sum__control_parameter__plus__noise <= 0.36\n|   |   |   |--- class: subcritical|0\n|   |   |--- coord_sum__control_parameter__plus__noise >  0.36\n|   |   |   |--- class: subcritical|0\n|--- coord_sum__control_parameter__plus__noise >  0.60\n|   |--- coord_sum__control_parameter__plus__noise <= 1.10\n|   |   |--- coord_sum__control_parameter__plus__noise <= 0.83\n|   |   |   |--- class: supercritical|1\n|   |   |--- coord_sum__control_parameter__plus__noise >  0.83\n|   |   |   |--- class: supercritical|1\n|   |--- coord_sum__control_parameter__plus__noise >  1.10\n|   |   |--- coord_sum__control_parameter__plus__noise <= 1.15\n|   |   |   |--- class: supercritical|0\n|   |   |--- coord_sum__control_parameter__plus__noise >  1.15\n|   |   |   |--- class: supercritical|0\n"
+    }
+  ],
+  "withheld_coordinate": "effective_control"
+}

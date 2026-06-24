@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Downloaded benchmark caches can be regenerated with:
+# latent-law a-plus-plus --out a_plus_plus_out_live/ --download
+a_plus_plus_out_live/cache/
