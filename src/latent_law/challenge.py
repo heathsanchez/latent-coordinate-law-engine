@@ -155,7 +155,22 @@ def generate_etp_raw(seed: int = 4, n: int = 420) -> pd.DataFrame:
 
 
 def _feature_columns(df: pd.DataFrame, targets: list[str]) -> list[str]:
-    excluded = set(targets) | {"domain", "label", "experiment", "holdout", "run", "description", "status"}
+    excluded = set(targets) | {
+        "domain",
+        "label",
+        "experiment",
+        "holdout",
+        "run",
+        "description",
+        "status",
+        "map_cost",
+        "route_cost",
+        "lowest_search_complexity",
+        "premise_index",
+        "conclusion_index",
+        "premise_equation",
+        "conclusion_equation",
+    }
     return [c for c in df.columns if c not in excluded and df[c].nunique(dropna=False) > 1]
 
 

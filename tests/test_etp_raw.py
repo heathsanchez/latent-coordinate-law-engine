@@ -2,6 +2,7 @@ from pathlib import Path
 
 import numpy as np
 
+from latent_law.discovery import discover_coordinates
 from latent_law.etp import equation_features, generate_etp_from_equations, pair_equation_features
 
 
@@ -52,3 +53,43 @@ def test_generate_etp_from_local_equations_and_matrix(tmp_path: Path):
     assert {"premise_equation", "conclusion_equation", "implication_true"}.issubset(df.columns)
     assert df["implication_true"].nunique() == 2
     assert not any(term in column for column in df.columns for term in FORBIDDEN)
+
+
+def test_discovery_excludes_etp_ids_text_and_auxiliary_costs(tmp_path: Path):
+    equations_path = tmp_path / "equations.txt"
+    equations_path.write_text(
+        "\n".join(
+            [
+                "x = x",
+                "x = y",
+                "x = x ◇ x",
+                "x = (y ◇ x) ◇ (x ◇ z)",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    matrix_path = tmp_path / "matrix.npy"
+    np.save(
+        matrix_path,
+        np.array(
+            [
+                [1, 0, 1, 0],
+                [0, 1, 0, 0],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+            ],
+            dtype=np.uint8,
+        ),
+    )
+    df = generate_etp_from_equations(equations_path, matrix_path, n=40, seed=8)
+    report = discover_coordinates(df, target_cols=["implication_true"])
+
+    forbidden_candidates = {
+        "premise_index",
+        "conclusion_index",
+        "premise_equation",
+        "conclusion_equation",
+        "map_cost",
+        "route_cost",
+    }
+    assert forbidden_candidates.isdisjoint(set(report["candidate_features"]))

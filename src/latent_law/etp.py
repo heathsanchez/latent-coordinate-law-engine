@@ -183,7 +183,7 @@ def _row_from_pair(equations: list[str], i: int, j: int, implication: int) -> di
     conclusion = equations[j]
     features = pair_equation_features(premise, conclusion)
     map_cost = features["pair_total_tokens"] + features["pair_variable_union_count"]
-    route_cost = int((features["pair_total_tokens"] + 1) * (features["pair_total_ops"] + 1) * (2 if not implication else 1))
+    route_cost = int((features["pair_total_tokens"] + 1) * (features["pair_total_ops"] + 1))
     return {
         "domain": "ETP",
         "premise_index": i,

@@ -38,7 +38,19 @@ class DomainSpec:
     route_cost_col: str | None = None
 
 
-META_COLUMNS = {"domain", "label", "experiment", "holdout", "run", "description", "status"}
+META_COLUMNS = {
+    "domain",
+    "label",
+    "experiment",
+    "holdout",
+    "run",
+    "description",
+    "status",
+    "premise_index",
+    "conclusion_index",
+    "premise_equation",
+    "conclusion_equation",
+}
 BENCHMARK_AUX_COLUMNS = {"map_cost", "route_cost", "lowest_search_complexity"}
 
 

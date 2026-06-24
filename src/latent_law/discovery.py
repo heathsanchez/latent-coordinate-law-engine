@@ -21,7 +21,22 @@ def _combined_target(df: pd.DataFrame, target_cols: list[str]) -> pd.Series:
 
 
 def _candidate_features(df: pd.DataFrame, target_cols: list[str]) -> list[str]:
-    excluded = set(target_cols) | {"label", "experiment", "holdout", "run", "description", "status"}
+    excluded = set(target_cols) | {
+        "label",
+        "experiment",
+        "holdout",
+        "run",
+        "description",
+        "status",
+        "domain",
+        "map_cost",
+        "route_cost",
+        "lowest_search_complexity",
+        "premise_index",
+        "conclusion_index",
+        "premise_equation",
+        "conclusion_equation",
+    }
     return [
         col
         for col in df.columns

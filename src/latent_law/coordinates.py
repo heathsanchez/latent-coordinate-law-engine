@@ -22,6 +22,10 @@ DEFAULT_EXCLUDED = {
     "map_cost",
     "route_cost",
     "lowest_search_complexity",
+    "premise_index",
+    "conclusion_index",
+    "premise_equation",
+    "conclusion_equation",
 }
 
 
