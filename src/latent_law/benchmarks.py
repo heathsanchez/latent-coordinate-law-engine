@@ -22,6 +22,7 @@ from latent_law.counterexamples import search_counterexamples
 from latent_law.coordinates import synthesize_coordinates
 from latent_law.data import generate_igp24_synthetic
 from latent_law.discovery import discover_coordinates
+from latent_law.etp import generate_etp_from_equations
 from latent_law.features import extract_features
 from latent_law.laws import Law, induce_laws, law_condition_mask
 from latent_law.reporting import export_lawbook, write_json
@@ -46,40 +47,7 @@ def _rng(seed: int) -> np.random.Generator:
 
 
 def generate_etp(n: int = 300, seed: int = 1) -> pd.DataFrame:
-    rng = _rng(seed)
-    rows = []
-    for _ in range(n):
-        variable_count = int(rng.integers(2, 9))
-        depth = int(rng.integers(1, 8))
-        symmetry = float(rng.random())
-        repeated_variables = int(rng.integers(0, 5))
-        idempotence = int(rng.random() < 0.45)
-        projection = int(rng.random() < 0.25)
-        affine = int(rng.random() < 0.3)
-        diagonal = int(rng.random() < 0.35)
-        latent_score = 2 * idempotence + 2 * projection + affine + diagonal + (symmetry > 0.62) - (depth > 5)
-        implication_true = latent_score >= 3
-        proof_found = implication_true and depth <= 5 and variable_count <= 6
-        countermodel_found = (not implication_true) and (projection == 0 or repeated_variables >= 2)
-        rows.append(
-            {
-                "domain": "ETP",
-                "variable_count": variable_count,
-                "depth": depth,
-                "symmetry": symmetry,
-                "repeated_variables": repeated_variables,
-                "idempotence_indicator": idempotence,
-                "projection_indicator": projection,
-                "affine_indicator": affine,
-                "diagonal_indicator": diagonal,
-                "implication_true": int(implication_true),
-                "proof_found": int(proof_found),
-                "countermodel_found": int(countermodel_found),
-                "map_cost": variable_count + depth,
-                "route_cost": int((variable_count + depth) ** 2 * (1.4 if not implication_true else 1.0)),
-            }
-        )
-    return pd.DataFrame(rows)
+    return generate_etp_from_equations(n=n, seed=seed)
 
 
 def generate_arc(n: int = 300, seed: int = 2) -> pd.DataFrame:
@@ -404,7 +372,14 @@ def build_domain_specs(igp24_csv: str | None = None, seed: int = 0) -> list[Doma
     igp["domain"] = "IGP24"
     return [
         DomainSpec("IGP24", igp, ["t", "r"], ["support_face", "support_index", "a6", "threshold_zone"]),
-        DomainSpec("ETP", generate_etp(seed=seed + 1), ["implication_true", "proof_found", "countermodel_found"], ["idempotence_indicator", "projection_indicator", "depth"], "map_cost", "route_cost"),
+        DomainSpec(
+            "ETP",
+            generate_etp(seed=seed + 1),
+            ["implication_true"],
+            ["premise_depth", "conclusion_depth", "pair_same_variable_set", "pair_total_repeats"],
+            "map_cost",
+            "route_cost",
+        ),
         DomainSpec("ARC", generate_arc(seed=seed + 2), ["task_family", "successful_solver"], ["symmetry", "hole_count", "connected_components", "translation_detected"], "map_cost", "route_cost"),
         DomainSpec("MAZE", generate_maze(seed=seed + 3), ["best_representation"], ["wall_density", "branch_factor", "graph_nodes", "skeleton_nodes", "distance_entropy"], "map_cost", "route_cost"),
         DomainSpec("CA", generate_cellular_automata(seed=seed + 4), ["wolfram_class"], ["rule_density", "transition_count", "local_entropy", "mirror_asymmetry"], "map_cost", "route_cost"),

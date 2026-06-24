@@ -27,6 +27,8 @@ pytest
 latent-law demo --out out/
 latent-law benchmark --out conclusive_out/
 latent-law a-plus-plus --out a_plus_plus_out/
+latent-law a-plus-plus --out a_plus_plus_out --data-dir data/real
+latent-law real-datasets --data-dir data/real --out real_out
 ```
 
 ## Python Usage
@@ -50,6 +52,7 @@ latent-law demo --out out/
 latent-law discover --csv data.csv --out out/
 latent-law benchmark --igp24-csv real_dataset.csv --out conclusive_out/
 latent-law a-plus-plus --out a_plus_plus_out/
+latent-law real-datasets --data-dir data/real --out real_out
 latent-law test
 ```
 
@@ -67,7 +70,7 @@ The demo writes:
 The conclusive benchmark command runs the same coordinate discovery protocol across:
 
 - IGP24 polynomial records
-- ETP-style equation statistics
+- ETP-style raw equation-pair structure, using `equations.txt` plus an implication matrix when available
 - ARC-style object/topology features
 - maze/search representations
 - elementary cellular automata
@@ -92,3 +95,25 @@ latent-law a-plus-plus --out a_plus_plus_out/
 ```
 
 It writes `a_plus_plus_report.md`, `a_plus_plus_scores.csv`, `scientific_rediscovery.csv`, `unknown_prediction.csv`, `human_comparison.csv`, and `dataset_sources.json`. Network-backed real benchmark downloads are available through `--download`, subject to the execution environment's network permissions.
+
+Network downloads are best-effort. If `--download` fails, the benchmark prints a warning and continues with cached or local files. Use `--data-dir data/real` to run in local-only mode with no internet requirement.
+
+Expected local real-data layout:
+
+```text
+data/real/
+  uci/
+    winequality-red.csv
+    winequality-white.csv
+    concrete.csv
+    energy_efficiency.csv
+    airfoil.csv
+  pmlb/
+    *.tsv
+    *.csv
+  srsd/
+    *.csv
+    *.tsv
+```
+
+`latent-law real-datasets --data-dir data/real --out real_out` recursively scans CSV, TSV, and Parquet files, infers targets, skips undersized files, synthesizes coordinates, and writes `real_dataset_report.json`, `real_dataset_results.csv`, and `real_dataset_summary.md`.

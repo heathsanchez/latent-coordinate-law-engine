@@ -22,6 +22,8 @@ from sklearn.tree import DecisionTreeClassifier
 from latent_law.benchmarks import generate_cellular_automata, generate_phase_transition
 from latent_law.coordinates import synthesize_coordinates
 from latent_law.discovery import discover_coordinates
+from latent_law.etp import generate_etp_from_equations
+from latent_law.realdata import run_real_dataset_benchmark
 from latent_law.reporting import write_json
 
 
@@ -149,45 +151,7 @@ def generate_phase_probe(seed: int = 3) -> RediscoveryProbe:
 
 
 def generate_etp_raw(seed: int = 4, n: int = 420) -> pd.DataFrame:
-    rng = np.random.default_rng(seed)
-    rows = []
-    for _ in range(n):
-        variable_count = int(rng.integers(2, 9))
-        depth = int(rng.integers(1, 8))
-        binary_nodes = int(rng.integers(1, 15))
-        leaf_count = int(variable_count + rng.integers(0, 8))
-        diagonal_hits = int(rng.integers(0, 5))
-        repeated_variables = int(rng.integers(0, 6))
-        symbol_balance = float(rng.uniform(-1, 1))
-        left_projection_traces = int(rng.integers(0, 6))
-        right_projection_traces = int(rng.integers(0, 6))
-        affine_residual = float(rng.gamma(2.0, 1.0))
-        symmetry_score = float(rng.random())
-        projection_like = (left_projection_traces + right_projection_traces) >= 7 and affine_residual > 1.0
-        affine_like = affine_residual < 1.5 and abs(symbol_balance) < 0.35
-        idempotent_like = diagonal_hits >= 2 and repeated_variables >= 2
-        implication_true = int((projection_like and idempotent_like) or (affine_like and symmetry_score > 0.5))
-        proof_found = int(implication_true and depth <= 5)
-        countermodel_found = int(not implication_true and affine_residual > 1.3)
-        rows.append(
-            {
-                "variable_count": variable_count,
-                "depth": depth,
-                "binary_nodes": binary_nodes,
-                "leaf_count": leaf_count,
-                "diagonal_hits": diagonal_hits,
-                "repeated_variables": repeated_variables,
-                "symbol_balance": symbol_balance,
-                "left_projection_traces": left_projection_traces,
-                "right_projection_traces": right_projection_traces,
-                "affine_residual": affine_residual,
-                "symmetry_score": symmetry_score,
-                "implication_true": implication_true,
-                "proof_found": proof_found,
-                "countermodel_found": countermodel_found,
-            }
-        )
-    return pd.DataFrame(rows)
+    return generate_etp_from_equations(n=n, seed=seed)
 
 
 def _feature_columns(df: pd.DataFrame, targets: list[str]) -> list[str]:
@@ -378,15 +342,22 @@ def _attempt_download_sources(cache_dir: Path, allow_download: bool) -> list[dic
         except Exception as exc:  # pragma: no cover - network path is environment-dependent.
             row["status"] = "failed"
             row["error"] = str(exc)
+            print(f"WARNING: failed to download {source['name']}: {exc}. Continuing with cached/local files if available.")
         statuses.append(row)
     return statuses
 
 
-def run_a_plus_plus_challenge(out: str, seed: int = 0, allow_download: bool = False) -> dict[str, Any]:
+def run_a_plus_plus_challenge(
+    out: str,
+    seed: int = 0,
+    allow_download: bool = False,
+    data_dir: str | None = None,
+) -> dict[str, Any]:
     out_path = Path(out)
     out_path.mkdir(parents=True, exist_ok=True)
 
-    sources = _attempt_download_sources(out_path / "cache", allow_download=allow_download)
+    cache_dir = Path(data_dir) if data_dir else out_path / "cache"
+    sources = [] if data_dir else _attempt_download_sources(cache_dir, allow_download=allow_download)
     probes = [
         generate_feynman_like(seed=seed + 1),
         generate_gas_law_like(seed=seed + 2),
@@ -396,22 +367,20 @@ def run_a_plus_plus_challenge(out: str, seed: int = 0, allow_download: bool = Fa
     rediscovery_rows = [_score_probe(probe) for probe in probes]
 
     etp = generate_etp_raw(seed=seed + 5)
-    etp_synth = synthesize_coordinates(etp, targets=["implication_true", "proof_found", "countermodel_found"], max_base_features=8, max_new_features=260)
-    etp_report = discover_coordinates(etp_synth, target_cols=["implication_true", "proof_found", "countermodel_found"])
-    etp_top = [row["feature"] for row in etp_report["targets"]["combined"]["rankings"][:5]]
+    etp_targets = ["implication_true"]
+    etp_synth = synthesize_coordinates(etp, targets=etp_targets, max_base_features=8, max_new_features=260)
+    etp_report = discover_coordinates(etp_synth, target_cols=etp_targets)
+    etp_top = [row["feature"] for row in etp_report["targets"]["implication_true"]["rankings"][:5]]
     comparison_rows = []
-    comparison_rows.append({"domain": "ETP_RAW", **_human_comparison(etp_synth, ["implication_true", "proof_found", "countermodel_found"], etp_top)})
-    real_dataset_rows = []
-    wine_result = _evaluate_wine_quality(out_path / "cache")
-    if wine_result is not None:
-        real_dataset_rows.append(wine_result)
+    comparison_rows.append({"domain": "ETP_RAW", **_human_comparison(etp_synth, etp_targets, etp_top)})
+    real_dataset_summary = run_real_dataset_benchmark(cache_dir, out_path)
+    real_dataset_rows = real_dataset_summary["results"]
 
     red_df = pd.DataFrame(rediscovery_rows)
     human_df = pd.DataFrame(comparison_rows)
     red_df.to_csv(out_path / "scientific_rediscovery.csv", index=False)
     red_df[["probe", "unknown_prediction_accuracy", "unknown_prediction_macro_f1"]].to_csv(out_path / "unknown_prediction.csv", index=False)
     human_df.to_csv(out_path / "human_comparison.csv", index=False)
-    pd.DataFrame(real_dataset_rows).to_csv(out_path / "real_dataset_results.csv", index=False)
     pd.DataFrame(sources).to_json(out_path / "dataset_sources.json", orient="records", indent=2)
 
     rediscovery_score = float((red_df["best_abs_correlation"] >= 0.95).mean())
@@ -420,7 +389,7 @@ def run_a_plus_plus_challenge(out: str, seed: int = 0, allow_download: bool = Fa
     compression_score = float((red_df["compression_ratio"] < 1.0).mean())
     transfer_score = float((red_df["invented_accuracy"] >= red_df["raw_accuracy"] - 0.05).mean())
     human_comparison_score = float((human_df["decision_tree_coordinates_accuracy"] >= human_df["nearest_neighbors_accuracy"]).mean())
-    real_validation_count = sum(1 for row in real_dataset_rows if row.get("status") == "evaluated")
+    real_validation_count = len(real_dataset_rows)
     real_downloads = sum(1 for row in sources if row["status"] in {"downloaded", "cached"})
 
     scores = {
@@ -455,6 +424,7 @@ def run_a_plus_plus_challenge(out: str, seed: int = 0, allow_download: bool = Fa
         "rediscovery": rediscovery_rows,
         "human_comparison": comparison_rows,
         "real_dataset_results": real_dataset_rows,
+        "data_dir": str(cache_dir),
     }
     write_json(summary, str(out_path / "a_plus_plus_summary.json"))
     _write_a_plus_plus_report(out_path, summary)
@@ -503,13 +473,21 @@ def _write_a_plus_plus_report(out_path: Path, summary: dict[str, Any]) -> None:
     )
     if summary["real_dataset_results"]:
         for row in summary["real_dataset_results"]:
+            name = row.get("domain", row.get("dataset", "UNKNOWN_DATASET"))
+            status = row.get("status", "evaluated")
+            top_coordinates = row.get("top_coordinates", row.get("top_invented_coordinates", "[]"))
+            if isinstance(top_coordinates, str):
+                top_text = top_coordinates
+            else:
+                top_text = ", ".join(top_coordinates)
+            coord_score = row.get("coordinate_accuracy", row.get("coordinate_r2", float("nan")))
             lines.extend(
                 [
-                    f"### {row['domain']}",
-                    f"- status: {row['status']}",
+                    f"### {name}",
+                    f"- status: {status}",
                     f"- rows: {row.get('rows', 'n/a')}",
-                    f"- top coordinates: {', '.join(row.get('top_coordinates', []))}",
-                    f"- coordinate-tree accuracy: {row.get('decision_tree_coordinates_accuracy', float('nan')):.3f}" if row.get("status") == "evaluated" else "",
+                    f"- top coordinates: {top_text}",
+                    f"- coordinate score: {coord_score:.3f}" if coord_score == coord_score else "",
                     "",
                 ]
             )

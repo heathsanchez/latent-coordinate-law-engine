@@ -16,6 +16,7 @@ from latent_law.laws import induce_laws
 from latent_law.reporting import export_lawbook, write_json, write_summary
 from latent_law.benchmarks import run_conclusive_benchmark, run_coordinate_invention_probe
 from latent_law.challenge import run_a_plus_plus_challenge
+from latent_law.realdata import run_real_dataset_benchmark
 
 
 def _run_pipeline(df: pd.DataFrame, out: Path) -> None:
@@ -65,7 +66,12 @@ def benchmark(args: argparse.Namespace) -> int:
 
 
 def a_plus_plus(args: argparse.Namespace) -> int:
-    run_a_plus_plus_challenge(out=args.out, seed=args.seed, allow_download=args.download)
+    run_a_plus_plus_challenge(out=args.out, seed=args.seed, allow_download=args.download, data_dir=args.data_dir)
+    return 0
+
+
+def real_datasets(args: argparse.Namespace) -> int:
+    run_real_dataset_benchmark(data_dir=args.data_dir, out=args.out)
     return 0
 
 
@@ -98,7 +104,13 @@ def build_parser() -> argparse.ArgumentParser:
     app_parser.add_argument("--out", default="a_plus_plus_out/")
     app_parser.add_argument("--seed", type=int, default=0)
     app_parser.add_argument("--download", action="store_true")
+    app_parser.add_argument("--data-dir", default=None)
     app_parser.set_defaults(func=a_plus_plus)
+
+    real_parser = subparsers.add_parser("real-datasets")
+    real_parser.add_argument("--data-dir", required=True)
+    real_parser.add_argument("--out", default="real_out/")
+    real_parser.set_defaults(func=real_datasets)
     return parser
 
 
