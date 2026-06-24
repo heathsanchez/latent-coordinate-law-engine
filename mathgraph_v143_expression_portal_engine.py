@@ -1,0 +1,1273 @@
+#!/usr/bin/env python3
+"""MATHGRAPH v143: Expression Portal Discovery Engine.
+
+Single-file, Colab-ready research engine for testing the hypothesis:
+
+    Intelligence is the discovery of sparse portal representations.
+
+The script searches for low-complexity expression coordinates that make
+prediction dramatically easier than raw representation. It runs synthetic
+worlds, optional real/local datasets, portal basin analysis, transfer tests,
+lawbook export, counterexample logging, and final reports.
+"""
+
+from __future__ import annotations
+
+# =============================================================================
+# 00 MOUNT DRIVE
+# =============================================================================
+
+import argparse
+import importlib
+import json
+import math
+import os
+import subprocess
+import sys
+import textwrap
+import warnings
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+from typing import Any, Callable
+
+
+def mount_drive_if_requested(enabled: bool) -> None:
+    if not enabled:
+        return
+    try:
+        from google.colab import drive  # type: ignore
+
+        drive.mount("/content/drive")
+        print("Mounted Google Drive at /content/drive")
+    except Exception as exc:
+        print(f"Drive mount skipped: {exc}")
+
+
+# =============================================================================
+# 01 INSTALL DEPENDENCIES
+# =============================================================================
+
+REQUIRED_PACKAGES = {
+    "numpy": "numpy",
+    "pandas": "pandas",
+    "sklearn": "scikit-learn",
+    "scipy": "scipy",
+    "networkx": "networkx",
+    "matplotlib": "matplotlib",
+}
+
+OPTIONAL_PACKAGES = {"openml": "openml", "pmlb": "pmlb"}
+
+
+def install_missing_packages(include_optional: bool = False) -> None:
+    packages = dict(REQUIRED_PACKAGES)
+    if include_optional:
+        packages.update(OPTIONAL_PACKAGES)
+    missing: list[str] = []
+    for import_name, package_name in packages.items():
+        if importlib.util.find_spec(import_name) is None:
+            missing.append(package_name)
+    if not missing:
+        return
+    print(f"Installing missing packages: {missing}")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", *missing])
+
+
+install_missing_packages(include_optional=False)
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import networkx as nx
+import numpy as np
+import pandas as pd
+from scipy import stats
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.metrics import accuracy_score, f1_score, r2_score
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
+
+# =============================================================================
+# 02 DATASET DOWNLOADS
+# =============================================================================
+
+UCI_SOURCES = {
+    "winequality-red": "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv",
+    "airfoil_self_noise": "https://archive.ics.uci.edu/ml/machine-learning-databases/00291/airfoil_self_noise.dat",
+}
+
+PMLB_DATASETS = [
+    "1027_ESL",
+    "1028_SWD",
+    "1029_LEV",
+    "1030_ERA",
+    "201_pol",
+    "197_cpu_act",
+    "215_2dplanes",
+    "529_pollen",
+    "537_houses",
+]
+
+OPENML_DATASET_IDS = [287, 216, 42225]
+
+
+def attempt_dataset_downloads(cache_dir: Path, allow_download: bool) -> list[dict[str, Any]]:
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    rows: list[dict[str, Any]] = []
+    for name, url in UCI_SOURCES.items():
+        suffix = ".csv" if url.endswith(".csv") else ".tsv"
+        path = cache_dir / f"{name}{suffix}"
+        row = {"name": name, "source": "uci", "url": url, "path": str(path), "status": "not_requested"}
+        if path.exists():
+            row["status"] = "cached"
+        elif allow_download:
+            try:
+                import urllib.request
+
+                urllib.request.urlretrieve(url, path)
+                row["status"] = "downloaded"
+            except Exception as exc:
+                row["status"] = "failed"
+                row["error"] = str(exc)
+                print(f"WARNING: failed to download {name}: {exc}. Continuing.")
+        rows.append(row)
+
+    if allow_download:
+        try:
+            install_missing_packages(include_optional=True)
+            from pmlb import fetch_data  # type: ignore
+
+            pmlb_dir = cache_dir / "pmlb"
+            pmlb_dir.mkdir(exist_ok=True)
+            for dataset in PMLB_DATASETS:
+                path = pmlb_dir / f"{dataset}.csv"
+                row = {"name": dataset, "source": "pmlb", "path": str(path), "status": "not_requested"}
+                if path.exists():
+                    row["status"] = "cached"
+                else:
+                    try:
+                        data = fetch_data(dataset, local_cache_dir=str(pmlb_dir))
+                        data.to_csv(path, index=False)
+                        row["status"] = "downloaded"
+                    except Exception as exc:
+                        row["status"] = "failed"
+                        row["error"] = str(exc)
+                        print(f"WARNING: failed to download PMLB {dataset}: {exc}. Continuing.")
+                rows.append(row)
+        except Exception as exc:
+            rows.append({"name": "pmlb", "source": "pmlb", "status": "failed", "error": str(exc)})
+            print(f"WARNING: PMLB unavailable: {exc}. Continuing.")
+        try:
+            install_missing_packages(include_optional=True)
+            import openml  # type: ignore
+
+            openml_dir = cache_dir / "openml"
+            openml_dir.mkdir(exist_ok=True)
+            for dataset_id in OPENML_DATASET_IDS:
+                path = openml_dir / f"openml_{dataset_id}.csv"
+                row = {"name": f"openml_{dataset_id}", "source": "openml", "path": str(path), "status": "not_requested"}
+                if path.exists():
+                    row["status"] = "cached"
+                else:
+                    try:
+                        dataset = openml.datasets.get_dataset(dataset_id)
+                        target = dataset.default_target_attribute
+                        x, y, _, _ = dataset.get_data(target=target, dataset_format="dataframe")
+                        frame = x.copy()
+                        frame["target"] = y
+                        frame.to_csv(path, index=False)
+                        row["status"] = "downloaded"
+                    except Exception as exc:
+                        row["status"] = "failed"
+                        row["error"] = str(exc)
+                        print(f"WARNING: failed to download OpenML {dataset_id}: {exc}. Continuing.")
+                rows.append(row)
+        except Exception as exc:
+            rows.append({"name": "openml", "source": "openml", "status": "failed", "error": str(exc)})
+            print(f"WARNING: OpenML unavailable: {exc}. Continuing.")
+    return rows
+
+
+# =============================================================================
+# 03 REAL DATASET LOADERS
+# =============================================================================
+
+TARGET_NAMES = {"target", "y", "label", "class", "quality", "strength", "output"}
+
+
+@dataclass
+class DatasetSpec:
+    name: str
+    domain: str
+    df: pd.DataFrame
+    target: str
+    source: str
+
+
+def read_table(path: Path) -> pd.DataFrame:
+    suffix = path.suffix.lower()
+    if suffix == ".csv":
+        df = pd.read_csv(path)
+        if len(df.columns) == 1:
+            try:
+                semicolon = pd.read_csv(path, sep=";")
+                if len(semicolon.columns) > 1:
+                    df = semicolon
+            except Exception:
+                pass
+        return df
+    if suffix == ".tsv":
+        return pd.read_csv(path, sep="\t")
+    if suffix == ".dat":
+        return pd.read_csv(path, sep=r"\s+", header=None)
+    if suffix == ".parquet":
+        return pd.read_parquet(path)
+    raise ValueError(f"unsupported file type: {suffix}")
+
+
+def infer_target(df: pd.DataFrame) -> str:
+    normalized = {str(col).strip().lower().replace(" ", "_"): col for col in df.columns}
+    for name in TARGET_NAMES:
+        if name in normalized:
+            return str(normalized[name])
+    return str(df.columns[-1])
+
+
+def load_real_datasets(data_dirs: list[Path]) -> tuple[list[DatasetSpec], list[dict[str, Any]]]:
+    datasets: list[DatasetSpec] = []
+    skipped: list[dict[str, Any]] = []
+    seen: set[Path] = set()
+    for root in data_dirs:
+        if not root.exists():
+            skipped.append({"path": str(root), "reason": "missing_directory"})
+            continue
+        for path in sorted(root.rglob("*")):
+            if path in seen or not path.is_file() or path.suffix.lower() not in {".csv", ".tsv", ".dat", ".parquet"}:
+                continue
+            seen.add(path)
+            try:
+                df = read_table(path)
+            except Exception as exc:
+                skipped.append({"path": str(path), "reason": f"read_failed: {exc}"})
+                continue
+            if path.name == "airfoil_self_noise.tsv" or "airfoil" in path.stem.lower():
+                if len(df.columns) == 6:
+                    df.columns = ["frequency", "angle", "chord", "velocity", "suction", "target"]
+            target = infer_target(df)
+            numeric_features = [
+                col
+                for col in df.columns
+                if col != target and pd.api.types.is_numeric_dtype(df[col]) and df[col].nunique(dropna=True) > 1
+            ]
+            if len(df) < 100:
+                skipped.append({"path": str(path), "reason": "fewer_than_100_rows", "rows": int(len(df))})
+                continue
+            if len(numeric_features) < 3:
+                skipped.append(
+                    {
+                        "path": str(path),
+                        "reason": "fewer_than_3_numeric_features",
+                        "rows": int(len(df)),
+                        "numeric_features": len(numeric_features),
+                    }
+                )
+                continue
+            datasets.append(DatasetSpec(path.stem, "REAL", df, target, str(path)))
+    return datasets, skipped
+
+
+# =============================================================================
+# 04 SYNTHETIC WORLDS
+# =============================================================================
+
+
+def _band(values: np.ndarray, labels: tuple[str, str, str]) -> np.ndarray:
+    ranks = pd.Series(values).rank(method="first")
+    return pd.qcut(ranks, 3, labels=list(labels)).astype(str).to_numpy()
+
+
+def world_phase(n: int, rng: np.random.Generator) -> DatasetSpec:
+    control = rng.uniform(0.05, 1.0, n)
+    coupling = rng.uniform(0.4, 2.2, n)
+    temperature = rng.uniform(0.5, 3.5, n)
+    noise = rng.uniform(0, 0.12, n)
+    effective = coupling * control / temperature
+    phase = np.where(effective < 0.32, "low", np.where(effective < 0.47, "critical", "high"))
+    df = pd.DataFrame(
+        {
+            "control": control,
+            "coupling": coupling,
+            "temperature": temperature,
+            "noise": noise,
+            "phase": phase,
+            "hidden_effective": effective,
+        }
+    )
+    return DatasetSpec("PHASE", "PHASE", df, "phase", "synthetic")
+
+
+def world_gas(n: int, rng: np.random.Generator) -> DatasetSpec:
+    pressure = rng.uniform(0.5, 14.0, n)
+    volume = rng.uniform(0.4, 9.0, n)
+    moles = rng.uniform(0.1, 5.0, n)
+    impurity = rng.uniform(0.0, 0.1, n)
+    pv_over_n = pressure * volume / moles
+    target = _band(pv_over_n * (1 - impurity), ("cold", "medium", "hot"))
+    df = pd.DataFrame(
+        {
+            "pressure": pressure,
+            "volume": volume,
+            "moles": moles,
+            "impurity": impurity,
+            "target": target,
+            "hidden_pv_over_n": pv_over_n,
+        }
+    )
+    return DatasetSpec("GAS", "GAS", df, "target", "synthetic")
+
+
+def world_maze(n: int, rng: np.random.Generator) -> DatasetSpec:
+    grid_size = rng.integers(12, 80, n)
+    wall_density = rng.uniform(0.1, 0.65, n)
+    branch_factor = rng.uniform(1.0, 5.0, n)
+    choke_count = rng.integers(0, 12, n)
+    corridor_width = rng.integers(1, 6, n)
+    bottleneck = choke_count * wall_density * branch_factor / corridor_width
+    target = np.where(bottleneck > 3.8, "bottleneck", np.where(wall_density > 0.5, "blocked", "open"))
+    df = pd.DataFrame(
+        {
+            "grid_size": grid_size,
+            "wall_density": wall_density,
+            "branch_factor": branch_factor,
+            "choke_count": choke_count,
+            "corridor_width": corridor_width,
+            "target": target,
+            "hidden_bottleneck": bottleneck,
+        }
+    )
+    return DatasetSpec("MAZE", "MAZE", df, "target", "synthetic")
+
+
+def world_ca(rng: np.random.Generator) -> DatasetSpec:
+    rows = []
+    for rule in range(256):
+        bits = np.array([(rule >> i) & 1 for i in range(8)])
+        density = bits.mean()
+        entropy = -(density * np.log2(density + 1e-9) + (1 - density) * np.log2(1 - density + 1e-9))
+        transitions = int(np.sum(bits != np.roll(bits, 1)))
+        asymmetry = int(np.sum(bits != bits[::-1]))
+        target = "chaotic" if entropy > 0.92 and transitions >= 5 else ("fixed" if transitions <= 1 else "structured")
+        if rng.random() < 0.02:
+            target = str(rng.choice(["chaotic", "fixed", "structured"]))
+        rows.append(
+            {
+                "rule": rule,
+                "density": density,
+                "transitions": transitions,
+                "asymmetry": asymmetry,
+                "target": target,
+                "hidden_entropy": entropy,
+            }
+        )
+    return DatasetSpec("CA", "CA", pd.DataFrame(rows), "target", "synthetic")
+
+
+def world_obstruction(n: int, rng: np.random.Generator) -> DatasetSpec:
+    width = rng.uniform(1.0, 20.0, n)
+    load = rng.uniform(1.0, 200.0, n)
+    clearance = rng.uniform(0.5, 12.0, n)
+    friction = rng.uniform(0.05, 0.8, n)
+    hidden = load / (width * clearance) - friction
+    target = np.where(hidden > 2.6, "blocked", "clear")
+    df = pd.DataFrame(
+        {
+            "width": width,
+            "load": load,
+            "clearance": clearance,
+            "friction": friction,
+            "target": target,
+            "hidden_obstruction": hidden,
+        }
+    )
+    return DatasetSpec("OBSTRUCTION", "OBSTRUCTION", df, "target", "synthetic")
+
+
+def world_sat(n: int, rng: np.random.Generator) -> DatasetSpec:
+    clauses = rng.integers(20, 240, n)
+    variables = rng.integers(5, 80, n)
+    unit_ratio = rng.uniform(0.0, 0.6, n)
+    horn_ratio = rng.uniform(0.0, 1.0, n)
+    balance = rng.uniform(0.1, 1.8, n)
+    hidden = (clauses / variables) * (1 - horn_ratio) * balance - unit_ratio
+    target = np.where(hidden > 3.3, "hard", "easy")
+    df = pd.DataFrame(
+        {
+            "clauses": clauses,
+            "variables": variables,
+            "unit_ratio": unit_ratio,
+            "horn_ratio": horn_ratio,
+            "balance": balance,
+            "target": target,
+            "hidden_boolean_coordinate": hidden,
+        }
+    )
+    return DatasetSpec("SAT", "SAT", df, "target", "synthetic")
+
+
+def world_modular(n: int, rng: np.random.Generator) -> DatasetSpec:
+    x = rng.integers(0, 10_000, n)
+    n_mod = rng.choice([5, 7, 11, 13], n)
+    residue = x % n_mod
+    target = np.where(residue <= 1, "low_residue", np.where(residue <= n_mod // 2, "mid_residue", "high_residue"))
+    df = pd.DataFrame({"x": x, "n": n_mod, "noise": rng.normal(0, 1, n), "target": target, "hidden_residue": residue})
+    return DatasetSpec("MODULAR", "MODULAR", df, "target", "synthetic")
+
+
+def equation_stats(eq: str, prefix: str) -> dict[str, float]:
+    left, _, right = eq.partition("=")
+    text = eq.replace("◇", "*")
+    variables = [ch for ch in text if ch.isalpha() and ch.islower()]
+    depth = 0
+    max_depth = 0
+    for char in text:
+        if char == "(":
+            depth += 1
+            max_depth = max(max_depth, depth)
+        elif char == ")":
+            depth = max(0, depth - 1)
+    return {
+        f"{prefix}_len": len(eq),
+        f"{prefix}_vars": len(set(variables)),
+        f"{prefix}_leaves": len(variables),
+        f"{prefix}_ops": text.count("*"),
+        f"{prefix}_depth": max_depth,
+        f"{prefix}_repeat": sum(max(0, variables.count(v) - 1) for v in set(variables)),
+        f"{prefix}_side_delta": len(left) - len(right),
+    }
+
+
+def world_etp(n: int, rng: np.random.Generator) -> DatasetSpec:
+    atoms = ["x", "y", "z", "w"]
+    terms = atoms + [
+        "(x ◇ x)",
+        "(x ◇ y)",
+        "(y ◇ x)",
+        "(x ◇ (y ◇ z))",
+        "((x ◇ y) ◇ z)",
+        "((x ◇ y) ◇ (z ◇ x))",
+        "((x ◇ x) ◇ (y ◇ y))",
+    ]
+    equations = [f"{a} = {b}" for a in terms for b in terms]
+    rows = []
+    for _ in range(n):
+        premise = str(rng.choice(equations))
+        conclusion = str(rng.choice(equations))
+        ps = equation_stats(premise, "premise")
+        cs = equation_stats(conclusion, "conclusion")
+        shared = len(set(ch for ch in premise if ch in "xyzw") & set(ch for ch in conclusion if ch in "xyzw"))
+        hidden = shared + ps["premise_repeat"] + cs["conclusion_repeat"] - abs(ps["premise_depth"] - cs["conclusion_depth"])
+        target = "implies" if hidden >= 3 else "independent"
+        row = {**ps, **cs, "shared_vars": shared, "pair_token_sum": ps["premise_len"] + cs["conclusion_len"], "target": target}
+        rows.append(row)
+    return DatasetSpec("ETP_RAW", "ETP", pd.DataFrame(rows), "target", "synthetic")
+
+
+def world_arc(n: int, rng: np.random.Generator) -> DatasetSpec:
+    objects = rng.integers(1, 12, n)
+    colors = rng.integers(2, 9, n)
+    holes = rng.integers(0, 5, n)
+    symmetry = rng.uniform(0, 1, n)
+    displacement = rng.integers(0, 8, n)
+    hidden = symmetry * colors + holes - displacement / np.maximum(objects, 1)
+    target = np.where(hidden > 4.2, "mirror_color", np.where(holes >= 3, "fill_holes", "move_object"))
+    df = pd.DataFrame(
+        {
+            "objects": objects,
+            "colors": colors,
+            "holes": holes,
+            "symmetry": symmetry,
+            "displacement": displacement,
+            "target": target,
+            "hidden_symbolic_transform": hidden,
+        }
+    )
+    return DatasetSpec("ARC_STYLE", "ARC", df, "target", "synthetic")
+
+
+def build_synthetic_worlds(seed: int, n: int) -> list[DatasetSpec]:
+    rng = np.random.default_rng(seed)
+    return [
+        world_phase(n, rng),
+        world_gas(n, rng),
+        world_maze(n, rng),
+        world_ca(rng),
+        world_obstruction(n, rng),
+        world_sat(n, rng),
+        world_modular(n, rng),
+        world_etp(n, rng),
+        world_arc(n, rng),
+    ]
+
+
+# =============================================================================
+# 05 EXPRESSION COORDINATE ENGINE
+# =============================================================================
+
+
+@dataclass
+class Coordinate:
+    name: str
+    depth: int
+    parents: list[str]
+    complexity: float
+    func: Callable[[pd.DataFrame], pd.Series]
+    expression: str
+    score: float = 0.0
+
+    def evaluate(self, df: pd.DataFrame) -> pd.Series:
+        values = self.func(df)
+        values = pd.Series(values, index=df.index).astype(float)
+        return values.replace([np.inf, -np.inf], np.nan).fillna(0.0)
+
+    def export(self) -> dict[str, Any]:
+        return {
+            "name": self.name,
+            "depth": self.depth,
+            "parents": self.parents,
+            "complexity": self.complexity,
+            "expression": self.expression,
+            "score": self.score,
+        }
+
+
+def safe_name(text: str) -> str:
+    return "".join(ch if ch.isalnum() or ch == "_" else "_" for ch in str(text)).strip("_")
+
+
+def numeric_features(df: pd.DataFrame, target: str, max_features: int = 8) -> list[str]:
+    cols = [
+        col
+        for col in df.columns
+        if col != target
+        and not str(col).startswith("hidden_")
+        and pd.api.types.is_numeric_dtype(df[col])
+        and df[col].nunique(dropna=True) > 1
+    ]
+    cols.sort(key=lambda c: (df[c].nunique(dropna=True), float(df[c].std() or 0)), reverse=True)
+    return cols[:max_features]
+
+
+def build_expression_coordinates(df: pd.DataFrame, target: str, max_base: int = 8, max_coords: int = 260) -> list[Coordinate]:
+    bases = numeric_features(df, target, max_base)
+    coords: list[Coordinate] = []
+
+    def add(coord: Coordinate) -> None:
+        if len(coords) >= max_coords:
+            return
+        try:
+            values = coord.evaluate(df)
+        except Exception:
+            return
+        if values.nunique(dropna=False) <= 1:
+            return
+        coords.append(coord)
+
+    for x in bases:
+        sx = safe_name(x)
+        add(Coordinate(sx, 0, [sx], 1.0, lambda d, x=x: d[x], x))
+        add(Coordinate(f"abs_{sx}", 1, [sx], 1.2, lambda d, x=x: d[x].abs(), f"abs({x})"))
+        add(Coordinate(f"sqrt_{sx}", 1, [sx], 1.3, lambda d, x=x: np.sqrt(pd.Series(d[x]).clip(lower=0)), f"sqrt({x})"))
+        add(Coordinate(f"log_{sx}", 1, [sx], 1.3, lambda d, x=x: np.log1p(pd.Series(d[x]).clip(lower=0)), f"log({x})"))
+        add(Coordinate(f"square_{sx}", 1, [sx], 1.3, lambda d, x=x: d[x] ** 2, f"{x}^2"))
+
+    for i, x in enumerate(bases):
+        for y in bases[i + 1 :]:
+            sx, sy = safe_name(x), safe_name(y)
+            add(Coordinate(f"{sx}_plus_{sy}", 2, [sx, sy], 2.0, lambda d, x=x, y=y: d[x] + d[y], f"{x}+{y}"))
+            add(Coordinate(f"{sx}_minus_{sy}", 2, [sx, sy], 2.0, lambda d, x=x, y=y: d[x] - d[y], f"{x}-{y}"))
+            add(Coordinate(f"{sx}_times_{sy}", 2, [sx, sy], 2.1, lambda d, x=x, y=y: d[x] * d[y], f"{x}*{y}"))
+            add(
+                Coordinate(
+                    f"{sx}_over_{sy}",
+                    2,
+                    [sx, sy],
+                    2.2,
+                    lambda d, x=x, y=y: d[x] / pd.Series(d[y]).replace(0, np.nan),
+                    f"{x}/{y}",
+                )
+            )
+            add(
+                Coordinate(
+                    f"{sy}_over_{sx}",
+                    2,
+                    [sx, sy],
+                    2.2,
+                    lambda d, x=x, y=y: d[y] / pd.Series(d[x]).replace(0, np.nan),
+                    f"{y}/{x}",
+                )
+            )
+
+    for x in bases:
+        for y in bases:
+            for z in bases:
+                if len({x, y, z}) != 3 or len(coords) >= max_coords:
+                    continue
+                sx, sy, sz = safe_name(x), safe_name(y), safe_name(z)
+                add(
+                    Coordinate(
+                        f"{sx}_times_{sy}_over_{sz}",
+                        3,
+                        [sx, sy, sz],
+                        3.4,
+                        lambda d, x=x, y=y, z=z: (d[x] * d[y]) / pd.Series(d[z]).replace(0, np.nan),
+                        f"({x}*{y})/{z}",
+                    )
+                )
+                add(
+                    Coordinate(
+                        f"{sx}_plus_{sy}_over_{sz}",
+                        3,
+                        [sx, sy, sz],
+                        3.3,
+                        lambda d, x=x, y=y, z=z: (d[x] + d[y]) / pd.Series(d[z]).replace(0, np.nan),
+                        f"({x}+{y})/{z}",
+                    )
+                )
+                add(
+                    Coordinate(
+                        f"{sx}_times_{sy}_minus_{sz}",
+                        3,
+                        [sx, sy, sz],
+                        3.2,
+                        lambda d, x=x, y=y, z=z: d[x] * (d[y] - d[z]),
+                        f"{x}*({y}-{z})",
+                    )
+                )
+                add(
+                    Coordinate(
+                        f"{sx}_over_{sy}_plus_{sz}",
+                        3,
+                        [sx, sy, sz],
+                        3.4,
+                        lambda d, x=x, y=y, z=z: d[x] / (d[y] + d[z]).replace(0, np.nan),
+                        f"{x}/({y}+{z})",
+                    )
+                )
+
+    depth3 = [coord for coord in coords if coord.depth == 3][: max(12, max_coords // 10)]
+    for base in depth3:
+        if len(coords) >= max_coords:
+            break
+        add(
+            Coordinate(
+                f"log_{base.name}",
+                4,
+                [base.name],
+                base.complexity + 1.2,
+                lambda d, base=base: np.log1p(base.evaluate(d).clip(lower=0)),
+                f"log({base.expression})",
+            )
+        )
+        add(
+            Coordinate(
+                f"sqrt_{base.name}",
+                4,
+                [base.name],
+                base.complexity + 1.2,
+                lambda d, base=base: np.sqrt(base.evaluate(d).clip(lower=0)),
+                f"sqrt({base.expression})",
+            )
+        )
+        add(
+            Coordinate(
+                f"square_{base.name}",
+                4,
+                [base.name],
+                base.complexity + 1.2,
+                lambda d, base=base: base.evaluate(d) ** 2,
+                f"({base.expression})^2",
+            )
+        )
+
+    return coords[:max_coords]
+
+
+# =============================================================================
+# 06 PORTAL SEARCH
+# =============================================================================
+
+
+def problem_type(y: pd.Series) -> str:
+    if pd.api.types.is_numeric_dtype(y) and y.nunique(dropna=True) > 15:
+        return "regression"
+    return "classification"
+
+
+def model_for(problem: str, kind: str) -> Any:
+    if problem == "regression":
+        if kind == "tree":
+            return DecisionTreeRegressor(max_depth=4, min_samples_leaf=5, random_state=143)
+        return RandomForestRegressor(n_estimators=160, min_samples_leaf=3, random_state=143)
+    if kind == "tree":
+        return DecisionTreeClassifier(max_depth=4, min_samples_leaf=5, random_state=143)
+    return RandomForestClassifier(n_estimators=160, min_samples_leaf=3, random_state=143, class_weight="balanced")
+
+
+def fit_score(x_train: pd.DataFrame, x_test: pd.DataFrame, y_train: pd.Series, y_test: pd.Series, problem: str, kind: str) -> float:
+    categorical = [c for c in x_train.columns if not pd.api.types.is_numeric_dtype(x_train[c])]
+    numeric = [c for c in x_train.columns if c not in categorical]
+    pipe = Pipeline(
+        [
+            (
+                "prep",
+                ColumnTransformer(
+                    [
+                        ("cat", OneHotEncoder(handle_unknown="ignore"), categorical),
+                        ("num", StandardScaler(), numeric),
+                    ],
+                    remainder="drop",
+                ),
+            ),
+            ("model", model_for(problem, kind)),
+        ]
+    )
+    pipe.fit(x_train, y_train)
+    pred = pipe.predict(x_test)
+    if problem == "regression":
+        return float(r2_score(y_test, pred))
+    return float(accuracy_score(y_test.astype(str), pd.Series(pred).astype(str)))
+
+
+@dataclass
+class PortalResult:
+    domain: str
+    coordinate: str
+    expression: str
+    depth: int
+    complexity: float
+    raw_score: float
+    raw_best_single_score: float
+    coordinate_score: float
+    portal_score: float
+    compressive_score: float
+    is_portal: bool
+    is_strong_portal: bool
+    stability: float
+    parents: list[str] = field(default_factory=list)
+
+
+def score_coordinate(
+    spec: DatasetSpec,
+    coord: Coordinate,
+    train_idx: pd.Index,
+    test_idx: pd.Index,
+    y_train: pd.Series,
+    y_test: pd.Series,
+    problem: str,
+) -> float:
+    values = coord.evaluate(spec.df)
+    x_train = pd.DataFrame({coord.name: values.loc[train_idx]})
+    x_test = pd.DataFrame({coord.name: values.loc[test_idx]})
+    return fit_score(x_train, x_test, y_train, y_test, problem, "tree")
+
+
+def portal_search(spec: DatasetSpec, max_coords: int) -> tuple[list[PortalResult], dict[str, Any], list[Coordinate]]:
+    df = spec.df.dropna(axis=0).reset_index(drop=True)
+    spec = DatasetSpec(spec.name, spec.domain, df, spec.target, spec.source)
+    y = df[spec.target]
+    ptype = problem_type(y)
+    raw_cols = numeric_features(df, spec.target, max_features=16)
+    if len(raw_cols) < 1 or y.nunique(dropna=True) < 2:
+        return [], {"domain": spec.domain, "status": "skipped", "reason": "insufficient_variation"}, []
+    stratify = y if ptype == "classification" and y.value_counts().min() >= 2 else None
+    train_idx, test_idx = train_test_split(df.index, test_size=0.3, random_state=143, stratify=stratify)
+    y_train, y_test = y.loc[train_idx], y.loc[test_idx]
+    raw_score = fit_score(df.loc[train_idx, raw_cols], df.loc[test_idx, raw_cols], y_train, y_test, ptype, "forest")
+    raw_single_scores = []
+    for col in raw_cols:
+        score = fit_score(df.loc[train_idx, [col]], df.loc[test_idx, [col]], y_train, y_test, ptype, "tree")
+        raw_single_scores.append(score)
+    raw_best_single = max(raw_single_scores) if raw_single_scores else max(raw_score, 1e-9)
+
+    coords = build_expression_coordinates(df, spec.target, max_base=8, max_coords=max_coords)
+    results: list[PortalResult] = []
+    for coord in coords:
+        try:
+            score = score_coordinate(spec, coord, train_idx, test_idx, y_train, y_test, ptype)
+        except Exception:
+            continue
+        coord.score = score
+        denominator = max(raw_best_single, 1e-9)
+        portal_score = score / denominator if denominator > 0 else 0.0
+        compressive_score = score / max(raw_score, 1e-9) / max(coord.complexity, 1.0)
+        stability = coordinate_stability(spec, coord, ptype)
+        results.append(
+            PortalResult(
+                domain=spec.domain,
+                coordinate=coord.name,
+                expression=coord.expression,
+                depth=coord.depth,
+                complexity=coord.complexity,
+                raw_score=raw_score,
+                raw_best_single_score=raw_best_single,
+                coordinate_score=score,
+                portal_score=portal_score,
+                compressive_score=compressive_score,
+                is_portal=portal_score > 1.1,
+                is_strong_portal=portal_score > 1.25,
+                stability=stability,
+                parents=coord.parents,
+            )
+        )
+    results.sort(key=lambda r: (r.is_strong_portal, r.portal_score, r.coordinate_score, -r.complexity), reverse=True)
+    representation = {
+        "domain": spec.domain,
+        "dataset": spec.name,
+        "source": spec.source,
+        "target": spec.target,
+        "problem_type": ptype,
+        "rows": len(df),
+        "raw_feature_count": len(raw_cols),
+        "raw_score": raw_score,
+        "raw_best_single_score": raw_best_single,
+        "best_coordinate_score": results[0].coordinate_score if results else np.nan,
+        "best_portal_score": results[0].portal_score if results else np.nan,
+        "portal_count": sum(r.is_portal for r in results),
+        "strong_portal_count": sum(r.is_strong_portal for r in results),
+        "coordinate_count": len(results),
+        "status": "evaluated",
+    }
+    return results, representation, coords
+
+
+def coordinate_stability(spec: DatasetSpec, coord: Coordinate, problem: str, repeats: int = 3) -> float:
+    y = spec.df[spec.target]
+    scores = []
+    for seed in range(repeats):
+        stratify = y if problem == "classification" and y.value_counts().min() >= 2 else None
+        try:
+            train_idx, test_idx = train_test_split(spec.df.index, test_size=0.3, random_state=900 + seed, stratify=stratify)
+            score = score_coordinate(spec, coord, train_idx, test_idx, y.loc[train_idx], y.loc[test_idx], problem)
+            scores.append(score)
+        except Exception:
+            pass
+    if len(scores) < 2:
+        return 0.0
+    return float(max(0.0, 1.0 - np.std(scores)))
+
+
+# =============================================================================
+# 07 PORTAL BASINS
+# =============================================================================
+
+
+def build_portal_basins(portals: list[PortalResult]) -> tuple[nx.DiGraph, pd.DataFrame]:
+    graph = nx.DiGraph()
+    lookup = {portal.coordinate: portal for portal in portals}
+    for portal in portals:
+        graph.add_node(
+            portal.coordinate,
+            domain=portal.domain,
+            depth=portal.depth,
+            portal_score=portal.portal_score,
+            is_portal=portal.is_portal,
+        )
+        for parent in portal.parents:
+            if parent == portal.coordinate:
+                continue
+            graph.add_node(parent, domain=portal.domain, depth=max(0, portal.depth - 1), portal_score=0.0, is_portal=False)
+            graph.add_edge(parent, portal.coordinate)
+
+    rows = []
+    components = list(nx.weakly_connected_components(graph))
+    for i, nodes in enumerate(components):
+        sub = graph.subgraph(nodes)
+        portal_nodes = [node for node in nodes if lookup.get(node, None) and lookup[node].is_portal]
+        rows.append(
+            {
+                "basin_id": i,
+                "basin_size": len(nodes),
+                "portal_count": len(portal_nodes),
+                "portal_density": len(portal_nodes) / max(len(nodes), 1),
+                "max_portal_depth": max((graph.nodes[node].get("depth", 0) for node in nodes), default=0),
+                "edge_count": sub.number_of_edges(),
+            }
+        )
+    return graph, pd.DataFrame(rows)
+
+
+def plot_basin_graph(graph: nx.DiGraph, path: Path) -> None:
+    if graph.number_of_nodes() == 0:
+        return
+    sample_nodes = list(graph.nodes())[:120]
+    sub = graph.subgraph(sample_nodes)
+    colors = ["tab:red" if sub.nodes[n].get("is_portal") else "tab:blue" for n in sub.nodes()]
+    plt.figure(figsize=(12, 8))
+    pos = nx.spring_layout(sub, seed=143)
+    nx.draw_networkx_nodes(sub, pos, node_color=colors, node_size=60, alpha=0.8)
+    nx.draw_networkx_edges(sub, pos, alpha=0.25, arrows=False)
+    plt.axis("off")
+    plt.tight_layout()
+    plt.savefig(path, dpi=150)
+    plt.close()
+
+
+# =============================================================================
+# 08 PORTAL TRANSFER
+# =============================================================================
+
+
+def transfer_coordinate(coord: Coordinate, source: str, target_spec: DatasetSpec) -> dict[str, Any]:
+    target_safe_columns = {safe_name(c) for c in target_spec.df.columns}
+    if any(parent not in target_safe_columns and parent not in target_spec.df.columns for parent in coord.parents):
+        return {"source_domain": source, "target_domain": target_spec.domain, "coordinate": coord.name, "transfer_score": np.nan, "status": "incompatible"}
+    try:
+        df = target_spec.df.copy().reset_index(drop=True)
+        y = df[target_spec.target]
+        if y.nunique(dropna=True) < 2:
+            return {"source_domain": source, "target_domain": target_spec.domain, "coordinate": coord.name, "transfer_score": np.nan, "status": "skipped"}
+        ptype = problem_type(y)
+        values = coord.evaluate(df)
+        if values.nunique(dropna=False) <= 1:
+            return {"source_domain": source, "target_domain": target_spec.domain, "coordinate": coord.name, "transfer_score": np.nan, "status": "constant"}
+        stratify = y if ptype == "classification" and y.value_counts().min() >= 2 else None
+        train_idx, test_idx = train_test_split(df.index, test_size=0.3, random_state=244, stratify=stratify)
+        score = fit_score(
+            pd.DataFrame({coord.name: values.loc[train_idx]}),
+            pd.DataFrame({coord.name: values.loc[test_idx]}),
+            y.loc[train_idx],
+            y.loc[test_idx],
+            ptype,
+            "tree",
+        )
+        return {"source_domain": source, "target_domain": target_spec.domain, "coordinate": coord.name, "transfer_score": score, "status": "evaluated"}
+    except Exception as exc:
+        return {"source_domain": source, "target_domain": target_spec.domain, "coordinate": coord.name, "transfer_score": np.nan, "status": f"failed: {exc}"}
+
+
+def build_transfer_matrix(best_coords: dict[str, Coordinate], datasets: list[DatasetSpec]) -> pd.DataFrame:
+    rows = []
+    for source_domain, coord in best_coords.items():
+        for target_spec in datasets:
+            rows.append(transfer_coordinate(coord, source_domain, target_spec))
+    return pd.DataFrame(rows)
+
+
+# =============================================================================
+# 09 LAWBOOK
+# =============================================================================
+
+
+def build_lawbook(portals: list[PortalResult], transfer_df: pd.DataFrame) -> dict[str, Any]:
+    laws = []
+    for portal in portals:
+        if not portal.is_portal:
+            continue
+        transfers = transfer_df[transfer_df["coordinate"] == portal.coordinate]
+        transfer_success = int((transfers["status"] == "evaluated").sum()) if not transfers.empty else 0
+        laws.append(
+            {
+                "coordinate": portal.coordinate,
+                "expression": portal.expression,
+                "domain": portal.domain,
+                "depth": portal.depth,
+                "complexity": portal.complexity,
+                "portal_score": portal.portal_score,
+                "coordinate_score": portal.coordinate_score,
+                "raw_best_single_score": portal.raw_best_single_score,
+                "stability": portal.stability,
+                "transfer_evaluations": transfer_success,
+                "confidence": "high" if portal.is_strong_portal and portal.stability >= 0.9 else "medium",
+            }
+        )
+    return {"lawbook_version": "v143", "hypothesis": "sparse_portal_representations", "laws": laws}
+
+
+# =============================================================================
+# 10 REPORTS
+# =============================================================================
+
+
+def write_json(path: Path, payload: Any) -> None:
+    path.write_text(json.dumps(payload, indent=2, default=_json_default), encoding="utf-8")
+
+
+def _json_default(obj: Any) -> Any:
+    if isinstance(obj, (np.integer, np.floating)):
+        return obj.item()
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    return str(obj)
+
+
+def final_metrics(
+    portal_df: pd.DataFrame,
+    basin_df: pd.DataFrame,
+    transfer_df: pd.DataFrame,
+    representation_df: pd.DataFrame,
+) -> dict[str, float]:
+    total = len(portal_df)
+    portals = portal_df[portal_df["is_portal"]] if total else pd.DataFrame()
+    strong = portal_df[portal_df["is_strong_portal"]] if total else pd.DataFrame()
+    evaluated_transfer = transfer_df[transfer_df["status"] == "evaluated"] if not transfer_df.empty else pd.DataFrame()
+    cross_transfer = (
+        evaluated_transfer[evaluated_transfer["source_domain"] != evaluated_transfer["target_domain"]]
+        if not evaluated_transfer.empty
+        else pd.DataFrame()
+    )
+    possible_cross = (
+        len(transfer_df[transfer_df["source_domain"] != transfer_df["target_domain"]])
+        if not transfer_df.empty and {"source_domain", "target_domain"}.issubset(transfer_df.columns)
+        else 0
+    )
+    return {
+        "portal_density": float(len(portals) / max(total, 1)),
+        "strong_portal_density": float(len(strong) / max(total, 1)),
+        "portal_depth": float(portals["depth"].mean()) if not portals.empty else 0.0,
+        "portal_transfer": float(evaluated_transfer["transfer_score"].mean()) if not evaluated_transfer.empty else 0.0,
+        "portal_cross_transfer": float(cross_transfer["transfer_score"].mean()) if not cross_transfer.empty else 0.0,
+        "portal_cross_transfer_coverage": float(len(cross_transfer) / max(possible_cross, 1)),
+        "portal_compression": float(portals["compressive_score"].mean()) if not portals.empty else 0.0,
+        "portal_rarity": float(1.0 - len(portals) / max(total, 1)),
+        "portal_stability": float(portals["stability"].mean()) if not portals.empty else 0.0,
+        "mean_raw_score": float(representation_df["raw_score"].mean()) if not representation_df.empty else 0.0,
+        "mean_best_portal_score": float(representation_df["best_portal_score"].mean()) if not representation_df.empty else 0.0,
+        "mean_basin_density": float(basin_df["portal_density"].mean()) if not basin_df.empty else 0.0,
+    }
+
+
+def write_reports(
+    out: Path,
+    portal_df: pd.DataFrame,
+    representation_df: pd.DataFrame,
+    basin_df: pd.DataFrame,
+    transfer_df: pd.DataFrame,
+    lawbook: dict[str, Any],
+    counterexamples: pd.DataFrame,
+    manifest: dict[str, Any],
+    metrics: dict[str, float],
+) -> None:
+    portal_df.to_csv(out / "portal_rankings.csv", index=False)
+    representation_df.to_csv(out / "representation_scores.csv", index=False)
+    basin_df.to_csv(out / "portal_basins.csv", index=False)
+    transfer_df.to_csv(out / "transfer_matrix.csv", index=False)
+    counterexamples.to_csv(out / "counterexamples.csv", index=False)
+    write_json(out / "lawbook_v143.json", lawbook)
+    write_json(out / "manifest.json", manifest)
+    write_json(out / "final_metrics.json", metrics)
+    write_markdown_report(out, portal_df, representation_df, lawbook, metrics, manifest)
+    write_final_conclusion(out, metrics, lawbook)
+
+
+def write_markdown_report(
+    out: Path,
+    portal_df: pd.DataFrame,
+    representation_df: pd.DataFrame,
+    lawbook: dict[str, Any],
+    metrics: dict[str, float],
+    manifest: dict[str, Any],
+) -> None:
+    lines = [
+        "# MATHGRAPH v143 Expression Portal Discovery Report",
+        "",
+        "Hypothesis: intelligence is the discovery of sparse portal representations.",
+        "",
+        "## Run Manifest",
+        "",
+        f"- datasets evaluated: {manifest['datasets_evaluated']}",
+        f"- synthetic datasets: {manifest['synthetic_datasets']}",
+        f"- real datasets: {manifest['real_datasets']}",
+        f"- coordinates evaluated: {len(portal_df)}",
+        "",
+        "## Final Metrics",
+        "",
+    ]
+    for key, value in metrics.items():
+        lines.append(f"- {key}: {value:.4f}")
+    lines.extend(["", "## Top Portals", ""])
+    if portal_df.empty:
+        lines.append("No coordinates were evaluated.")
+    else:
+        cols = ["domain", "coordinate", "expression", "depth", "coordinate_score", "raw_best_single_score", "portal_score", "stability"]
+        for _, row in portal_df.sort_values("portal_score", ascending=False).head(20).iterrows():
+            lines.append(
+                f"- {row['domain']}: `{row['expression']}` "
+                f"score={row['coordinate_score']:.3f}, portal={row['portal_score']:.3f}, depth={int(row['depth'])}"
+            )
+    lines.extend(["", "## Representation Scores", ""])
+    for _, row in representation_df.iterrows():
+        lines.append(
+            f"- {row['domain']}: raw={row['raw_score']:.3f}, "
+            f"best_coordinate={row['best_coordinate_score']:.3f}, portals={int(row['portal_count'])}"
+        )
+    lines.extend(["", "## Lawbook", "", f"Promoted laws: {len(lawbook['laws'])}", ""])
+    for law in lawbook["laws"][:20]:
+        lines.append(f"- {law['domain']}: `{law['expression']}` portal_score={law['portal_score']:.3f}")
+    (out / "benchmark_report.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+# =============================================================================
+# 11 FINAL CONCLUSION
+# =============================================================================
+
+
+def verdict(metrics: dict[str, float], lawbook: dict[str, Any]) -> tuple[str, str]:
+    law_count = len(lawbook["laws"])
+    transfer = metrics["portal_cross_transfer"]
+    transfer_coverage = metrics["portal_cross_transfer_coverage"]
+    density = metrics["portal_density"]
+    stability = metrics["portal_stability"]
+    if law_count >= 8 and transfer >= 0.75 and transfer_coverage >= 0.5 and stability >= 0.85:
+        return "A", "portals transfer broadly"
+    if law_count >= 4 and density > 0 and stability >= 0.75:
+        return "B", "portals exist but are mostly domain-specific"
+    if metrics["mean_best_portal_score"] > 0.8:
+        return "C", "representations help but no strong transferable portals were established"
+    return "D", "no strong evidence for portals in this run"
+
+
+def write_final_conclusion(out: Path, metrics: dict[str, float], lawbook: dict[str, Any]) -> None:
+    grade, statement = verdict(metrics, lawbook)
+    text = f"""# Final Conclusion
+
+Outcome: **{grade}**
+
+Interpretation: {statement}.
+
+This is a research result, not a proof. A portal is counted only when a sparse
+coordinate beats the best raw single-coordinate baseline by the configured
+threshold. The run promotes low-complexity coordinates into the lawbook when
+they are predictive, compressive, and stable enough to justify reuse.
+
+Scientific caution: broad claims require repeated runs, harder real datasets,
+and adversarial checks for leakage.
+"""
+    (out / "final_conclusion.md").write_text(text, encoding="utf-8")
+
+
+# =============================================================================
+# COUNTEREXAMPLES
+# =============================================================================
+
+
+def build_counterexamples(portal_df: pd.DataFrame, transfer_df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    if not portal_df.empty:
+        false_portals = portal_df[(portal_df["is_portal"]) & (portal_df["stability"] < 0.75)]
+        for _, row in false_portals.iterrows():
+            rows.append(
+                {
+                    "type": "unstable_portal",
+                    "domain": row["domain"],
+                    "coordinate": row["coordinate"],
+                    "detail": f"stability={row['stability']:.3f}",
+                }
+            )
+    if not transfer_df.empty:
+        failures = transfer_df[transfer_df["status"] != "evaluated"]
+        for _, row in failures.iterrows():
+            rows.append(
+                {
+                    "type": "non_transfer",
+                    "domain": row["target_domain"],
+                    "coordinate": row["coordinate"],
+                    "detail": row["status"],
+                }
+            )
+    return pd.DataFrame(rows, columns=["type", "domain", "coordinate", "detail"])
+
+
+# =============================================================================
+# ORCHESTRATION
+# =============================================================================
+
+
+def run_engine(args: argparse.Namespace) -> dict[str, Any]:
+    mount_drive_if_requested(args.mount_drive)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+
+    download_rows = attempt_dataset_downloads(out / "downloads", allow_download=args.download)
+    data_dirs = [Path(path) for path in args.data_dir] if args.data_dir else []
+    if args.download:
+        data_dirs.append(out / "downloads")
+    real_datasets, skipped = load_real_datasets(data_dirs) if data_dirs else ([], [])
+    synthetic = build_synthetic_worlds(seed=args.seed, n=args.n)
+    datasets = synthetic + real_datasets
+
+    all_portals: list[PortalResult] = []
+    all_coords_by_domain: dict[str, list[Coordinate]] = {}
+    best_coords: dict[str, Coordinate] = {}
+    representation_rows: list[dict[str, Any]] = []
+
+    for spec in datasets:
+        print(f"Evaluating {spec.domain} ({len(spec.df)} rows)")
+        results, representation, coords = portal_search(spec, max_coords=args.max_coords)
+        representation_rows.append(representation)
+        all_portals.extend(results)
+        all_coords_by_domain[spec.domain] = coords
+        if results:
+            coord_map = {coord.name: coord for coord in coords}
+            best = results[0]
+            if best.coordinate in coord_map:
+                best_coords[spec.domain] = coord_map[best.coordinate]
+
+    portal_df = pd.DataFrame([asdict(row) for row in all_portals])
+    representation_df = pd.DataFrame(representation_rows)
+    graph, basin_df = build_portal_basins(all_portals)
+    plot_basin_graph(graph, out / "portal_basins.png")
+    transfer_df = build_transfer_matrix(best_coords, datasets)
+    lawbook = build_lawbook(all_portals, transfer_df)
+    counterexamples = build_counterexamples(portal_df, transfer_df)
+    metrics = final_metrics(portal_df, basin_df, transfer_df, representation_df)
+    manifest = {
+        "system": "MATHGRAPH v143 Expression Portal Discovery Engine",
+        "out": str(out),
+        "seed": args.seed,
+        "n": args.n,
+        "max_coords": args.max_coords,
+        "datasets_evaluated": len(datasets),
+        "synthetic_datasets": len(synthetic),
+        "real_datasets": len(real_datasets),
+        "skipped_real_files": skipped,
+        "downloads": download_rows,
+        "dependencies": list(REQUIRED_PACKAGES.values()),
+    }
+    write_reports(out, portal_df, representation_df, basin_df, transfer_df, lawbook, counterexamples, manifest, metrics)
+    return {"metrics": metrics, "law_count": len(lawbook["laws"]), "out": str(out), "verdict": verdict(metrics, lawbook)}
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="MATHGRAPH v143 Expression Portal Discovery Engine")
+    parser.add_argument("--out", default="mathgraph_v143_out", help="Output directory")
+    parser.add_argument("--data-dir", action="append", default=[], help="Recursive local data directory; may be passed multiple times")
+    parser.add_argument("--download", action="store_true", help="Best-effort public dataset downloads")
+    parser.add_argument("--mount-drive", action="store_true", help="Mount Google Drive when running in Colab")
+    parser.add_argument("--seed", type=int, default=143)
+    parser.add_argument("--n", type=int, default=420, help="Rows per synthetic dataset")
+    parser.add_argument("--max-coords", type=int, default=260, help="Maximum expression coordinates per dataset")
+    parser.add_argument("--quick", action="store_true", help="Fast smoke run")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.quick:
+        args.n = min(args.n, 180)
+        args.max_coords = min(args.max_coords, 120)
+    result = run_engine(args)
+    grade, statement = result["verdict"]
+    print(json.dumps({"out": result["out"], "law_count": result["law_count"], "verdict": grade, "statement": statement}, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
