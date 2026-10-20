@@ -20,3 +20,5 @@ jobs:
         run: python -m latent_law.developmental
       - name: Untrusted engine adapter and independent verifier
         run: python -m latent_law.coordinate_adapter
+      - name: Bounded compositional semantic-closure synthesis
+        run: python -m latent_law.semantic_closure
