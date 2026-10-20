@@ -380,6 +380,23 @@ def run_a_plus_plus_challenge(
         generate_phase_probe(seed=seed + 4),
     ]
     rediscovery_rows = [_score_probe(probe) for probe in probes]
+    # Independent held-out evaluation; historical A++ scores are not requalified.
+    from latent_law.sealed_eval import sealed_evaluate
+    sealed_rows = []
+    for probe in probes:
+        hidden = probe.data.drop(columns=[probe.hidden_coordinate])
+        raw_cols = [c for c in _feature_columns(hidden, probe.targets)
+                    if pd.api.types.is_numeric_dtype(hidden[c]) and not pd.api.types.is_bool_dtype(hidden[c])]
+        if not raw_cols:
+            sealed_rows.append({"probe": probe.name, "status": "NO_NUMERIC_INPUTS"})
+            continue
+        try:
+            scored = sealed_evaluate(
+                hidden.assign(__sealed_target__=_target(hidden, probe.targets)),
+                target="__sealed_target__", raw_columns=raw_cols, seed=seed + 100)
+            sealed_rows.append({"probe": probe.name, "status": "EVALUATED", **scored})
+        except (ValueError, TypeError) as exc:
+            sealed_rows.append({"probe": probe.name, "status": "UNRESOLVED", "error": str(exc)})
 
     etp = generate_etp_raw(seed=seed + 5)
     etp_targets = ["implication_true"]
@@ -394,6 +411,7 @@ def run_a_plus_plus_challenge(
     red_df = pd.DataFrame(rediscovery_rows)
     human_df = pd.DataFrame(comparison_rows)
     red_df.to_csv(out_path / "scientific_rediscovery.csv", index=False)
+    pd.DataFrame(sealed_rows).to_csv(out_path / "sealed_holdout.csv", index=False)
     red_df[["probe", "unknown_prediction_accuracy", "unknown_prediction_macro_f1"]].to_csv(out_path / "unknown_prediction.csv", index=False)
     human_df.to_csv(out_path / "human_comparison.csv", index=False)
     pd.DataFrame(sources).to_json(out_path / "dataset_sources.json", orient="records", indent=2)
@@ -437,6 +455,8 @@ def run_a_plus_plus_challenge(
         "verdict": verdict,
         "status": a_status,
         "rediscovery": rediscovery_rows,
+        "sealed_holdout": sealed_rows,
+        "sealed_status": "EXPLORATORY_PENDING_PROSPECTIVE_REPLICATION",
         "human_comparison": comparison_rows,
         "real_dataset_results": real_dataset_rows,
         "data_dir": str(cache_dir),
@@ -464,6 +484,10 @@ def _write_a_plus_plus_report(out_path: Path, summary: dict[str, Any]) -> None:
         f"- human comparison score: {summary['human_comparison_score']:.3f}",
         f"- real dataset downloads: {summary['real_dataset_download_count']}",
         f"- real dataset validations: {summary['real_dataset_validation_count']}",
+        "",
+        "## Sealed holdout addendum",
+        "",
+        "See sealed_holdout.csv. The original A++ headline scores are exploratory and have not been requalified.",
         "",
         "## Rediscovery Probes",
         "",
