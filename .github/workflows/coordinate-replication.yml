@@ -1,0 +1,25 @@
+name: Prospective Coordinate Replication
+on:
+  push:
+    branches: [research/prospective-coordinate-replication-v1]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  replicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e .
+      - name: Regressions
+        run: python -m pytest -q
+      - name: Independent seeds, raw-tree and random-forest controls
+        run: python -m latent_law.replication
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prospective-coordinate-replication
+          path: replication_out/
