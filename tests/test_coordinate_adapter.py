@@ -25,3 +25,18 @@ def test_xor_claim_only_when_independently_correct():
     report=bounded_admission_demo()
     if report["xor"]["authorized"]:
         assert report["xor"]["correct"]==8
+
+def test_qualified_admission_scope_ablation_and_refusal():
+    from latent_law.coordinate_adapter import CoordinateAuthority,Proposal,apply
+    domain=worlds()
+    objective=lambda w:w[0] & (w[0]^w[1])
+    acquisition=[w for w in domain if w[2]==0]
+    proposal=propose([(obs(w),objective(w)) for w in acquisition])
+    authority=CoordinateAuthority(domain)
+    assert authority.admit("conjunction",proposal,"source-A",objective)
+    assert all(authority.invoke("conjunction",obs(w),"source-A")==objective(w) for w in domain)
+    assert authority.invoke("conjunction",obs(domain[0]),"source-B") is None
+    wrong=Proposal(proposal.column,proposal.threshold,not proposal.positive)
+    assert not authority.admit("wrong",wrong,"source-A",objective)
+    assert authority.revoke("conjunction")
+    assert authority.invoke("conjunction",obs(domain[0]),"source-A") is None
