@@ -13,3 +13,15 @@ def test_wrong_target_is_not_automatically_accepted():
         assert not verify(wrong,w)
 def test_report_declares_boundary():
     assert "fixed algebraic" in run()["boundary"]
+
+def test_independent_checker_accepts_replayable_conjunction():
+    from latent_law.coordinate_adapter import bounded_admission_demo
+    report=bounded_admission_demo()
+    assert report["conjunction"]["authorized"], report
+    assert report["conjunction"]["correct"]==8
+
+def test_xor_claim_only_when_independently_correct():
+    from latent_law.coordinate_adapter import bounded_admission_demo
+    report=bounded_admission_demo()
+    if report["xor"]["authorized"]:
+        assert report["xor"]["correct"]==8
