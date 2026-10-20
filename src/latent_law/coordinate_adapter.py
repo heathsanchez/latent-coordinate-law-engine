@@ -90,3 +90,18 @@ def run():
 if __name__=="__main__":
     import json
     print(json.dumps(run(),indent=2))
+
+def bounded_admission_demo():
+    """Independent exhaustive verifier; proposer gets only 4 acquisition cases."""
+    domain=worlds()
+    acquire=[w for w in domain if w[2]==0]
+    result={}
+    for name,objective in (("conjunction",lambda w:w[0] & (w[0]^w[1])),
+                           ("xor",lambda w:w[1])):
+        proposal=propose([(obs(w),objective(w)) for w in acquire])
+        predictions=apply_batch(proposal,[obs(w) for w in domain]) if proposal else None
+        authorized=predictions is not None and predictions==[objective(w) for w in domain]
+        result[name]={"proposed":str(proposal),"authorized":authorized,
+                      "correct":sum(p==objective(w) for p,w in zip(predictions,domain)) if predictions else 0,
+                      "universe":len(domain)}
+    return result
