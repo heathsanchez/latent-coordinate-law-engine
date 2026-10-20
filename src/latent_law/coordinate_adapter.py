@@ -105,3 +105,22 @@ def bounded_admission_demo():
                       "correct":sum(p==objective(w) for p,w in zip(predictions,domain)) if predictions else 0,
                       "universe":len(domain)}
     return result
+
+class CoordinateAuthority:
+    """Scope-limited admission; verifier only returns the pass/fail bit."""
+    def __init__(self,verification_worlds):
+        self._worlds=tuple(verification_worlds)
+        self._active={}
+    def admit(self,key,proposal,scope,objective):
+        predictions=apply_batch(proposal,[obs(w) for w in self._worlds]) if proposal else None
+        if predictions is None or predictions!=[objective(w) for w in self._worlds]:
+            return False
+        self._active[key]=(proposal,scope)
+        return True
+    def invoke(self,key,observation,scope):
+        admitted=self._active.get(key)
+        if admitted is None or admitted[1]!=scope:return None
+        try:return apply(admitted[0],observation)
+        except (ValueError,TypeError,KeyError):return None
+    def revoke(self,key):
+        return self._active.pop(key,None) is not None
