@@ -1,0 +1,35 @@
+name: Sealed Coordinate Evaluation
+on:
+  push:
+    branches: [research/sealed-coordinate-evaluation-v1]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e .
+      - name: Full regression suite
+        run: python -m pytest -q
+      - name: Sealed A++ smoke test
+        run: |
+          python -m latent_law.cli a-plus-plus --out /tmp/sealed_a_plus_plus
+          test -s /tmp/sealed_a_plus_plus/sealed_holdout.csv
+          python - <<'PY'
+          import pandas as pd
+          x = pd.read_csv('/tmp/sealed_a_plus_plus/sealed_holdout.csv')
+          assert len(x) == 4
+          assert (x.status == 'EVALUATED').all(), x.to_string()
+          print(x[['probe','selected','test_accuracy','raw_test_accuracy']].to_string(index=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sealed-a-plus-plus
+          path: /tmp/sealed_a_plus_plus/
