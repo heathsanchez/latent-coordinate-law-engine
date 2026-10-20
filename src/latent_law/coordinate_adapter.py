@@ -38,17 +38,43 @@ def propose(rows):
                 candidate=(score,col,threshold,positive)
                 if best is None or score>best[0]:best=candidate
     return None if best is None else Proposal(best[1],float(best[2]),bool(best[3]))
+def _replay_feature(column, observed):
+    """Replay supported syntactic coordinate families without batch refitting."""
+    import math
+    if column in observed:
+        return float(observed[column])
+    unary = {
+        "coord_abs__": abs,
+        "coord_square__": lambda x: x*x,
+        "coord_sqrt__": lambda x: math.sqrt(max(0.0,x)),
+        "coord_log__": lambda x: math.log1p(max(0.0,x)),
+    }
+    for prefix,fn in unary.items():
+        if column.startswith(prefix):
+            key=column[len(prefix):]
+            if key in observed:return fn(float(observed[key]))
+    operations = (
+        ("coord_diff__", "__minus__", lambda a,b:a-b),
+        ("coord_sum__", "__plus__", lambda a,b:a+b),
+        ("coord_mul__", "__times__", lambda a,b:a*b),
+        ("coord_ratio__", "__over__", lambda a,b:a/b if b else 0.0),
+    )
+    for prefix,separator,fn in operations:
+        if column.startswith(prefix):
+            parts=column[len(prefix):].split(separator)
+            if len(parts)==2 and all(p in observed for p in parts):
+                return fn(float(observed[parts[0]]),float(observed[parts[1]]))
+    raise ValueError("unsupported coordinate replay: "+column)
+
 def apply(proposal, observed):
-    df=synthesize_coordinates(pd.DataFrame([observed]),targets=[],
-         max_base_features=3,max_new_features=80,second_order=False,include_pca=False)
-    # One-row generation drops constant features; use domain-fixed batch evaluator instead.
-    raise RuntimeError("Use apply_batch with stable feature schema")
+    value=_replay_feature(proposal.column,observed)
+    return int((value>proposal.threshold)==proposal.positive)
+
 def apply_batch(proposal, observations):
-    data=pd.DataFrame(observations)
-    made=synthesize_coordinates(data,targets=[],max_base_features=3,max_new_features=80,
-                                second_order=False,include_pca=False)
-    if proposal.column not in made:return None
-    return [int(((x>proposal.threshold)==proposal.positive)) for x in made[proposal.column]]
+    try:
+        return [apply(proposal,observation) for observation in observations]
+    except (ValueError,KeyError,TypeError,ZeroDivisionError,OverflowError):
+        return None
 def verify(proposal, cases):
     if proposal is None:return False
     predictions=apply_batch(proposal,[obs(w) for w in cases])
