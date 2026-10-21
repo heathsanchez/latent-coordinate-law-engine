@@ -1,0 +1,30 @@
+name: V13 Capability Transport Boundary
+on:
+  push:
+    branches: [research/capability-transport-v13]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: Fetch independently maintained exposed calibration source
+        run: |
+          git clone --depth=1 https://github.com/mahmoud/boltons.git /tmp/source-b
+          git -C /tmp/source-b rev-parse HEAD | tee /tmp/source-b-commit.txt
+          python -m pip install -e /tmp/source-b
+      - name: Measure binding reconstruction and cold conventional baseline
+        run: PYTHONPATH=. python research/transport_v13/run.py --source /tmp/source-b --out /tmp/transport-v13
+      - name: Run native upstream author tests
+        run: timeout 600 python -m pytest -q /tmp/source-b/tests/test_iterutils.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: transport-v13
+          path: /tmp/transport-v13/
