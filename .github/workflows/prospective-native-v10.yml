@@ -1,0 +1,36 @@
+name: V10 Prospective Native Contract
+on:
+  push:
+    branches: [research/prospective-native-contract-v10]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  prospective:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Freeze external source exact revision
+        run: |
+          git clone --depth=1 https://github.com/more-itertools/more-itertools.git /tmp/native-source
+          git -C /tmp/native-source rev-parse HEAD | tee /tmp/native-source-sha.txt
+      - name: Install native upstream implementation and tests
+        run: |
+          python -m pip install -e /tmp/native-source pytest
+      - name: Run generic raw-source selector against independently authored source
+        run: |
+          PYTHONPATH=/tmp/native-source python research/prospective_native_v10/run.py --root /tmp/native-source --out /tmp/native-v10
+      - name: Run upstream author tests
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          timeout 600 python -m pytest -q /tmp/native-source/tests 2>&1 | tee /tmp/native-v10/upstream-tests.log
+          echo ${PIPESTATUS[0]} > /tmp/native-v10/upstream-tests-exit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prospective-native-v10
+          path: /tmp/native-v10/
