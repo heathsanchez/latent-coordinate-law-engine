@@ -1,0 +1,35 @@
+name: V17 Minimum Consequential Reverification
+on:
+  push:
+    branches: [research/minimum-consequence-reverification-v17]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: V17 finite preservation and failure controls
+        run: PYTHONPATH=. python research/minimum_v17/run.py
+      - name: Assertions on full evidence
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('v17_out/result.json'))['events']
+          assert len(d)==3
+          assert d['equivalent']['mathgraph_cost_units']==d['equivalent']['conventional_shared_cost_units']
+          assert d['equivalent']['expected_claim_authorization']
+          assert not d['behavior_changed']['expected_claim_authorization']
+          assert not d['authority_withdrawn']['expected_claim_authorization']
+          print('V17 bounded correctness and equal-information checks passed')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: minimum-consequence-v17
+          path: v17_out/
