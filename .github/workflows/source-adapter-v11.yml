@@ -1,0 +1,33 @@
+name: V11 Source General Adapter Calibration
+on:
+  push:
+    branches: [research/source-general-adapter-v11]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: Clone previously exposed calibration source
+        run: |
+          git clone --depth=1 https://github.com/more-itertools/more-itertools.git /tmp/calibration
+          git -C /tmp/calibration fetch --depth=1 origin 4aeb4338ae1407d8da9723e86da99efeb446f719
+          git -C /tmp/calibration checkout --detach 4aeb4338ae1407d8da9723e86da99efeb446f719
+          git -C /tmp/calibration rev-parse HEAD
+          python -m pip install -e /tmp/calibration
+      - name: Candidate and same-information comparator
+        run: |
+          PYTHONPATH=. python research/prospective_native_v11/adapter.py --root /tmp/calibration --out /tmp/v11
+      - name: Upstream tests
+        run: timeout 600 python -m pytest -q /tmp/calibration/tests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v11-calibration
+          path: /tmp/v11/
