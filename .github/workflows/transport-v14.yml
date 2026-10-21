@@ -1,0 +1,30 @@
+name: V14 Compiled Adapter Calibration
+on:
+  push:
+    branches: [research/compiled-adapter-transport-v14]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: Fetch exposed independent source
+        run: |
+          git clone --depth=1 https://github.com/mahmoud/boltons.git /tmp/source
+          git -C /tmp/source rev-parse HEAD | tee /tmp/source-sha
+          python -m pip install -e /tmp/source
+      - name: Compare compiled fallback with equal-information baseline
+        run: PYTHONPATH=. python research/transport_v14/run.py --source /tmp/source --out /tmp/v14
+      - name: Native author test gate
+        run: timeout 600 python -m pytest -q /tmp/source/tests/test_iterutils.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: transport-v14
+          path: /tmp/v14/
