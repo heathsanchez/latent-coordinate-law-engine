@@ -1,0 +1,41 @@
+name: V16 Cumulative Warrant Cost
+on:
+  push:
+    branches: [research/cumulative-warrant-cost-v16]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  cumulative:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e .
+      - name: Full regression
+        run: python -m pytest -q
+      - name: Execute four cumulative arms
+        run: PYTHONPATH=. python research/cumulative_v16/run.py
+      - name: Check all correctness and revocation gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('cumulative_v16_out/summary.json').read_text())
+          s=report['summary']
+          assert set(s)=={'cold','conventional_cache','retained_full','retained_boundary'}
+          for mode,v in s.items():
+              assert v['correct']==v['tasks'],(mode,v)
+              assert v['boundary_checks']==v['tasks']
+          assert s['cold']['full_checks']>s['conventional_cache']['full_checks']
+          assert s['retained_full']['full_checks']>=s['retained_boundary']['full_checks']
+          print('All bounded correctness and accounting assertions passed.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cumulative-v16
+          path: cumulative_v16_out/
