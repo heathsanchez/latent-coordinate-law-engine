@@ -50,14 +50,8 @@ def closure_status(old,new,symbol):
             "qualification":"requires unchanged runtime, imports and ambient state; not proof of semantics"}
 
 def fixture():
-    old="OFFSET=1
-def outcome(x):
-    return x+OFFSET
-"
-    new="OFFSET=2
-def outcome(x):
-    return x+OFFSET
-"
+    old="OFFSET=1\ndef outcome(x):\n    return x+OFFSET\n"
+    new="OFFSET=2\ndef outcome(x):\n    return x+OFFSET\n"
     first=closure_status(old,new,"outcome")
     assert first["status"]=="WITHHOLD_CHANGED_DEPENDENCY",first
     namespace1={};namespace2={}
