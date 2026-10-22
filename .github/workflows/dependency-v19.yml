@@ -1,0 +1,26 @@
+name: V19 Dependency Closed Preservation
+on:
+  push:
+    branches: [research/dependency-closed-warrant-v19]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  dependency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install and regressions
+        run: |
+          python -m pip install -e . pytest
+          python -m pytest -q
+      - name: Changed dependency negative control
+        run: PYTHONPATH=. python research/dependency_v19/run.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dependency-v19
+          path: v19_out/
