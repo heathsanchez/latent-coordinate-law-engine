@@ -1,0 +1,34 @@
+name: V18 Authentic Commit Reverification
+on:
+  push:
+    branches: [research/authentic-commit-reverification-v18]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  retrospective:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install project and test runner
+        run: python -m pip install -e . pytest
+      - name: Fetch actual upstream repository and commits
+        run: |
+          git clone https://github.com/mahmoud/boltons.git /tmp/boltons-v18
+          for sha in 3970a80f63807392e512340c25dc2db473bcba70 4aa77cddb5d06def130df6f09aefab4018fa487c 57cb026b7f47cd2765a0d5acdc83849ed5f1f6a3 ead236e278ca0466bf468de746b5960fb12d7e5b 970051b66474ac37383c5d990c169c794e20eb88 f5f5cd867ee98f15def2b6a19bfba203de29b961; do
+            git -C /tmp/boltons-v18 cat-file -e "$sha^{commit}"
+          done
+      - name: Test actual old/new author implementations
+        run: PYTHONPATH=. python research/authentic_v18/run.py
+      - name: Native upstream author tests on latest selected commit
+        run: |
+          git -C /tmp/boltons-v18 checkout --detach f5f5cd867ee98f15def2b6a19bfba203de29b961
+          PYTHONPATH=/tmp/boltons-v18 python -m pytest -q /tmp/boltons-v18/tests/test_iterutils.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: authentic-reverification-v18
+          path: v18_out/
