@@ -34,10 +34,10 @@ def closure_status(old,new,symbol):
         for tree in (a,b):
             decl=next((n for n in tree.body if getattr(n,"name",None)==name),None)
             if decl is None:continue
-            for n in ast.walk(decl):
+            locals_set=set()\n            if isinstance(decl,(ast.FunctionDef,ast.AsyncFunctionDef)):\n                locals_set.update(a.arg for a in decl.args.posonlyargs+decl.args.args+decl.args.kwonlyargs)\n                if decl.args.vararg:locals_set.add(decl.args.vararg.arg)\n                if decl.args.kwarg:locals_set.add(decl.args.kwarg.arg)\n            for n in ast.walk(decl):
                 if isinstance(n,ast.Name) and isinstance(n.ctx,ast.Load):
                     if n.id in before or n.id in after:queue.append(n.id)
-                    elif n.id not in ("range","len","list","zip","enumerate","tuple","iter","next","min","max"):
+                    elif n.id not in locals_set and n.id not in ("range","len","list","zip","enumerate","tuple","iter","next","min","max"):
                         external.append(n.id)
     if changes:return {"status":"WITHHOLD_CHANGED_DEPENDENCY","dependencies":sorted(seen),"changed":sorted(set(changes))}
     if external:return {"status":"UNKNOWN_EXTERNAL_OR_LOCAL_REFERENCES","dependencies":sorted(seen),"external":sorted(set(external))}
