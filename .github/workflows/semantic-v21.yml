@@ -1,0 +1,32 @@
+name: V21 Cross Source Semantic Obligations
+on:
+  push:
+    branches: [research/semantic-obligation-discovery-v21]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: Fetch two pinned upstreams
+        run: |
+          git clone https://github.com/more-itertools/more-itertools.git /tmp/more-v21
+          git -C /tmp/more-v21 checkout --detach 4aeb4338ae1407d8da9723e86da99efeb446f719
+          git clone https://github.com/mahmoud/boltons.git /tmp/boltons-v21
+          git -C /tmp/boltons-v21 checkout --detach f5f5cd867ee98f15def2b6a19bfba203de29b961
+          python -m pip install -e /tmp/more-v21 -e /tmp/boltons-v21
+      - name: Automatically discover candidates without source symbols
+        run: PYTHONPATH=. python research/semantic_v21/discover.py
+      - name: Independently verify common consequence
+        run: PYTHONPATH=. python research/semantic_v21/verify.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-v21
+          path: v21_out/
