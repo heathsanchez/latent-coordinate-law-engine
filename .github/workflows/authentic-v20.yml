@@ -1,0 +1,26 @@
+name: V20 Authentic Shared Obligations
+on:
+  push:
+    branches: [research/authentic-shared-obligation-v20]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: Fetch real upstream source commits
+        run: |
+          git clone https://github.com/mahmoud/boltons.git /tmp/boltons-v20
+      - name: Execute source-separated shared and individual controls
+        run: PYTHONPATH=. python research/authentic_v20/run.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: authentic-shared-v20
+          path: v20_out/
