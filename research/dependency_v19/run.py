@@ -34,7 +34,12 @@ def closure_status(old,new,symbol):
         for tree in (a,b):
             decl=next((n for n in tree.body if getattr(n,"name",None)==name),None)
             if decl is None:continue
-            locals_set=set()\n            if isinstance(decl,(ast.FunctionDef,ast.AsyncFunctionDef)):\n                locals_set.update(a.arg for a in decl.args.posonlyargs+decl.args.args+decl.args.kwonlyargs)\n                if decl.args.vararg:locals_set.add(decl.args.vararg.arg)\n                if decl.args.kwarg:locals_set.add(decl.args.kwarg.arg)\n            for n in ast.walk(decl):
+            locals_set=set()
+            if isinstance(decl,(ast.FunctionDef,ast.AsyncFunctionDef)):
+                locals_set.update(a.arg for a in decl.args.posonlyargs+decl.args.args+decl.args.kwonlyargs)
+                if decl.args.vararg:locals_set.add(decl.args.vararg.arg)
+                if decl.args.kwarg:locals_set.add(decl.args.kwarg.arg)
+            for n in ast.walk(decl):
                 if isinstance(n,ast.Name) and isinstance(n.ctx,ast.Load):
                     if n.id in before or n.id in after:queue.append(n.id)
                     elif n.id not in locals_set and n.id not in ("range","len","list","zip","enumerate","tuple","iter","next","min","max"):
@@ -45,8 +50,14 @@ def closure_status(old,new,symbol):
             "qualification":"requires unchanged runtime, imports and ambient state; not proof of semantics"}
 
 def fixture():
-    old="OFFSET=1\ndef outcome(x):\n    return x+OFFSET\n"
-    new="OFFSET=2\ndef outcome(x):\n    return x+OFFSET\n"
+    old="OFFSET=1
+def outcome(x):
+    return x+OFFSET
+"
+    new="OFFSET=2
+def outcome(x):
+    return x+OFFSET
+"
     first=closure_status(old,new,"outcome")
     assert first["status"]=="WITHHOLD_CHANGED_DEPENDENCY",first
     namespace1={};namespace2={}
