@@ -14,20 +14,27 @@ def fingerprints(root,limit=160):
     records=sorted(records,key=lambda x:(-score(x),x["file"],x["name"]))[:limit]
     acquisition=[[],[0],[1,2],[0,1,2],[2,2,1,0],[0,2,1,2]]
     candidates=[];attempts=0
-    for c in records:
+    for index,c in enumerate(records):
+        print(f"V21_DIAG_CANDIDATE source={root.name} ordinal={index+1}/{len(records)} file={c['file']} function={c['name']}",flush=True)
         try:
             f=function(root,c);variants=adaptations(f)
-        except Exception:continue
+        except Exception as exc:
+            print(f"V21_DIAG_IMPORT_SKIP source={root.name} ordinal={index+1} error={type(exc).__name__}",flush=True)
+            continue
         for kwargs,materialize in variants:
             attempts+=1
+            print(f"V21_DIAG_VARIANT source={root.name} ordinal={index+1} kwargs={kwargs} materialize={materialize}",flush=True)
             try:
                 ok=True
-                for xs in acquisition:
+                for case,xs in enumerate(acquisition):
+                    print(f"V21_DIAG_CASE source={root.name} ordinal={index+1} case={case}",flush=True)
                     y=f(list(xs),**kwargs)
                     if materialize:y=list(y)
                     if type(y)!=list or y!=oracle(xs):ok=False;break
                 if ok:candidates.append(dict(file=c["file"],name=c["name"],kwargs=kwargs,materialize=materialize))
-            except Exception:pass
+                print(f"V21_DIAG_DONE source={root.name} ordinal={index+1} pass={ok}",flush=True)
+            except Exception as exc:
+                print(f"V21_DIAG_EXCEPTION source={root.name} ordinal={index+1} error={type(exc).__name__}",flush=True)
     return candidates,attempts,len(records)
 def run():
     out=Path("v21_out");out.mkdir(exist_ok=True)
