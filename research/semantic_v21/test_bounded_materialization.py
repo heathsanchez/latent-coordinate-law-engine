@@ -53,7 +53,9 @@ print(json.dumps({'names':[c['name'] for c in candidates],
                   'attempts':attempts,'scanned':scanned}))
 ''')
         self.assertEqual(result['scanned'], 2)
-        self.assertEqual(result['names'], ['adjacent'])
+        # The legitimate list-producing function qualifies with either
+        # materialization setting; neither variant of repeat_last may qualify.
+        self.assertEqual(result['names'], ['adjacent', 'adjacent'])
         self.assertEqual(result['attempts'], 4)
 
     def test_independent_verifier_rejects_nonterminating_materialization(self):
