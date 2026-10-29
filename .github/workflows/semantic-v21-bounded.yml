@@ -1,0 +1,36 @@
+name: V21 bounded materialization and source-native verification
+
+on:
+  push:
+    branches:
+      - research/semantic-v21-bounded-materialization-20261029
+  workflow_dispatch:
+
+jobs:
+  bounded-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . pytest
+      - name: Reject a nonterminating adapter while retaining the valid finite one
+        run: python -m unittest -v research.semantic_v21.test_bounded_materialization
+      - name: Fetch the two frozen upstream sources
+        run: |
+          git clone https://github.com/more-itertools/more-itertools.git /tmp/more-v21
+          git -C /tmp/more-v21 checkout --detach 4aeb4338ae1407d8da9723e86da99efeb446f719
+          git clone https://github.com/mahmoud/boltons.git /tmp/boltons-v21
+          git -C /tmp/boltons-v21 checkout --detach f5f5cd867ee98f15def2b6a19bfba203de29b961
+          python -m pip install -e /tmp/more-v21 -e /tmp/boltons-v21
+      - name: Automatically discover without source symbols
+        run: PYTHONUNBUFFERED=1 PYTHONPATH=. python research/semantic_v21/discover.py
+      - name: Independently verify all protected ternary inputs
+        run: PYTHONPATH=. python research/semantic_v21/verify.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-v21-bounded
+          path: v21_out/
