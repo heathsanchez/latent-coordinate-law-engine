@@ -17,3 +17,21 @@ jobs:
           python-version: '3.11'
       - name: Two-slot binding regression and ablation
         run: python -m unittest -v research.semantic_v21.test_two_slot_binding
+      - name: Checkout preregistered source-C and source-D pins
+        run: |
+          git clone -q https://github.com/pytoolz/toolz.git /tmp/toolz-v21-c
+          git -C /tmp/toolz-v21-c checkout -q 451af60dec590a6010e2babdbf391ea8f815122f
+          git clone -q https://github.com/Suor/funcy.git /tmp/funcy-v21-d
+          git -C /tmp/funcy-v21-d checkout -q a876c7e1cf11e7c746e91fce4632ebfa93865428
+          python -m pip install -q -e /tmp/toolz-v21-c -e /tmp/funcy-v21-d
+      - name: Source-C post-hoc and uninspected-D acquisition
+        run: PYTHONPATH=. python research/semantic_v21/two_slot_trial.py
+      - name: Independent 1,093-case C-and-D oracle
+        run: PYTHONPATH=. python research/semantic_v21/two_slot_verify.py
+      - name: Preserve finite independent evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: semantic-v21-two-slot-c-d
+          path: v21_out/
+          if-no-files-found: warn
