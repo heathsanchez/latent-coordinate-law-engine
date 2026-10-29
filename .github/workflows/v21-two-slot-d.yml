@@ -1,0 +1,19 @@
+name: V21 two-slot prospective source D
+
+on:
+  push:
+    branches:
+      - research/semantic-v21-two-slot-d-20261029
+  workflow_dispatch:
+
+jobs:
+  binding-and-heldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Two-slot binding regression and ablation
+        run: python -m unittest -v research.semantic_v21.test_two_slot_binding
