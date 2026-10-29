@@ -72,6 +72,29 @@ def posthoc_c_mechanism(root, qualified_candidates):
             'prospective': False}
 
 
+def posthoc_d_legacy_ablation(root, qualified_candidates):
+    """After the frozen D result, check if D required the added binding rule."""
+    old_verified = []
+    for item in qualified_candidates:
+        candidate = item['candidate']
+        module = '.'.join(Path(candidate['file']).with_suffix('').parts)
+        sys.path.insert(0, str(root))
+        fn = getattr(importlib.import_module(module), candidate['name'])
+        for kwargs, materialize in adaptations(fn):
+            binding = {'input_slot': 0, 'size_value': None,
+                       'kwargs': kwargs, 'materialize': materialize}
+            replay = verify_candidate(root, candidate, binding)
+            if replay.get('pass') and replay.get('checked') == 1093:
+                old_verified.append({'file': candidate['file'],
+                                     'name': candidate['name'], 'binding': binding})
+    new_names = {(i['candidate']['file'], i['candidate']['name']) for i in qualified_candidates}
+    old_names = {(i['file'], i['name']) for i in old_verified}
+    return {'status': 'POSTHOC_DIAGNOSTIC_ONLY', 'old_verified': old_verified,
+            'old_sufficient_for_all_new_hits': new_names <= old_names,
+            'new_second_slot_needed_for_d': bool(new_names - old_names),
+            'protected_cases': 1093}
+
+
 def verify(out):
     acquired = json.loads((out/'two_slot_discovery.json').read_text())
     result = {'protocol': acquired['protocol'], 'protected_cases': 1093,
@@ -107,6 +130,16 @@ def verify(out):
     result['posthoc_c_mechanism'] = posthoc_c_mechanism(
         SOURCES['c_posthoc']['root'], result['sources']['c_posthoc']['methods']['source_generic']['qualified'])
     print(json.dumps(result['posthoc_c_mechanism'], indent=2))
+    for key, entry in result['sources'].items():
+        print(json.dumps({'verified_candidate_identities': key,
+                          'items': [{'file': item['candidate']['file'],
+                                     'name': item['candidate']['name'],
+                                     'binding': item['candidate']['binding']}
+                                    for item in entry['methods']['source_generic']['qualified']]}, indent=2))
+    result['posthoc_d_legacy_ablation'] = posthoc_d_legacy_ablation(
+        SOURCES['d_prospective']['root'],
+        result['sources']['d_prospective']['methods']['source_generic']['qualified'])
+    print(json.dumps(result['posthoc_d_legacy_ablation'], indent=2))
     (out/'two_slot_evidence.json').write_text(json.dumps(result, indent=2))
 
 
