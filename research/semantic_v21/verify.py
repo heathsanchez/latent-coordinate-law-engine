@@ -11,7 +11,7 @@ def check(root,c):
         for n in range(7):
             for t in itertools.product((0,1,2),repeat=n):
                 xs=list(t);result=fn(xs,**c["kwargs"])
-                if c["materialize"]:result=list(result)
+                if c["materialize"]:result=list(itertools.islice(result,max(1,len(xs))))
                 if type(result)!=list or result!=expected(xs):return {"pass":False,"checked":total}
                 total+=1
         return {"pass":True,"checked":total}

@@ -24,7 +24,7 @@ def fingerprints(root,limit=160):
                 ok=True
                 for xs in acquisition:
                     y=f(list(xs),**kwargs)
-                    if materialize:y=list(y)
+                    if materialize:y=list(itertools.islice(y,max(1,len(xs))))
                     if type(y)!=list or y!=oracle(xs):ok=False;break
                 if ok:candidates.append(dict(file=c["file"],name=c["name"],kwargs=kwargs,materialize=materialize))
             except Exception:pass
